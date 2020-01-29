@@ -72,7 +72,7 @@
 |------|----|-------|
 |name|string|null: false, index: true|
 ### Association
-- belongs_to :product
+- has_many :products
 
 ## product-image
 |Column|Type|Options|
@@ -87,7 +87,7 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- belongs_to :user
+- has_many :users
 
 
 
