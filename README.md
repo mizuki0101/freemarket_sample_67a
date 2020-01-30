@@ -9,24 +9,16 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
+|phonenumber|integer|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_date|integer|null: false|
-|address_id|references|null: false, foreign_key: true|
-|credit_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
-|buyed_product|references|foreign_key: "buyer_id", class_name: "Product"|
-|saling_product|references|-> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Product"|
-|solid_product|references|-> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Product"|
 ### Association
 - has_many :addresses
 - has_many :credits
-- has_many :produts
-- has_many :buyed_products
-- has_many :saling_products
-- has_many :sold_products
+- has_many :products
 
-## produtsテーブル
+## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |price|integer|null: false|
@@ -40,13 +32,13 @@
 |buyer_id|references|null: false, foreign_key: true|
 |saler_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :blands
-- has_many :first-category
-- has_many :product-image
+- belongs_to :brand
+- belongs_to :first_category
+- has_many :product_images
 - belongs_to :saler, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 
-## address
+## addresses
 |Column|Type|Options|
 |------|----|-------|
 |postnumber|integer|null: false|
@@ -58,7 +50,7 @@
 ### Association
 - belongs_to :user
 
-## credit
+## credits
 |Column|Type|Options|
 |------|----|-------|
 |card_id|reference|null: false, foreign_key: true|
@@ -67,14 +59,14 @@
 ### Association
 - belongs_to :user
 
-## bland
+## brands
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
 ### Association
 - has_many :products
 
-## product-image
+## product_images
 |Column|Type|Options|
 |------|----|-------|
 |url|text|null: false|
@@ -82,12 +74,12 @@
 ### Association
 - belongs_to :product
 
-## first-category
+## first_categorys
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :users
+- has_many :products
 
 
 
