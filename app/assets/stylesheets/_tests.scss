@@ -1,4 +1,701 @@
-.title {
-  color: #FFF000;
-  font-size: 50px;
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+.sell_box {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  z-index: 1;
+  right: 20px;
+  bottom: 20px;
+  border: solid 2px #33CCCC;
+  background-color: #33CCCC;
+  cursor: pointer;
+  border-radius: 10px;
+  &__btn {
+    background-image: url(icon_camera.png);
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 80px;
+    height: 70px;
+  }
+  
+}
+
+.header {
+  box-sizing: border-box;
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  padding: 10px 250px;
+  &__box {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    &__title {
+      height: 50px;
+      width: 150px;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-image: url(logo.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+    }
+    &__search {
+      height: 40px;
+      width: 650px;
+      display: flex;
+      justify-content: center;
+      &__form {
+        height: 30px;
+        width: 600px;
+        border: solid;
+      }
+      &__btn {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        background-image: url(icon-search.png);
+        background-size: cover;
+        background-color: #33CCCC;
+        margin-top: 2px;
+        margin-left: 5px;
+      }
+    }
+  }
+  &__box2 {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__tab {
+      height: 25px;
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      &__category {
+        font-size: 15px;
+      }
+      &__brand {
+        font-size: 15px;
+      }
+    }
+    &__info {
+      height: 25px;
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      &__like {
+        font-size: 15px;
+      }
+      &__mypage {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.content {
+  box-sizing: border-box;
+  background-image: url(bg-mainVisual-pict_pc.jpg);
+  background-size: 100% 560px;
+  height: 560px;
+  width: 100%;
+  padding: 200px 0 0 100px;
+  &__title {
+    height: 60px;
+    width: 100%;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px black;
+  }
+  &__subtitle {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+  }
+  &__icon {
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    &__app {
+      background-image: url(app-store-badge.png);
+      background-size: contain;
+      height: 40px;
+      width: 135px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    &__google {
+      background-image: url(google-play-badge.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 60px;
+      width: 155px;
+      cursor: pointer;
+    }
+  }
+}
+
+.content2 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 700px;
+  padding: 60px 0;
+  &__title {
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__main {
+    height: 550px;
+    padding: 0 100px;
+    &__picture {
+      height: 350px;
+      display: flex;
+      justify-content: space-between;
+      &__image1 {
+        background-image: url(pict-reason-01.jpg);
+        background-size: cover;
+        height: 300px;
+        width: 300px;
+        &__number {
+          background-color: #33CCCC;
+          border: solid #33cccc;
+          color: white;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          text-align: center;
+        }
+      }
+      &__image2 {
+        background-image: url(pict-reason-02.jpg);
+        background-size: cover;
+        height: 300px;
+        width: 300px;
+        &__number {
+          background-color: #33CCCC;
+          border: solid #33cccc;
+          color: white;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          text-align: center;
+        }
+      }
+      &__image3 {
+        background-image: url(pict-reason-03.jpg);
+        background-size: cover;
+        height: 300px;
+        width: 300px;
+        &__number {
+          background-color: #33CCCC;
+          border: solid #33CCCC;
+          color: white;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          text-align: center;
+        }
+      }
+    }
+    &__box {
+      height: 150px;
+      display: flex;
+      justify-content: space-between;
+      &__text1 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+      &__text2 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+      &__text3 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+    }
+  }
+}
+
+.content3 {
+  box-sizing: border-box;
+  background-image: url(bg-topMiddleDl-pict.jpg);
+  background-size: 100% 400px;
+  height: 400px;
+  padding: 100px 0 0 150px;
+  &__title {
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+  }  
+  &__subtitle {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    white-space: pre;
+  }
+  &__icon {
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    &__app {
+      background-image: url(app-store-badge.png);
+      background-size: contain;
+      height: 40px;
+      width: 135px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    &__google {
+      background-image: url(google-play-badge.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 60px;
+      width: 155px;
+      cursor: pointer;
+    }
+  }
+}
+
+.content4 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 700px;
+  padding: 60px 0;
+  &__title {
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__main {
+    height: 550px;
+    padding: 0 100px;
+    &__picture {
+      height: 350px;
+      display: flex;
+      justify-content: space-between;
+      &__image1 {
+        background-image: url(icon-01.png);
+        background-size: 300px 300px;
+        height: 300px;
+        width: 300px;
+      }
+      &__image2 {
+        background-image: url(icon-03.png);
+        background-size: 300px 300px;
+        height: 300px;
+        width: 300px;
+      }
+      &__image3 {
+        background-image: url(icon-04.png);
+        background-size: 300px 300px;
+        height: 300px;
+        width: 300px;
+      }
+    }
+    &__box {
+      height: 150px;
+      display: flex;
+      justify-content: space-between;
+      &__text1 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+      &__text2 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+      &__text3 {
+        font-size: 30px;
+        &__content {
+          font-size: 20px;
+          white-space: pre;
+        }
+      }
+    }
+  }
+}
+
+.content5 {
+  background-color: #f0f0f0;
+  height: 800px;
+  width: 100%;
+  &__main1 {
+    height: 400px;
+    &__title {
+      height: 100px;
+      white-space: pre;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    &__picture {
+      height: 250px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 150px;
+      &__image1 {
+        background-image: url(a007.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image2 {
+        background-image: url(a004.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image3 {
+        background-image: url(a001.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image4 {
+        background-image: url(a007.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image5 {
+        background-image: url(a004.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+    }
+  }
+  &__main2 {
+    height: 400px;
+    &__title {
+      height: 100px;
+      white-space: pre;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    &__picture {
+      height: 250px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 150px;
+      &__image1 {
+        background-image: url(a007.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image2 {
+        background-image: url(a004.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image3 {
+        background-image: url(a001.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image4 {
+        background-image: url(a007.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+      &__image5 {
+        background-image: url(a004.png);
+        background-size: 150px 150px;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 220px;
+        background-color: white;
+        &__content {
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 140px;
+          &__form {
+            font-size: 20px;
+            white-space: pre;
+          }
+          &__like {
+            padding-top: 50px;
+          }
+        }       
+      }
+    }
+  }    
+}
+
+.banner {
+  box-sizing: border-box;
+  height: 360px;
+  background-image: url(bg-appBanner-pict.jpg);
+  background-size: 100% 360px;
+  width: 100%;
+  height: 360px;
+  padding-top: 100px;
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+  }
+  &__subtitle {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+  }
+  &__icon {
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    padding-left: 570px;
+    &__app {
+      background-image: url(app-store-badge.png);
+      background-size: contain;
+      height: 40px;
+      width: 135px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    &__google {
+      background-image: url(google-play-badge.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 60px;
+      width: 155px;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  background-color: black;
+  height: 200px;
+  padding: 50px 300px;
+  &__info {
+    height: 30px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    &__help {
+      padding-right: 30px;
+    }
+  }
+  &__content {
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    &__menu1 {
+      font-size: 12px;
+      white-space: pre;
+    
+    }
+    &__menu2 {
+      font-size: 12px;
+      white-space: pre;
+      
+    }
+    &__menu3 {
+      font-size: 12px;
+      white-space: pre;
+    }
+  }
+  &__logo {
+    background-image: url(logo-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 50px;
+    margin-left: 330px;
+  }
 }
