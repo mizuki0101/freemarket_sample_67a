@@ -1,0 +1,254 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  box-sizing: border-box;
+}
+h3{
+  font-size: 14px;
+  margin: 0;
+  display: inline;
+  color: #888;
+}
+span{
+  font-size: 12px;
+  padding: 2px 4px;
+  background-color: #3CCACE;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+a{
+  cursor: pointer;
+}
+
+label{
+  font-weight: bold;
+  font-size: 14px;
+}
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.wrapper{
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+  .header{
+    height: 128px;
+    width: 100%;
+    text-align: center;
+    line-height: 128px;
+    &--logo{
+      vertical-align: middle;
+    }
+  }
+  .container{
+    height: calc(100% - 350px);
+    width: 700px;
+    background-color: #fff;
+    margin: 0 auto;
+    .head{
+      text-align: center;
+      border-bottom: 1px solid #f5f5f5;
+      padding: 32px 16px;
+      h2{
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+    .section{
+      padding: 40px;
+      border-bottom: 1px solid #f5f5f5;
+      background-color: #fff;
+      .form-question{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+      }
+      p{
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: normal;
+      }
+      .drop-zone{
+        min-height: 162px;
+        width: 100%;
+        background-color: #f5f5f5;
+        border: 1px dashed #ccc;
+        margin-top: 16px;
+        input[type="file"]{
+          display: none;
+        }
+      }
+      input[type="text"]{
+        min-height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        padding: 10px 16px 8px;
+        margin-top: 8px;
+      }
+      .form{
+        width: 100%;
+        &__group{
+          margin-top: 40px;
+          textarea{
+            min-height: 104px;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+      }
+      .sell-form-box{
+        float: right;
+        width: 65%;
+        li{
+          min-height: 48px;
+          line-height: 48px;
+          font-size: 14px;
+          border-bottom: 1px solid #f5f5f5;
+          padding-bottom: 24px;
+          .l-left{
+            width: 50%;
+            float: left;
+          }
+          .l-right{
+            width: 50%;
+            float: right;
+            display: flex;
+            text-align: right;
+            div{
+              display: inline;
+            }
+            input[type="tel"]{
+              min-height: 48px;
+              width: 100%;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              padding: 10px 16px 8px;
+            }
+          }
+        }
+        li.clearfix{
+          padding: 12px 0;
+          p{
+            display: inline;
+            margin: 0;
+          }
+        }
+        li.bold{
+          p{
+            font-weight: bold;
+            display: inline;
+          }
+        }
+      }
+      .sell-btn-box{
+        p{
+          margin: 14px 0;
+          a{
+            cursor: pointer;
+            color: #0099e8;
+          }
+        }
+        .btn-default{
+          display: block;
+          height: 48px;
+          width: 100%;
+          font-size: 14px;
+          color: #fff;
+          cursor: pointer;
+        }
+        .btn-blue{
+          padding: 1px 7px 2px;
+          margin-top: 40px;
+          border: 1px solid #3CCACE;
+          background-color: #3CCACE;
+        }
+        .btn-gray{
+          background-color: #aaa;
+          border: 1px solid #aaa;
+          width: 50%;
+          text-align: center;
+          line-height: 48px;
+          margin: 24px auto;
+        }
+      }
+      .select{
+        &__box{
+          width: 400px;
+          float: right;
+          position: relative;
+          margin-top: 40px;
+          .select-wrap{
+              i{
+                position: absolute;
+                right: 16px;
+                top: 65%;
+                color: #888;
+                font-size: 16px;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+              }
+            select{
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              width: 100%;
+              // z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    font-size: 14px;
+    ul{
+      font-size: 12px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      li{
+        width: 33%;
+      }
+    }
+    a.footer-logo{
+      display: block;
+      margin: 40px auto 0;
+      text-align: center;
+    }
+    p{
+      text-align: center;
+      margin-top: 5px;
+    }
+  }
+}
