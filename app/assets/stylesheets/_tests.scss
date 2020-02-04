@@ -56,7 +56,7 @@ body {
       font-size: 40px;
       line-height: 40px;
       text-align: center;
-      background-image: url(logo/logo.png);
+      background-image: image-url("logo/logo.png");
       background-size: contain;
       background-repeat: no-repeat;
 
@@ -74,7 +74,7 @@ body {
         height: 30px;
         width: 30px;
         cursor: pointer;
-        background-image: url(icon/icon-search.png);
+        background-image: image-url("icon/icon-search.png");
         background-size: cover;
         background-color: #33CCCC;
         margin-left: 5px;
@@ -120,7 +120,7 @@ body {
 
 .content {
   box-sizing: border-box;
-  background-image: url(pict/bg-mainVisual-pict_pc.jpg);
+  background-image: image-url("pict/bg-mainVisual-pict_pc.jpg");
   background-size: 100% 560px;
   height: 560px;
   width: 100%;
@@ -144,7 +144,7 @@ body {
     display: flex;
     justify-content: center;
     &__app {
-      background-image: url(logo/app-store-badge.png);
+      background-image: image-url("logo/app-store-badge.png");
       background-size: contain;
       height: 40px;
       width: 135px;
@@ -152,7 +152,7 @@ body {
       margin-top: 10px;
     }
     &__google {
-      background-image: url(logo/google-play-badge.png);
+      background-image: image-url("logo/google-play-badge.png");
       background-size: cover;
       background-repeat: no-repeat;
       height: 60px;
@@ -181,7 +181,7 @@ body {
       display: flex;
       justify-content: space-between;
       &__image1 {
-        background-image: url(pict/pict-reason-01.jpg);
+        background-image: image-url("pict/pict-reason-01.jpg");
         background-size: cover;
         height: 300px;
         width: 300px;
@@ -196,7 +196,7 @@ body {
         }
       }
       &__image2 {
-        background-image: url(pict/pict-reason-02.jpg);
+        background-image: image-url("pict/pict-reason-02.jpg");
         background-size: cover;
         height: 300px;
         width: 300px;
@@ -211,7 +211,7 @@ body {
         }
       }
       &__image3 {
-        background-image: url(pict/pict-reason-03.jpg);
+        background-image: image-url("pict/pict-reason-03.jpg");
         background-size: cover;
         height: 300px;
         width: 300px;
@@ -257,7 +257,7 @@ body {
 
 .content3 {
   box-sizing: border-box;
-  background-image: url(pict/bg-topMiddleDl-pict.jpg);
+  background-image: image-url("pict/bg-topMiddleDl-pict.jpg");
   background-size: 100% 400px;
   height: 400px;
   padding: 100px 0 0 150px;
@@ -278,7 +278,7 @@ body {
     display: flex;
     justify-content: center;
     &__app {
-      background-image: url(logo/app-store-badge.png);
+      background-image: image-url("logo/app-store-badge.png");
       background-size: contain;
       height: 40px;
       width: 135px;
@@ -286,7 +286,7 @@ body {
       margin-top: 10px;
     }
     &__google {
-      background-image: url(logo/google-play-badge.png);
+      background-image: image-url("logo/google-play-badge.png");
       background-size: cover;
       background-repeat: no-repeat;
       height: 60px;
@@ -315,19 +315,19 @@ body {
       display: flex;
       justify-content: space-between;
       &__image1 {
-        background-image: url(icon/icon-01.png);
+        background-image: image-url("icon/icon-01.png");
         background-size: 300px 300px;
         height: 300px;
         width: 300px;
       }
       &__image2 {
-        background-image: url(icon/icon-03.png);
+        background-image: image-url("icon/icon-03.png");
         background-size: 300px 300px;
         height: 300px;
         width: 300px;
       }
       &__image3 {
-        background-image: url(icon/icon-04.png);
+        background-image: image-url("icon/icon-04.png");
         background-size: 300px 300px;
         height: 300px;
         width: 300px;
@@ -382,7 +382,7 @@ body {
       justify-content: space-between;
       padding: 0 150px;
       &__image1 {
-        background-image: url(icon/a007.png);
+        background-image: image-url("icon/a007.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -403,7 +403,7 @@ body {
         }       
       }
       &__image2 {
-        background-image: url(icon/a004.png);
+        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -424,7 +424,7 @@ body {
         }       
       }
       &__image3 {
-        background-image: url(icon/a001.png);
+        background-image: image-url("icon/a001.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -445,7 +445,7 @@ body {
         }       
       }
       &__image4 {
-        background-image: url(icon/a007.png);
+        background-image: image-url("icon/a007.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -466,7 +466,7 @@ body {
         }       
       }
       &__image5 {
-        background-image: url(icon/a004.png);
+        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -504,7 +504,7 @@ body {
       justify-content: space-between;
       padding: 0 150px;
       &__image1 {
-        background-image: url(icon/a007.png);
+        background-image: image-url("icon/a007.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -525,7 +525,7 @@ body {
         }       
       }
       &__image2 {
-        background-image: url(icon/a004.png);
+        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -546,7 +546,7 @@ body {
         }       
       }
       &__image3 {
-        background-image: url(icon/a001.png);
+        background-image: image-url("icon/a001.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -567,7 +567,7 @@ body {
         }       
       }
       &__image4 {
-        background-image: url(icon/a007.png);
+        background-image: image-url("icon/a007.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -588,7 +588,7 @@ body {
         }       
       }
       &__image5 {
-        background-image: url(icon/a004.png);
+        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -615,7 +615,7 @@ body {
 .banner {
   box-sizing: border-box;
   height: 360px;
-  background-image: url(pict/bg-appBanner-pict.jpg);
+  background-image: image-url("pict/bg-appBanner-pict.jpg");
   background-size: 100% 360px;
   width: 100%;
   height: 360px;
@@ -638,7 +638,7 @@ body {
     display: flex;
     justify-content: center;
     &__app {
-      background-image: url(logo/app-store-badge.png);
+      background-image: image-url("logo/app-store-badge.png");
       background-size: contain;
       background-repeat: no-repeat;
       height: 40px;
@@ -647,7 +647,7 @@ body {
       margin-top: 10px;
     }
     &__google {
-      background-image: url(logo/google-play-badge.png);
+      background-image: image-url("logo/google-play-badge.png");
       background-size: cover;
       background-repeat: no-repeat;
       height: 60px;
@@ -693,7 +693,7 @@ body {
     }
   }
   &__logo {
-    background-image: url(logo/logo-white.png);
+    background-image: image-url("logo/logo-white.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 150px;
