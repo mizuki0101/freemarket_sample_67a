@@ -25,7 +25,7 @@ body {
   cursor: pointer;
   border-radius: 10px;
   &__btn {
-    background-image: url(icon/icon_camera.png);
+    background-image: image-url("icon/icon_camera.png");
     background-size: 60px 60px;
     background-repeat: no-repeat;
     position: fixed;
