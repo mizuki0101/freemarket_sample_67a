@@ -1,0 +1,66 @@
+.telephone-single-container
+  .s-header
+    .l-header
+      %h1
+      .nav-contents
+        .nav-content.red
+          %p情報入力
+          .nav-line
+            .circle.red
+        .nav-content.red
+          %p住所入力
+          .nav-line
+            .circle.red
+        .nav-content.red
+          %p電話番号
+          .nav-line
+            .circle.last
+        .nav-content
+          %p入力完了
+          .nav-line
+            .round
+  .Telephone-information
+    .telephone-l-single
+      %h2電話番号の確認
+      .telephone-form
+        =form_with do |form|
+          .l-single-container
+            %label電話番号
+            %span必須
+            = form.text_field :telephonenumber, class: "number-form", placeholder: "携帯電話の番号を入力"
+            %p本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            .form-register
+            = form.submit "登録する", class: "telephone-btn"
+
+
+
+.Complete
+  .s-header
+    .l-header
+      %h1
+      .nav-contents
+        .nav-content.red
+          %p情報入力
+          .nav-line
+            .circle.red
+        .nav-content.red
+          %p住所入力
+          .nav-line
+            .circle.red
+        .nav-content.red
+          %p電話番号
+          .nav-line
+            .circle.phone
+        .nav-content.red
+          %p入力完了
+          .nav-line
+            .round.last
+  .Complete-info
+    .Complete-view
+      %h2会員登録完了
+      .Complete-text
+        %pありがとうございます。
+        %p登録が完了しました。
+      .Complete-btn
+        = link_to "#" do
+          メルカリに戻る
