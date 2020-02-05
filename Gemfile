@@ -75,7 +75,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'pry-rails'
-gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'payjp'
 gem 'devise'
+gem "font-awesome-sass"

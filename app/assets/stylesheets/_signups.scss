@@ -1,0 +1,850 @@
+// Place all the styles related to the signups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.l-header{
+  height: 128px;
+  display: flex;
+  background-color: #f5f5f5;
+  h1{
+    background-image: image-url("logo/logo.png");
+    background-size: contain;
+    width: 193px;
+    height: 49px;
+    background-repeat: no-repeat;
+    // margin: 0 auto;
+    margin-left: 400px;
+    margin-top: 40px;
+  }
+  .nav-contents{
+    display: flex;
+    width: 500px;
+    height: 50px;
+    background-color: #f5f5f5;
+    margin-top: 45px;
+    text-align: center;
+    margin-left: 160px;
+    .nav-content{
+      width: 80px;
+      height: 40px;
+      background-color: #f5f5f5;
+      // margin-left: 5px;
+      font-size: 15px;
+      color: gray;
+      // position: relative;
+      z-index: 1;
+      display: inline-block;
+      min-width: 40px;
+      // margin: 0 5% 0 0;
+      font-size: 12px;
+      color: #888;
+      position: relative;
+      p{
+        margin-right: 32px;
+        margin-left: -37px;
+      }
+      .circle{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: gray;
+        // margin: 0 auto;
+        font-size: 15px;
+        // margin-left: 20px;
+      }
+      .round{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: gray;
+        // margin: 0 auto;
+        font-size: 15px;
+        // margin-left: 20px;
+      }
+      .circle::after{
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        // width: 100%;
+        width: 100%;
+        height: 2px;
+        background: #ccc;
+        margin-bottom: 11px;
+      }
+      .red::after{
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        // width: 100%;
+        width: 100%;
+        height: 2px;
+        background: red;
+        margin-bottom: 11px;
+      }
+      .phone::after{
+        position: absolute;
+        bottom: 5px;
+        z-index: -1;
+        display: block;
+        content: '';
+        // width: 100%;
+        width: 100%;
+        height: 2px;
+        background: red;
+        margin-bottom: 11px;
+      }
+      .red{
+        background-color: red;
+      }
+      .second{
+        background-color: red;
+      }
+      .rot{
+        background-color: red;
+      }
+      .phone{
+        background-color: red;
+      }
+      .last{
+        background-color: red;
+      }
+    }
+    .red{
+      color: red;
+    }
+    .second{
+      color: red;
+    }
+  }
+}
+
+
+.Newsingle-container{
+  // width: 985px;
+  // height: 472px;
+  background-color: #f5f5f5;
+  .header{
+    height: 128px;
+    h1{
+      background-image: image-url('logo/logo.png');
+      width: 193px;
+      height: 49px;
+      margin: 0 auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-bottom: -30px;      
+
+    }
+
+  }
+  .single-main{
+    height: 344px;
+    margin: 0 auto;
+    .l-single-container{
+      width:700px;
+      height: 344px;
+      margin: 0 auto;
+      background-color: white;
+      h2{
+        text-align: center;
+        font-size: 22px;
+        padding: 32px;
+        color: #333;
+        font-weight: bold;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .container-form{
+        width: 668px;
+        height: 182px;
+        padding: 24px 16px 40px 16px;
+        .form-content{
+          width: 343px;
+          height: 182px;
+          margin: 0 auto;
+          i{
+            font-size: 20px;
+            line-height: 1px;
+          }
+          a{
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+            background-color: #ea352d;
+            color: white;
+            border: 1px solid #ea352d;
+            text-align: center;
+            height: 48px;
+            line-height: 48px;
+            font-size: 14px;
+          }
+
+          .facebook-btn{
+            height: 48px;
+            background-color: #385185;
+            border: solid 1px #385185;
+            color: white;
+            text-align: center;
+            line-height: 48px;
+            margin-top: 16px;
+            font-size: 14px;
+          }
+
+          .google-btn{
+            height: 48px;
+            border: solid 1px #979797;
+            line-height: 48px;
+            text-align: center;
+            margin-top: 16px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Menber-information{
+  // width: 985px;
+  height: 1199px;
+  background-color: #f5f5f5;
+  // .l-header{
+  //   height: 128px;
+  //   display: flex;
+  //   background-color: #f5f5f5;
+  //   h1{
+  //     background-image: image-url("logo/logo.png");
+  //     background-size: contain;
+  //     width: 193px;
+  //     height: 49px;
+  //     background-repeat: no-repeat;
+  //     // margin: 0 auto;
+  //     margin-left: 440px;
+  //     margin-top: 40px;
+  //   }
+  //   .nav-contents{
+  //     display: flex;
+  //     width: 500px;
+  //     height: 50px;
+  //     background-color: #f5f5f5;
+  //     margin-top: 45px;
+  //     text-align: center;
+  //     .nav-content{
+  //       width: 100px;
+  //       height: 40px;
+  //       background-color: #f5f5f5;
+  //       margin-left: 5px;
+  //       font-size: 15px;
+  //       color: gray;
+  //       .circle{
+  //         width: 10px;
+  //         height: 10px;
+  //         border-radius: 50%;
+  //         background-color: gray;
+  //         margin: 0 auto;
+  //         font-size: 15px;
+  //       }
+  //       .red{
+  //         background-color: red;
+  //       }
+  //     }
+  //     .red{
+  //       color: red;
+  //     }
+  //   }
+  // }
+  .single-container{
+    width:700px;
+    height: 1199px;
+    margin: 0 auto;
+    background-color: white;
+    h2{
+      font-size: 22px;
+      padding: 32px;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+      width: 636px;
+      height: 33px;
+      border-bottom: solid 1px #f5f5f5;
+    }
+    .register-form{
+      padding: 24px 16px 40px 16px;
+      background-color: white;
+      width: 668px;
+      height: 1037px;
+      .l-single-content{
+        width: 343px;
+        height: 760px;
+        margin: 0 auto;
+        background-color: white;
+        .form-group{
+          width: 343px;
+          height: 70px;
+          margin-top: 24px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .register-form{
+            width: 309px;
+            height: 28px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+          }
+          h3{
+            margin-top: 80px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+          }
+          p{
+            margin:8px 0 0;
+            font-size: 14px;
+          }
+          .form-kana{
+            display: flex;
+            .kana-form{
+              width: 131px;
+              height: 28px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+            }
+            .kana-name{
+              margin-left: 5px;
+            }
+          }
+        }
+        .form-password{
+          width: 343px;
+          height: 70px;
+          margin-top: 24px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .password-form{
+            width: 309px;
+            height: 28px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+          }
+          p{
+            color: #ccc;
+            margin-top: 5px;
+            font-size: 14px;
+          }
+          .checkbox-default{
+            margin-top: 16px;
+            i{
+              color: #ccc;
+              margin-right: 20px;
+              font-size: 20px;
+            }
+          }
+        }
+        .form-group-name{
+          margin-top: 60px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .form-name{
+            display: flex;
+            .name-form{
+              width: 131px;
+              height: 28px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+            }
+            .name-second{
+              margin-left: 12px;
+            }
+          }
+        }
+        .form-group-kana{
+          margin-top: 24px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .form-kana{
+            display: flex;
+            .kana-second{
+              margin-left:12px;
+            }
+            .kana-form{
+              width: 131px;
+              height: 28px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+            }
+          }
+        }
+        .form-group-birth{
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .birthday-select{
+            margin-top: 10px;
+            p{
+              display: inline;
+            }
+            select{
+              height: 46px;
+              width: 70px;
+              padding: 0 10px;
+            }
+          }
+        }
+        .form-register{
+          width: 341px;
+          height: 48px;
+          margin-top: 45px;
+          .register-btn{
+            width: 341px;
+            background-color: #ea352d;
+            color: white;
+            border: solid 1px #ea352d;
+            border-radius: 2px;
+            padding: 10px 16px 8px 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.prefecture-register{
+  background-color: #f5f5f5;
+  // width: 985px;
+  // height: 3456px;
+  .header{
+    height: 50px;
+    // width: 985px;
+    background-color: red;
+  }
+  .prefecture-main{
+    width: 700px;
+    height: 800px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 24px;
+    .prefecture-content{
+      width: 700px;
+      height: 1029px;
+      h2{
+        padding: 32px;
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+        font-size: 22px;
+        border-bottom: solid 1px #f5f5f5;
+      }
+      .prefecture-form{
+        width: 668px;
+        height: 914px;
+        background-color: white;
+        padding: 24px 16px 40px 16px;
+        .form-content-post{
+          width: 314px;
+          background-color: white;
+          margin: 0 auto;
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .post-form{
+            display: block;
+            width: 309px;
+            height: 28px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+            margin-top: 5px;
+          }
+        }
+        .select-prefecture{
+          width: 314px;
+          margin: 0 auto;
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          select{
+            display: block;
+            width: 342px;
+            height: 28px;
+          }
+          .form-city{
+            width: 314px;
+            background-color: white;
+            margin: 0 auto;
+            label{
+              color: #333;
+              font-weight: bold;
+              font-size: 14px;
+            }
+            span{
+              background-color: #ea352d;
+              margin: 0 0 0 8px;
+              border-radius: 2px;
+              color: white;
+              font-size: 12px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        .form-build{
+          width: 314px;
+          background-color: white;
+          margin: 0 auto;
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ccc;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .build-form{
+            display: block;
+            width: 309px;
+            height: 28px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+            margin-top: 5px;
+          }
+
+        }
+        .address-register{
+          width: 310px;
+          margin-top: 50px;
+          margin: 0 auto;
+          .register-btn{
+            background-color: #ea352d;
+            color: white;
+            border: 1px solid #ea352d;
+            width: 341px;
+            height: 48px;
+            line-height: 48px;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.telephone-single-container{
+  background-color: #f5f5f5;
+  // width: 985px;
+  // height: 570px;
+  .header{
+    // width: 985px;
+    height: 128px;
+    background-color: red;
+  }
+  .Telephone-information{
+    // width: 985px;
+    height: 442px;
+    padding-top: 30px;
+    .telephone-l-single{
+      width:700px;
+      height: 442px;
+      margin: 0 auto;
+      background-color: white;
+      h2{
+        text-align: center;
+        padding: 32px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        border-bottom: solid 1px #f5f5f5;
+      }
+      .telephone-form{
+        padding: 24px 16px 40px 16px;
+        background-color: white;
+        width:668px;
+        height: 282px;
+        margin: 0 auto;
+        .l-single-container{
+          width: 343px;
+          height: 282px;
+          margin: 0 auto;
+          background-color: white;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .number-form{
+            display: block;
+            width: 309px;
+            height: 28px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+          }
+          p{
+            margin-top: 8px;
+            font-size: 14px;
+            color: #333;
+          }
+          .telephone-btn{
+            width: 341px;
+            height: 48px;
+            background-color: #ea352d;
+            border-radius: 4px;
+            color: white;
+            border: solid 1px #ea352d;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Complete{
+  background-color: #f5f5f5;
+  .Complete-info{
+    height: 442px;
+    padding-top: 30px;
+    .Complete-view{
+      width:700px;
+      height: 442px;
+      margin: 0 auto;
+      background-color: white;
+      h2{
+        text-align: center;
+        padding: 32px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        border-bottom: solid 1px #f5f5f5;
+      }
+      .Complete-text{
+        margin: 0 auto;
+        width: 180px;
+        margin-top: 70px;
+        line-height: 45px;
+        padding-left: 20px;
+        p{
+          color: #333;
+          font-size: 16px;
+        }
+      }
+      .Complete-btn{
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 80px;
+        a{
+          display: block;
+          width: 341px;
+          height: 48px;
+          background-color: #ea352d;
+          border-radius: 4px;
+          color: white;
+          border: solid 1px #ea352d;
+          margin-top: 30px;
+          text-decoration: none;
+          text-align: center;
+          line-height: 48px;
+        }
+      }
+    }
+  }
+}
+
+.login-main{
+  // width: 731px;
+  height: 985px;
+  background-color: #f5f5f5;
+  .login-panel{
+    width: 456px;
+    height: 731px;
+    background-color: white;
+    margin: 0 auto;
+    .login-new{
+      width: 328px;
+      height: 64px;
+      margin: 0 auto;
+      padding: 40px 64px;
+      p{
+        text-align: center;
+      }
+      a{
+        display: block;
+        width: 326px;
+        height: 46px;
+        margin: 0 auto;
+        border: solid 1px #0099e8;
+        background-color: #0099e8;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 8px;
+        line-height: 46px;
+      }
+    }
+    .login-api{
+      border-top: 1px solid #eee;
+      padding: 32px 64px;
+      width: 328px;
+      height: 116px;
+      background-color: white;
+      .facebook-btn{
+        background-color: #385185;
+        border: solid 1px #385185;
+        width: 328px;
+        height: 48px;
+        color: white;
+        text-align: center;
+        line-height: 48px;
+        i{
+          font-size: 20px;
+        }
+      }
+      .google-btn{
+        background-color: white;
+        border: solid 1px black;
+        width: 328px;
+        height: 48px;
+        // color: white;
+        text-align: center;
+        line-height: 48px;
+        margin-top: 30px;
+        i{
+          font-size: 20px;
+        }
+      }
+      .login-form-mail{
+        margin-top: 70px;
+        .log-form{
+          width: 294px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+          font-size: 16px;
+        }
+      }
+      .log-form-pass{
+        margin-top: 30px;
+        .log-form{
+          width: 294px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+          font-size: 16px;
+        }
+      }
+      .log-form-btn{
+        margin-top: 40px;
+        width: 341px;
+        height: 48px;
+        .log-btn{
+          width: 326px;
+          background-color: #ea352d;
+          color: white;
+          border: solid 1px #ea352d;
+          border-radius: 2px;
+          padding: 10px 16px 8px 16px;
+        }
+      }
+    }
+  }
+}
