@@ -1,44 +1,47 @@
-.prefecture-register
-  .s-header
-    .l-header
-      %h1
-      .nav-contents
-        .nav-content.red
-          %p情報入力
-          .circle.red
-        .nav-content.second
-          %p住所入力
-          .circle.second
-        .nav-content
-          %p電話番号
-          .circle
-        .nav-content
-          %p入力完了
-          .round
-  .prefecture-main
-    .prefecture-content
-      %h2住所登録
-      = form_with do |form|
-        .prefecture-form
-          .form-content-post
-            %label郵便番号
-            %span必須
-            = form.text_field :postnumber, class: "post-form", placeholder: "郵便番号"
-          .select-prefecture
-            %label都道府県
-            %span必須
-            = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "active-hash"
-          .form-content-post
-            %label市町村区
-            %span必須
-            = form.text_field :city, class: "post-form", placeholder: "市町村区"
-          .form-content-post
-            %label番地
-            %span必須
-            = form.text_field :housenumber, class: "post-form", placeholder: "番地"
-          .form-build
-            %label建物名
-            %span任意
-            = form.text_field :build, class: "build-form", placeholder: "建物名"
-          .address-register
-            = form.submit "登録する", class: "register-btn"
+.wrwpper
+  .prefecture-register
+    .s-header
+      .l-header
+        %h1
+        .nav-contents
+          .nav-content.red
+            %p情報入力
+            .circle.red
+          .nav-content.second
+            %p住所入力
+            .circle.second
+          .nav-content
+            %p電話番号
+            .circle
+          .nav-content
+            %p入力完了
+            .round
+    .prefecture-main
+      .prefecture-content
+        %h2住所登録
+        = form_with do |form|
+          .prefecture-form
+            .form-content-post
+              %label郵便番号
+              %span必須
+              = form.text_field :postnumber, class: "post-form", placeholder: "郵便番号"
+            .select-prefecture
+              %label都道府県
+              %span必須
+              = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "active-hash"
+            .form-content-post
+              %label市町村区
+              %span必須
+              = form.text_field :city, class: "post-form", placeholder: "市町村区"
+            .form-content-post
+              %label番地
+              %span必須
+              = form.text_field :housenumber, class: "post-form", placeholder: "番地"
+            .form-build
+              %label建物名
+              %span任意
+              = form.text_field :build, class: "build-form", placeholder: "建物名"
+            .address-register
+              = form.submit "登録する", class: "register-btn"
+
+    = render partial: "shared/shared_1/footer"

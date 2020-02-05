@@ -124,8 +124,8 @@
 
 
 .Newsingle-container{
-  // width: 985px;
-  // height: 472px;
+  width: vw;
+  height: 100vh;
   background-color: #f5f5f5;
   .header{
     height: 128px;
@@ -142,13 +142,14 @@
 
   }
   .single-main{
-    height: 344px;
+    // height: 344px;
     margin: 0 auto;
     .l-single-container{
       width:700px;
       height: 344px;
       margin: 0 auto;
       background-color: white;
+      margin-bottom: 120px;
       h2{
         text-align: center;
         font-size: 22px;
@@ -158,8 +159,8 @@
         border-bottom: 1px solid #f5f5f5;
       }
       .container-form{
-        width: 668px;
-        height: 182px;
+        // width: 668px;
+        // height: 182px;
         padding: 24px 16px 40px 16px;
         .form-content{
           width: 343px;
@@ -209,7 +210,7 @@
 
 .Menber-information{
   // width: 985px;
-  height: 1199px;
+  // height: 1199px;
   background-color: #f5f5f5;
   // .l-header{
   //   height: 128px;
@@ -258,7 +259,7 @@
   // }
   .single-container{
     width:700px;
-    height: 1199px;
+    // height: 1199px;
     margin: 0 auto;
     background-color: white;
     h2{
@@ -267,15 +268,15 @@
       color: #333;
       font-weight: bold;
       text-align: center;
-      width: 636px;
-      height: 33px;
+      // width: 636px;
+      // height: 33px;
       border-bottom: solid 1px #f5f5f5;
     }
     .register-form{
       padding: 24px 16px 40px 16px;
-      background-color: white;
-      width: 668px;
-      height: 1037px;
+      // background-color: white;
+      // width: 668px;
+      height: 1000px;
       .l-single-content{
         width: 343px;
         height: 760px;
@@ -300,10 +301,11 @@
           }
           .register-form{
             width: 309px;
-            height: 28px;
+            height: 40px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
+            margin: 0;
           }
           h3{
             margin-top: 80px;
@@ -319,7 +321,7 @@
             display: flex;
             .kana-form{
               width: 131px;
-              height: 28px;
+              height: 40px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -331,7 +333,7 @@
         }
         .form-password{
           width: 343px;
-          height: 70px;
+          height: 150px;
           margin-top: 24px;
           label{
             color: #333;
@@ -348,7 +350,7 @@
           }
           .password-form{
             width: 309px;
-            height: 28px;
+            height: 40px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -386,7 +388,7 @@
             display: flex;
             .name-form{
               width: 131px;
-              height: 28px;
+              height: 40px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -418,7 +420,7 @@
             }
             .kana-form{
               width: 131px;
-              height: 28px;
+              height: 40px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -481,13 +483,13 @@
   }
   .prefecture-main{
     width: 700px;
-    height: 800px;
+    // height: 750px;
     background-color: white;
     margin: 0 auto;
     margin-top: 24px;
     .prefecture-content{
       width: 700px;
-      height: 1029px;
+      height: 800px;
       h2{
         padding: 32px;
         text-align: center;
@@ -498,7 +500,7 @@
       }
       .prefecture-form{
         width: 668px;
-        height: 914px;
+        // height: 914px;
         background-color: white;
         padding: 24px 16px 40px 16px;
         .form-content-post{
@@ -748,9 +750,9 @@
   }
 }
 
-.login-main{
+.Login-main{
   // width: 731px;
-  height: 985px;
+  // height: 985px;
   background-color: #f5f5f5;
   .login-panel{
     width: 456px;
@@ -758,8 +760,8 @@
     background-color: white;
     margin: 0 auto;
     .login-new{
-      width: 328px;
-      height: 64px;
+      // width: 328px;
+      // height: 64px;
       margin: 0 auto;
       padding: 40px 64px;
       p{
@@ -782,7 +784,7 @@
     .login-api{
       border-top: 1px solid #eee;
       padding: 32px 64px;
-      width: 328px;
+      // width: 328px;
       height: 116px;
       background-color: white;
       .facebook-btn{
@@ -813,8 +815,8 @@
       .login-form-mail{
         margin-top: 70px;
         .log-form{
-          width: 294px;
-          height: 28px;
+          width: 328px;
+          height: 40px;
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: solid 1px #ccc;
@@ -824,8 +826,8 @@
       .log-form-pass{
         margin-top: 30px;
         .log-form{
-          width: 294px;
-          height: 28px;
+          width: 328px;
+          height: 40px;
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: solid 1px #ccc;
@@ -846,5 +848,33 @@
         }
       }
     }
+  }
+}
+
+
+footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  font-size: 14px;
+  ul{
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    li{
+      width: 33%;
+    }
+  }
+  a.footer-logo{
+    display: block;
+    margin: 40px auto 0;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+    margin-top: 5px;
   }
 }
