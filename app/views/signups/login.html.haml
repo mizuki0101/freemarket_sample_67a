@@ -1,4 +1,7 @@
-.login-main
+
+.Login-main
+  .wrapper
+    = render partial: "shared/shared_1/header"
   .login-panel
     .login-new
       %pアカウントをお持ちでない方はこちら
@@ -18,3 +21,4 @@
           = form.text_field :password, class: "log-form", placeholder: "パスワード"
         .log-form-btn
           = form.submit "ログイン", class: "log-btn"
+  = render partial: "shared/shared_1/footer"

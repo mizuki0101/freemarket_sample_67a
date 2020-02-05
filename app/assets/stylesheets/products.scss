@@ -182,19 +182,19 @@ label{
 	clear: both;
 	display: block;
 }
+.product-header{
+  height: 128px;
+  width: 100%;
+  text-align: center;
+  line-height: 128px;
+  &--logo{
+    vertical-align: middle;
+  }
+}
 .wrapper{
   height: 100%;
   width: 100%;
   background-color: #f5f5f5;
-  .product-header{
-    height: 128px;
-    width: 100%;
-    text-align: center;
-    line-height: 128px;
-    &--logo{
-      vertical-align: middle;
-    }
-  }
   .container{
     height: calc(100% - 350px);
     width: 700px;
