@@ -276,7 +276,7 @@
       padding: 24px 16px 40px 16px;
       // background-color: white;
       // width: 668px;
-      height: 1000px;
+      height: 1500px;
       .l-single-content{
         width: 343px;
         height: 760px;
@@ -300,8 +300,8 @@
             padding: 2px 4px;
           }
           .register-form{
-            width: 309px;
-            height: 40px;
+            width: 341px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -321,7 +321,7 @@
             display: flex;
             .kana-form{
               width: 131px;
-              height: 40px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -333,7 +333,7 @@
         }
         .form-password{
           width: 343px;
-          height: 150px;
+          // height: 150px;
           margin-top: 24px;
           label{
             color: #333;
@@ -349,8 +349,8 @@
             padding: 2px 4px;
           }
           .password-form{
-            width: 309px;
-            height: 40px;
+            width: 341px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -387,8 +387,8 @@
           .form-name{
             display: flex;
             .name-form{
-              width: 131px;
-              height: 40px;
+              width: 151px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -419,8 +419,8 @@
               margin-left:12px;
             }
             .kana-form{
-              width: 131px;
-              height: 40px;
+              width: 151px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -489,7 +489,7 @@
     margin-top: 24px;
     .prefecture-content{
       width: 700px;
-      height: 800px;
+      height: 1090px;
       h2{
         padding: 32px;
         text-align: center;
@@ -499,10 +499,64 @@
         border-bottom: solid 1px #f5f5f5;
       }
       .prefecture-form{
-        width: 668px;
+        // width: 668px;
         // height: 914px;
         background-color: white;
         padding: 24px 16px 40px 16px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .form-group-name{
+            margin: 0 auto;
+            width: 314px;
+          }
+          .form-name{
+            display: flex;
+            .name-myouzi{
+              // margin-right: 10px;
+            }
+            .name-form{              
+              width: 150px;
+              height: 50px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+              margin-right: 10px;
+            }
+          }
+          .form-group-kana{
+            width: 314px;
+            margin: 0 auto;
+            margin-top: 10px;
+          }
+          .form-kana{
+            display: flex;
+            .kana-myouzi{
+              // margin-right: 10px;
+            }
+            .kana-form{
+              margin-right: 10px;
+              width: 150px;
+              height: 50px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+            }
+            .kana-name{
+              margin-left: 5px;
+            }
+          }
+        
         .form-content-post{
           width: 314px;
           background-color: white;
@@ -599,7 +653,34 @@
             padding: 10px 16px 8px 16px;
             margin-top: 5px;
           }
-
+        }
+        .form-telephon{
+          width: 314px;
+          background-color: white;
+          margin: 0 auto;
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ccc;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .number-form{
+            display: block;
+            width: 341px;
+            height: 50px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+            margin-top: 5px;
+          }
         }
         .address-register{
           width: 310px;
@@ -674,7 +755,7 @@
           .number-form{
             display: block;
             width: 309px;
-            height: 28px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;

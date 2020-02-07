@@ -81,3 +81,4 @@ gem 'payjp'
 gem 'devise'
 gem "font-awesome-sass"
 gem 'active_hash'
+gem 'rails-i18n'
