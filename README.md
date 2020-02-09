@@ -27,6 +27,7 @@
 |description|text|null: false|
 |delivery_date|references|null: false|
 |status|references|null: false|
+|prefecture_id|integer|null: false|
 |category|references|null: false, foreign_key: true|
 |bland_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
@@ -42,7 +43,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postnumber|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |house_number|integer|null: false|
 |building|string|
