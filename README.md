@@ -27,9 +27,9 @@
 |description|text|null: false|
 |delivery_date|references|null: false|
 |status|references|null: false|
-|category_id|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 |bland_id|references|null: false, foreign_key: true|
-|buyer_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
 |saler_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :brand
