@@ -67,11 +67,11 @@
 ### Association
 - has_many :products
 
-## product_images
+## images
 |Column|Type|Options|
 |------|----|-------|
-|url|text|null: false|
-|product_id|reference|null: false, foreign_key: true|
+|src|text|null: false|
+|products|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
