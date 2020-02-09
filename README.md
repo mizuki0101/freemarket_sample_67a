@@ -22,14 +22,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |price|integer|null: false|
-|size|string|null: false|
-|status|string|null: false|
-|delivery_date|string|null: false|
+|size|string|-|
 |name|string|null: false, index: true|
 |description|text|null: false|
-|first_category_id|references|null: false, foreign_key: true|
+|delivery_date|references|null: false|
+|status|references|null: false|
+|prefecture_id|integer|null: false|
+|category|references|null: false, foreign_key: true|
 |bland_id|references|null: false, foreign_key: true|
-|buyer_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
 |saler_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :brand
@@ -42,7 +43,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postnumber|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |house_number|integer|null: false|
 |building|string|
@@ -66,17 +67,31 @@
 ### Association
 - has_many :products
 
-## product_images
+## images
 |Column|Type|Options|
 |------|----|-------|
-|url|text|null: false|
-|product_id|reference|null: false, foreign_key: true|
+|src|text|null: false|
+|products|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
-## first_categorys
+## categoryies
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null: false|
+### Association
+- has_many :products
+
+## Status
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :products
+## Delivery_date
+|Column|Type|Options|
+|------|----|-------|
+|date|string|null: false|
 ### Association
 - has_many :products
