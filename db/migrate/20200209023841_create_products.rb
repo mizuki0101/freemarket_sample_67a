@@ -3,16 +3,13 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
       t.string :name, null: false, index: true
       t.string :size
-      t.string :bland_id
+      t.string :bland
       t.text :description, null: false
       t.integer :price, null: false
       t.integer :prefecture_id, null: false
-      t.references :delivery_date, null: false, foreign_key: true
-      t.references :prefecture, null: false, foreign_key: true
-      t.references :status, null: false, foreign_key: true
-      t.references :category, null: false, foreign_key: true
-      t.references :saler_id, null: false, foreign_key: true
-      t.references :buyer_id, foreign_key: true
+      t.references :categories, null: false, foreign_key: true
+      t.references :saler, null: false
+      t.references :buyer
       t.timestamps
     end
   end
