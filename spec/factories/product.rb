@@ -7,8 +7,8 @@ FactoryBot.define do
     price             {0000}
     prefecture_id     {1}
     categories_id     {1}
-    delivery_date_id {1}
-    status_id      {1}
-
+    delivery_date_id   {1}
+    status_id          {1}
+    shipping_charges_id {1}
   end
 end

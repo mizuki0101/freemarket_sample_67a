@@ -97,4 +97,16 @@ RSpec.describe Product, type: :model do
       end
     end
   end
+  describe Product do
+    describe '#create' do
+        it 'is invalid without a shipping_charges_id ' do
+          # # user = create(:user)
+          # image = create(:image)
+          # status = create(:status)
+          product = build(:product, shipping_charges_id: nil)
+          product.valid?
+          expect(product.errors[:shipping_charges_id]).to include("can't be blank")
+      end
+    end
+  end
 end
