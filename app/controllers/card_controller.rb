@@ -1,11 +1,12 @@
 class CardController < ApplicationController
   require "payjp"
   before_action :get_payjp_info, only: [:new, :pay, :delete, :show]
-  before_action :set_card, only: [:show, :delete]
+  before_action :set_card, only: [:new, :show, :delete]
 
   def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    if @card.present?
+      redirect_to action: "show" 
+    end
   end
 
   def pay 
@@ -17,7 +18,6 @@ class CardController < ApplicationController
       metadata: {user_id: current_user.id}
       ) #なくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      #current_user.id
       if @card.save
         redirect_to action: "show"
       else
@@ -49,7 +49,7 @@ class CardController < ApplicationController
   end
 
   def set_card
-    @card = Card.where(user_id: current_user.id).first
+    @card = Card.find_by(user_id: current_user.id)
   end
 
 end
