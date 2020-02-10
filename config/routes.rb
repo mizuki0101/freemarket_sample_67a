@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :card, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
@@ -22,7 +21,6 @@ Rails.application.routes.draw do
 
   resources :purchase, only: [:index] do
     collection do
-      get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
