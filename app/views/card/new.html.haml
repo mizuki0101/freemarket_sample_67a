@@ -1,0 +1,35 @@
+.credit-content
+  .credit-content__title
+    %h2 クレジットカード情報入力
+  .credit-content__card
+    = form_with method: :post, url: pay_card_index_path, name: "charge-form", id: 'charge-form', local: true do |f|
+      .credit-content__card__number
+        = f.label :カード番号,class: 'label', maxlength: "16", type: "text"
+        %span.require 必須
+        %br
+        = f.number_field :card_nuber, type: 'text',class: 'number__text', placeholder: '半角数字のみ', id: "card_number", maxlength: "16"
+        %ul
+          = image_tag "credit/mastercard.svg", height: 20, width: 30
+          = image_tag "credit/visa.svg", height: 20, width: 30
+          = image_tag "credit/jcb.svg", height: 20, width: 30
+          = image_tag "credit/dinersclub.svg", height: 20, width: 30
+          = image_tag "credit/discover.svg", height: 20, width: 30
+          = image_tag "credit/saison-card.svg", height: 20, width: 30
+          = image_tag "credit/american_express.svg", height: 20, width: 30
+      .credit-content__card__deadline
+        = f.label :有効期限, class: 'label'
+        %span.require 必須
+        .credit-content__card__deadline__box
+          = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-deadline', name: "exp_month", id: "exp_month"
+          %span.deadline-date 月
+          = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-deadline', name: "exp_year", id: "exp_year"
+          %span.deadline-date 年
+      .credit-content__card__security
+        = f.label :セキュリティーコード, class: 'label'
+        %span.require 必須
+        %br
+        = f.number_field :cvc, type: 'text', class: 'number__text', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4", id: "cvc"
+        .credit-content__card__security__question
+          カードの裏面の番号とは？
+      .credit-content__card__bottom#card_token
+      = f.submit '追加する', class: 'credit-content__card__bottom--btn', id: 'token_submit'
