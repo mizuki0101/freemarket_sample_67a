@@ -19,7 +19,7 @@
     .prefecture-main
       .prefecture-content
         %h2住所登録
-        = form_with model: @address, url: step3_signups_path, method: :post, local: true do |form|
+        = form_with model: @address, url: telephone_signups_path, method: :post, local: true do |form|
           .prefecture-form
             .form-group-name
               %labelお名前（全角）
