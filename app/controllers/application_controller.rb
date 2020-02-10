@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
 
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
   private
 
   def production?

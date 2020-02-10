@@ -32,7 +32,7 @@ class SignupsController < ApplicationController
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
       birth_date: session[:birth_date],
-      phonenumber: "12345678909"
+      phonenumber: "08026259178"
     )
     # binding-pry
     unless @user.valid?
@@ -65,7 +65,7 @@ class SignupsController < ApplicationController
       city: session[:city],
       house_number: session[:house_number],
       building: "苺ビル",
-      phonenumber: "12345678909"
+      phonenumber: "08026259178"
     )
     # binding-pry
     unless @address.valid?
@@ -92,9 +92,10 @@ class SignupsController < ApplicationController
     # binding.pry
     unless @user.valid?
       # binding.pry
-      render '/signups/step3'
+      return render '/signups/step3'
     end
 
+    # binding.pry
     @user.save
     # binding.pry
 

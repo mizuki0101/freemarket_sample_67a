@@ -1,0 +1,21 @@
+ja:
+  attributes:
+      nickname: ニックネーム
+      email: Eメール
+      password: パスワード
+      password_confirmation: パスワード
+      family_name: 名字
+      first_name: 名前
+      family_name_kana: ミョウジ
+      first_name_kana: ナマエ
+      birth_year: 年
+      birth_month: 月
+      birth_date: 日
+      send_family_name: 名前
+      send_first_name: 名字
+      send_family_name_kana: ミョウジ
+      send_first_name_kana: ナマエ
+      postnumber: 郵便番号
+      prefecture_id: 都道府県
+      city: 市町村
+      house_number: 番地
