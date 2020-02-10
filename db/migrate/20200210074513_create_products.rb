@@ -10,9 +10,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :delivery_date_id,   null: false
       t.integer :shipping_method_id,   null: false
       t.integer :prefecture_id,   null: false
-      t.references :category,    null: false, foreign_key: true
-      t.references :saler,    null: false
-      t.references :buyer_id
       t.timestamps
     end
   end
