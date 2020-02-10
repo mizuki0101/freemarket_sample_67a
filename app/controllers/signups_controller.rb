@@ -7,7 +7,6 @@ class SignupsController < ApplicationController
   end
 
   def address
-    # binding-pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
