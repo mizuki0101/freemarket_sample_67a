@@ -34,7 +34,6 @@ class SignupsController < ApplicationController
       birth_date: session[:birth_date],
       phonenumber: "08026259178"
     )
-    # binding-pry
     unless @user.valid?
       render 'signups/step1'
     end
@@ -42,7 +41,6 @@ class SignupsController < ApplicationController
   end
 
   def step3
-    # binding-pry
     session[:send_family_name] = address_params[:send_family_name]
     session[:send_first_name] = address_params[:send_first_name]
     session[:send_family_name_kana] = address_params[:send_family_name_kana]
@@ -67,7 +65,6 @@ class SignupsController < ApplicationController
       building: "苺ビル",
       phonenumber: "08026259178"
     )
-    # binding-pry
     unless @address.valid?
       render '/signups/step2'
     end
