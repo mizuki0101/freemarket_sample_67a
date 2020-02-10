@@ -63,12 +63,14 @@ body {
     }
     &__search {
       height: 40px;
-      width: 650px;
+      width: 800px;
       display: flex;
       justify-content: center;
       &__form {
         height: 30px;
-        width: 600px;
+        width: 730px;
+        margin-left: 30px;
+        font-size: 15px;
       }
       &__btn {
         height: 30px;
@@ -77,7 +79,7 @@ body {
         background-image: image-url("icon/icon-search.png");
         background-size: cover;
         background-color: #33CCCC;
-        margin-left: 5px;
+        margin-left: 1px;
       }
     }
   }
@@ -88,17 +90,24 @@ body {
     justify-content: space-between;
     &__tab {
       height: 25px;
-      width: 200px;
+      width: 250px;
       display: flex;
       justify-content: space-between;
-      &__category {
-        font-size: 14px;
+      a {
+        font-size: 15px;
         text-decoration: none;
-        a:link {color: black;}
+      }  
+      a:link{
+        color: black;
       }
-      &__brand {
-        font-size: 14px;
-        text-decoration: none;
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: #33CCCC;
+      }  
+      a:active {
+        color: #33CCCC;
       }
     }
     &__info {
@@ -106,14 +115,22 @@ body {
       width: 250px;
       display: flex;
       justify-content: space-between;
-      &__like {
-        font-size: 14px;
+      a {
         text-decoration: none;
+        font-size: 15px;
       }
-      &__mypage {
-        font-size: 14px;
-        text-decoration: none;
+      a:link{
+        color: black;
       }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: #33CCCC;
+      }  
+      a:active {
+        color: #33CCCC;
+      }    
     }
   }
 }
@@ -313,7 +330,7 @@ body {
     &__picture {
       height: 350px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       &__image1 {
         background-image: image-url("icon/icon-01.png");
         background-size: 300px 300px;
@@ -379,7 +396,7 @@ body {
     &__picture {
       height: 250px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       padding: 0 150px;
       &__image1 {
         background-image: image-url("icon/a007.png");
@@ -425,48 +442,6 @@ body {
       }
       &__image3 {
         background-image: image-url("icon/a001.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image4 {
-        background-image: image-url("icon/a007.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image5 {
-        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
@@ -501,7 +476,7 @@ body {
     &__picture {
       height: 250px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       padding: 0 150px;
       &__image1 {
         background-image: image-url("icon/a007.png");
@@ -547,48 +522,6 @@ body {
       }
       &__image3 {
         background-image: image-url("icon/a001.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image4 {
-        background-image: image-url("icon/a007.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image5 {
-        background-image: image-url("icon/a004.png");
         background-size: 150px 150px;
         background-repeat: no-repeat;
         width: 150px;
