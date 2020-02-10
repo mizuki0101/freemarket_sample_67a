@@ -26,72 +26,7 @@ body {
         height: 420px;
         width: 300px;
         float: left;
-        &__main {
-          width: 300px;
-          height: 300px;
-          background-color: silver;
-        }
-        &__sub1 {
-          height: 60px;
-          width: 300px;
-          display: flex;
-          &__picture1 {
-            height: 60px;
-            width: 60px;
-            background-color: black;
-          }
-          &__picture2 {
-            height: 60px;
-            width: 60px;
-            background-color: blue;
-          }
-          &__picture3 {
-            height: 60px;
-            width: 60px;
-            background-color: yellow;
-          }
-          &__picture4 {
-            height: 60px;
-            width: 60px;
-            background-color: red;
-          }
-          &__picture5 {
-            height: 60px;
-            width: 60px;
-            background-color: gray;
-          }
-        }
-        &__sub2 {
-          height: 60px;
-          width: 300px;
-          display: flex;
-          &__picture1 {
-            height: 60px;
-            width: 60px;
-            background-color: pink;
-          }
-          &__picture2 {
-            height: 60px;
-            width: 60px;
-            background-color: beige;
-          }
-          &__picture3 {
-            height: 60px;
-            width: 60px;
-            background-color: skyblue;
-          }
-          &__picture4 {
-            height: 60px;
-            width: 60px;
-            background-color: purple;
-          }
-          &__picture5 {
-            height: 60px;
-            width: 60px;
-            background-color: silver;
-          }
-        }
-      }
+      }  
       &__detail {
         height: 414px;
         width: 300px;
@@ -358,4 +293,32 @@ body {
       cursor: pointer;
     }
   }
+}
+
+.slick {
+  height: 420px;
+  width: 300px;
+}
+.slick-img {
+  height: 300px;
+  width: 300px;
+  background-size: 300px 300px;
+}
+.slick-thumbnail {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.slick-thumbnail_item {
+  background-size: 60px 60px;
+  width: 20%;
+  height: 60px;
+  outline:none;
+}
+
+.img.slick-slide {
+  height: 300px;
+  width: 60px;
 }
