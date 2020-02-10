@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -81,3 +82,4 @@ gem 'payjp'
 gem 'devise'
 gem "font-awesome-sass"
 gem 'active_hash'
+gem 'rails-i18n'

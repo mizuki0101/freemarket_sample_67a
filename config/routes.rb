@@ -5,10 +5,24 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :edit]
   resources :signups, only: [:new, :create] do
     collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
+      get 'member'
+      post 'address'
+      post 'telephone'
       get 'login'
+    end
+  end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 
