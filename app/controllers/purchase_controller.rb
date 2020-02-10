@@ -19,8 +19,8 @@ class PurchaseController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
-  #トップページに変更すること
-  redirect_to action: 'done' 
+  redirect_to root_path
+
   end
 
   private
