@@ -89,15 +89,11 @@ class SignupsController < ApplicationController
       birth_month: session[:birth_month], 
       birth_date: session[:birth_date] 
     )
-    # binding.pry
     unless @user.valid?
-      # binding.pry
       return render '/signups/step3'
     end
 
-    # binding.pry
     @user.save
-    # binding.pry
 
     @address = Address.create(
       user: @user,
@@ -112,7 +108,6 @@ class SignupsController < ApplicationController
     )
 
 
-  # binding.pry
 
   end
 
