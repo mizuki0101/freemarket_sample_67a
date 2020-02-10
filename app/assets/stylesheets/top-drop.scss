@@ -6,6 +6,7 @@ ul.ddmenu {
   padding: 0px 0px 0px 0px; /* メニューバー内側の余白(左に15px) */
   background-color: white;
   font-size: 12px;
+  z-index: 1;
 }
 
 /* -------------------------- */
@@ -20,7 +21,6 @@ ul.ddmenu a {
   background-color: white; /* メニュー項目の背景色(濃い赤色) */
   color: black;              /* メニュー項目の文字色(白色) */
   line-height: 30px;         /* メニュー項目のリンクの高さ(40px) */
-  // text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
   text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
   display: block;            /* ★項目内全域をリンク可能にする */
 }
