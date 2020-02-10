@@ -1,5 +1,5 @@
 .products-detail
-  = render partial: "tests/header-top"
+  = render partial: "shared/shared_2/header-top"
   
   .content-detail
     .content-detail__form
@@ -7,19 +7,29 @@
         ジャケット
       .content-detail__form__box
         .content-detail__form__box__image
-          .content-detail__form__box__image__main
-          .content-detail__form__box__image__sub1
-            .content-detail__form__box__image__sub1__picture1
-            .content-detail__form__box__image__sub1__picture2
-            .content-detail__form__box__image__sub1__picture3
-            .content-detail__form__box__image__sub1__picture4
-            .content-detail__form__box__image__sub1__picture5
-          .content-detail__form__box__image__sub2
-            .content-detail__form__box__image__sub2__picture1
-            .content-detail__form__box__image__sub2__picture2
-            .content-detail__form__box__image__sub2__picture3
-            .content-detail__form__box__image__sub2__picture4
-            .content-detail__form__box__image__sub2__picture5
+          .slick  
+            .slick-img
+              = image_tag "icon/a001.png", alt: ''
+              = image_tag "icon/a004.png", alt: ''
+              = image_tag "icon/a007.png", alt: ''
+              = image_tag "icon/a001.png", alt: ''
+              = image_tag "icon/a004.png", alt: ''
+              = image_tag "icon/a001.png", alt: ''
+              = image_tag "icon/a004.png", alt: ''
+              = image_tag "icon/a007.png", alt: ''
+              = image_tag "icon/a001.png", alt: ''
+              = image_tag "icon/a004.png", alt: ''
+            .slick-thumbnail
+              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a007.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a007.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
+              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
         .content-detail__form__box__detail
           .content-detail__form__box__detail__seller
             出品者
@@ -61,7 +71,7 @@
             1~2日で発送
       .content-detail__form__price
         .content-detail__form__price__bold
-          ￥5000円
+          ￥5000
         .content-detail__form__price__item
           .content-detail__form__price__item__tax
             (税込)
@@ -81,4 +91,4 @@
       .content-detail__comment__btn
         コメントする   
   
-  = render partial: "tests/footer-top"
+  = render partial: "shared/shared_2/footer-top"
