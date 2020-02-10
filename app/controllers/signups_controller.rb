@@ -2,11 +2,11 @@ class SignupsController < ApplicationController
   def new
   end
 
-  def step1
+  def member
     @user = User.new
   end
 
-  def step2
+  def address
     # binding-pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
@@ -40,7 +40,7 @@ class SignupsController < ApplicationController
     @address = Address.new
   end
 
-  def step3
+  def telephone
     session[:send_family_name] = address_params[:send_family_name]
     session[:send_first_name] = address_params[:send_first_name]
     session[:send_family_name_kana] = address_params[:send_family_name_kana]

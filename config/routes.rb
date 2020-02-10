@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :edit]
   resources :signups, only: [:new, :create] do
     collection do
-      get 'step1'
-      post 'step2'
-      post 'step3'
+      get 'member'
+      post 'address'
+      post 'telephone'
       get 'login'
     end
   end
