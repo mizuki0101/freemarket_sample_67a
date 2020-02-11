@@ -34,7 +34,7 @@ class SignupsController < ApplicationController
       phonenumber: "08026259178"
     )
     unless @user.valid?
-      render 'signups/step1'
+      render 'signups/member'
     end
     @address = Address.new
   end
@@ -65,7 +65,7 @@ class SignupsController < ApplicationController
       phonenumber: "08026259178"
     )
     unless @address.valid?
-      render '/signups/step2'
+      render '/signups/address'
     end
     @user = User.new
   end
@@ -86,7 +86,7 @@ class SignupsController < ApplicationController
       birth_date: session[:birth_date] 
     )
     unless @user.valid?
-      return render '/signups/step3'
+      return render '/signups/telephone'
     end
 
     @user.save
