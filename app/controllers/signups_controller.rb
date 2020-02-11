@@ -102,8 +102,7 @@ class SignupsController < ApplicationController
       city: session[:city],
       house_number: session[:house_number]
     )
-
-
+    sign_in @user unless user_signed_in?
 
   end
 
