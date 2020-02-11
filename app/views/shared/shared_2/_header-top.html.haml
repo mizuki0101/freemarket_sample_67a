@@ -1,6 +1,6 @@
 .header
   .header__box
-    %div{type: "logo", class: "header__box__title", link_to: "#"}
+    .header__box__title
     .header__box__search
       %input{ class: 'header__box__search__form', placeholder: 'キーワードから探す' }
       %a{type: "button", class: "header__box__search__btn", link_to: "#"}
@@ -9,5 +9,9 @@
       = render partial: 'category-drop'
       = render partial: "brand-drop"
     .header__box2__info
-      = link_to "♡ いいね！一覧", new_user_session_path, class: "header__box2__info__like"
-      = link_to "マイページ", destroy_user_session_path, method: :delete, class: "header__box2__info__mypage"
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__box2__info__like"
+        = link_to "マイページ", class: "header__box2__info__mypage"
+      - else
+        = link_to "ログイン", new_user_session_path, class: "header__box2__info__like"
+        = link_to "新規会員登録", new_signup_path, class: "header__box2__info__mypage"
