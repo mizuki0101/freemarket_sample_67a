@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+
+
+
 describe Address do
   describe "#create" do
     it "Can be registered when all columns exist " do
@@ -104,3 +107,4 @@ end
 RSpec.describe Address, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+
