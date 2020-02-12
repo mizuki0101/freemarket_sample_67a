@@ -18,21 +18,21 @@
               .btn-box
                 .js-remove 削除
                 .js-change 編集
-              = f.fields_for :images do |image|
-                .drop-zone.input-box{:style => "display:none;"}
-                .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :src, class: 'js-file'
-              %br/
+          = f.fields_for :images do |image|
+            .drop-zone.input-box{:style => "display:none;"}
+            .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :src, class: 'js-file'
+            %br/
           - if @product.persisted?
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy',style: "display:none;"
         .input-box
           .js-file_group{"data-index" => "#{@product.images.count}"}
-            %label{:for => "product_images_attributes_#{@product.images.count}_src"}
+            %label{:for => "src"}
               %p
                 ドラッグアンドドロップ
                 %br/
                 またはクリックしてファイルをアップロード
-            = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+              = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
     .section
       .form
         %label 
@@ -58,7 +58,7 @@
             - if @product.persisted?
               .listing-select-wrapper
                 .listing-select-wrapper__box.select-wrap
-                  = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                  = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                   .listing-select-wrapper__added#children_wrapper
                     .listing-select-wrapper__box.select-wrap
                       = f.select :category, options_for_select(@category_children.map{|c|[c[:name], data: {category: c[:id]}]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
@@ -90,7 +90,7 @@
               必須
           .select-wrap
             %i.fa.fa-chevron-down
-            = f.collection_select :shipping_charges_id, Shippingcharges.all, :id, :name, prompt: "--", class: 'input'
+            = f.collection_select :shopping_charge_id, Shippingcharges.all, :id, :name, prompt: "--", class: 'input'
         .select__box
           %label 
             発送元の地域
@@ -123,7 +123,8 @@
                       必須
                 .l-right
                   %div ¥
-                  %input{:type => "tel",:placeholder => "例）300"}/
+                  = f.telephone_field :price, {:placeholder => "例）300"}
+                  -# %input{:type => "tel",:placeholder => "例）300"}/
             %li.clearfix
               %p.l-left  販売手数料 (10%)
               %p.l-right  -
@@ -131,6 +132,8 @@
               .clearfix
                 %p.l-left 販売利益
                 %p.l-right -
+      = f.submit
+
   .section
     .sell-btn-box.clearfix
       %p

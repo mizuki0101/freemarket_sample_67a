@@ -31,12 +31,18 @@ class ProductsController < ApplicationController
   def create
     @category = Category.find_by(name: params[:category_id])
     @product = Product.new(product_params)
-    @product.category_id = @category.id
-    if @product.save
+    @product.categories_id = @category.id
+    @product.saler_id = 1
+    binding.pry
+    begin
+      @product.save!
       redirect_to root_path
-    else
+    rescue ActiveRecord::RecordInvalid => e
+      puts e
+      puts "保存に失敗しました"
       redirect_to new_product_path
     end
+    
   end
 
   def edit
@@ -88,6 +94,7 @@ class ProductsController < ApplicationController
   def update
     @category = Category.find_by(name: params[:category_id])
     @product.category_id = @category.id
+    # @product.shipping_charges_id = 1
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -104,7 +111,7 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :price, images_attributes:  [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id, :prefecture_id, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_product

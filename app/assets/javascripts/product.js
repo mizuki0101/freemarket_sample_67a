@@ -26,17 +26,6 @@ $(document).on('turbolinks:load', ()=> {
 
   let i = 0;
   
-  $('.js-file_group').on('click',function(e){
-    console.log('click');
-    $(this).children('input[type="file"]').trigger('click');
-  })
-  $('.js-file_group').on('click',function(e){
-    e.stopPropagation();
-  })
-  $('input[type="file"]').on('click',function(e){
-    e.stopPropagation();
-  })
-  
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -54,8 +43,7 @@ $(document).on('turbolinks:load', ()=> {
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
-    // console.log('click');
-    // $('.previews__box').append(html);
+    
     let length = $('.previews__box').length;
     $(".input-box").css('width',`calc(100% - 20% * ${length})`);
     if(length >= 5 && length <= 10){
