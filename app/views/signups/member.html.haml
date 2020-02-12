@@ -1,0 +1,145 @@
+.Menber-information
+  .s-header
+    .l-header
+      %h1
+      .nav-contents
+        .nav-content.red
+          %p情報入力
+          .circle.rot
+        .nav-content
+          %p住所入力
+          .circle
+        .nav-content
+          %p電話番号
+          .circle
+        .nav-content
+          %p入力完了
+          .round
+    .single-container
+      %h2会員情報登録
+      .register-form
+        .l-single-content
+          =form_with model: @user, url: address_signups_path, method: :post, local: true do |form|
+            -# != sprintf(form.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1500, date_separator:'%s'),'年','月')+'日'
+            .form-group
+              %labelニックネーム
+              %span必須
+              - if @user.errors.full_messages_for(:nickname).any?
+                = form.text_field :nickname, class: "register-form", placeholder: '例）メルカリ太郎'
+              - else
+                = form.text_field :nickname, class: "register-form", placeholder: '例）メルカリ太郎'
+              %ul.signup-main__has-error-text
+              =  render partial: 'error-messages', locals: { user: @user, column: "nickname"}
+
+            .form-group
+              %labelメールアドレス
+              %span必須
+              - if @user.errors.full_messages_for(:email).any?
+                = form.email_field :email, class: "register-form", placeholder: '携帯・PCどちらでも可'
+              - else
+                = form.email_field :email, class: "register-form", placeholder: '携帯・PCどちらでも可'
+            .email-error
+              %ul.signup-main_has-error-text
+              =  render partial: 'error-messages', locals: { user: @user, column: "email"}
+
+
+            .form-password
+              %labelパスワード
+              %span必須
+              - if @user.errors.full_messages_for(:password).any?
+                = form.password_field :password, class: "password-form", placeholder: 'パスワード'
+              - else
+                = form.password_field :password, class: "password-form", placeholder: 'パスワード'
+              %ul.signup-main_has-error-text
+              = render partial: 'error-messages', locals: { user: @user, column: "password"}
+
+              %p※英字と数字の両方を含めて設定してください
+            .form-password
+              %labelパスワード確認
+              - if @user.errors.full_messages_for(:password_confirmation).any?
+                = form.password_field :password_confirmation, class: "password-form", placeholder: 'パスワード確認'
+              -else
+                = form.password_field :password_confirmation, class: "password-form", placeholder: 'パスワード確認'
+              %ul.signup-main_has-error-text
+              = render partial: 'error-messages', locals: { user: @user, column: "password_confirmation"}
+            .form-group
+              %h3本人確認
+              %p安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .form-group-name
+              %labelお名前（全角）
+              %span必須
+              .form-name
+                .name-myouzi
+                - if @user.errors.full_messages_for(:family_name).any?
+                  = form.text_field :family_name, class: "name-form", placeholder: '例）山田'
+                - else
+                  = form.text_field :family_name, class: "name-form", placeholder: '例）山田'
+                .name-second
+                -if @user.errors.full_messages_for(:second_name).any?
+                  = form.text_field :first_name, class: "name-form", placeholder: '彩'
+                -else
+                  = form.text_field :first_name, class: "name-form", placeholder: '彩'
+              = render partial: 'error-messages', locals: { user: @user, column: "family_name"}
+              = render partial: 'error-messages', locals: { user: @user, column: "first_name"}
+            .form-group-kana
+              %labelお名前カナ
+              %span必須
+              .form-kana
+                .kana-myouzi
+                - if @user.errors.full_messages_for(:family_name_kana).any?
+                  = form.text_field :family_name_kana, class: "kana-form", placeholder: '例）ヤマダ'
+                - else
+                  = form.text_field :family_name_kana, class: "kana-form", placeholder: '例）ヤマダ'
+                .kana-second
+                -if @user.errors.full_messages_for(:first_name_kana).any?
+                  = form.text_field :first_name_kana, class: "kana-form", placeholder: '例）アヤ'
+                -else
+                  = form.text_field :first_name_kana, class: "kana-form", placeholder: '例）アヤ'
+              = render partial: 'error-messages', locals: { user: @user, column: "family_name_kana"}
+              = render partial: 'error-messages', locals: { user: @user, column: "first_name_kana"}
+
+            .form-group-birth
+              %label生年月日
+              %span必須
+              .birthday-select
+                .select-wrap
+                - if @user.errors.full_messages_for(:birth_year).any?
+                  != sprintf(form.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+                -else
+                  != sprintf(form.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+              = render partial: 'error-messages', locals: { user: @user, column: "birth_year"}
+              = render partial: 'error-messages', locals: { user: @user, column: "birth_month"}
+              = render partial: 'error-messages', locals: { user: @user, column: "birth_date"}
+
+            .form-register
+              = form.submit "次へ", class: "register-btn"
+
+    = render partial: "shared/shared_1/footer"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

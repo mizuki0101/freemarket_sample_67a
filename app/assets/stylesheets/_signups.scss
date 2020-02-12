@@ -12,7 +12,6 @@
     width: 193px;
     height: 49px;
     background-repeat: no-repeat;
-    // margin: 0 auto;
     margin-left: 400px;
     margin-top: 40px;
   }
@@ -28,14 +27,11 @@
       width: 80px;
       height: 40px;
       background-color: #f5f5f5;
-      // margin-left: 5px;
       font-size: 15px;
       color: gray;
-      // position: relative;
       z-index: 1;
       display: inline-block;
       min-width: 40px;
-      // margin: 0 5% 0 0;
       font-size: 12px;
       color: #888;
       position: relative;
@@ -48,18 +44,14 @@
         height: 10px;
         border-radius: 50%;
         background-color: gray;
-        // margin: 0 auto;
         font-size: 15px;
-        // margin-left: 20px;
       }
       .round{
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background-color: gray;
-        // margin: 0 auto;
         font-size: 15px;
-        // margin-left: 20px;
       }
       .circle::after{
         position: absolute;
@@ -67,7 +59,6 @@
         z-index: -1;
         display: block;
         content: '';
-        // width: 100%;
         width: 100%;
         height: 2px;
         background: #ccc;
@@ -79,7 +70,6 @@
         z-index: -1;
         display: block;
         content: '';
-        // width: 100%;
         width: 100%;
         height: 2px;
         background: red;
@@ -91,7 +81,6 @@
         z-index: -1;
         display: block;
         content: '';
-        // width: 100%;
         width: 100%;
         height: 2px;
         background: red;
@@ -142,11 +131,9 @@
 
   }
   .single-main{
-    // height: 344px;
     margin: 0 auto;
     .l-single-container{
       width:700px;
-      height: 344px;
       margin: 0 auto;
       background-color: white;
       margin-bottom: 120px;
@@ -159,8 +146,6 @@
         border-bottom: 1px solid #f5f5f5;
       }
       .container-form{
-        // width: 668px;
-        // height: 182px;
         padding: 24px 16px 40px 16px;
         .form-content{
           width: 343px;
@@ -209,57 +194,9 @@
 }
 
 .Menber-information{
-  // width: 985px;
-  // height: 1199px;
   background-color: #f5f5f5;
-  // .l-header{
-  //   height: 128px;
-  //   display: flex;
-  //   background-color: #f5f5f5;
-  //   h1{
-  //     background-image: image-url("logo/logo.png");
-  //     background-size: contain;
-  //     width: 193px;
-  //     height: 49px;
-  //     background-repeat: no-repeat;
-  //     // margin: 0 auto;
-  //     margin-left: 440px;
-  //     margin-top: 40px;
-  //   }
-  //   .nav-contents{
-  //     display: flex;
-  //     width: 500px;
-  //     height: 50px;
-  //     background-color: #f5f5f5;
-  //     margin-top: 45px;
-  //     text-align: center;
-  //     .nav-content{
-  //       width: 100px;
-  //       height: 40px;
-  //       background-color: #f5f5f5;
-  //       margin-left: 5px;
-  //       font-size: 15px;
-  //       color: gray;
-  //       .circle{
-  //         width: 10px;
-  //         height: 10px;
-  //         border-radius: 50%;
-  //         background-color: gray;
-  //         margin: 0 auto;
-  //         font-size: 15px;
-  //       }
-  //       .red{
-  //         background-color: red;
-  //       }
-  //     }
-  //     .red{
-  //       color: red;
-  //     }
-  //   }
-  // }
   .single-container{
     width:700px;
-    // height: 1199px;
     margin: 0 auto;
     background-color: white;
     h2{
@@ -268,18 +205,12 @@
       color: #333;
       font-weight: bold;
       text-align: center;
-      // width: 636px;
-      // height: 33px;
       border-bottom: solid 1px #f5f5f5;
     }
     .register-form{
       padding: 24px 16px 40px 16px;
-      // background-color: white;
-      // width: 668px;
-      height: 1000px;
       .l-single-content{
         width: 343px;
-        height: 760px;
         margin: 0 auto;
         background-color: white;
         .form-group{
@@ -300,8 +231,8 @@
             padding: 2px 4px;
           }
           .register-form{
-            width: 309px;
-            height: 40px;
+            width: 341px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -321,7 +252,7 @@
             display: flex;
             .kana-form{
               width: 131px;
-              height: 40px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -333,7 +264,6 @@
         }
         .form-password{
           width: 343px;
-          height: 150px;
           margin-top: 24px;
           label{
             color: #333;
@@ -349,8 +279,8 @@
             padding: 2px 4px;
           }
           .password-form{
-            width: 309px;
-            height: 40px;
+            width: 341px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -387,8 +317,8 @@
           .form-name{
             display: flex;
             .name-form{
-              width: 131px;
-              height: 40px;
+              width: 151px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -419,8 +349,8 @@
               margin-left:12px;
             }
             .kana-form{
-              width: 131px;
-              height: 40px;
+              width: 151px;
+              height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
@@ -489,7 +419,7 @@
     margin-top: 24px;
     .prefecture-content{
       width: 700px;
-      height: 800px;
+      // height: 1090px;
       h2{
         padding: 32px;
         text-align: center;
@@ -499,10 +429,61 @@
         border-bottom: solid 1px #f5f5f5;
       }
       .prefecture-form{
-        width: 668px;
+        // width: 668px;
         // height: 914px;
         background-color: white;
         padding: 24px 16px 40px 16px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ea352d;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .form-group-name{
+            margin: 0 auto;
+            width: 314px;
+          }
+          .form-name{
+            display: flex;
+            .name-form{              
+              width: 150px;
+              height: 50px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+              margin-right: 10px;
+            }
+          }
+          .form-group-kana{
+            width: 314px;
+            margin: 0 auto;
+            margin-top: 10px;
+          }
+          .form-kana{
+            display: flex;
+            .kana-myouzi{
+              // margin-right: 10px;
+            }
+            .kana-form{
+              margin-right: 10px;
+              width: 150px;
+              height: 50px;
+              padding: 10px 16px 8px 16px;
+              border-radius: 4px;
+              border: solid 1px #ccc;
+            }
+            .kana-name{
+              margin-left: 5px;
+            }
+          }
+        
         .form-content-post{
           width: 314px;
           background-color: white;
@@ -599,7 +580,34 @@
             padding: 10px 16px 8px 16px;
             margin-top: 5px;
           }
-
+        }
+        .form-telephon{
+          width: 314px;
+          background-color: white;
+          margin: 0 auto;
+          margin-top: 20px;
+          label{
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          span{
+            background-color: #ccc;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 4px;
+          }
+          .number-form{
+            display: block;
+            width: 341px;
+            height: 50px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px 16px 8px 16px;
+            margin-top: 5px;
+          }
         }
         .address-register{
           width: 310px;
@@ -623,20 +631,14 @@
 
 .telephone-single-container{
   background-color: #f5f5f5;
-  // width: 985px;
-  // height: 570px;
   .header{
-    // width: 985px;
     height: 128px;
     background-color: red;
   }
   .Telephone-information{
-    // width: 985px;
-    height: 442px;
     padding-top: 30px;
     .telephone-l-single{
       width:700px;
-      height: 442px;
       margin: 0 auto;
       background-color: white;
       h2{
@@ -655,7 +657,6 @@
         margin: 0 auto;
         .l-single-container{
           width: 343px;
-          height: 282px;
           margin: 0 auto;
           background-color: white;
           label{
@@ -674,7 +675,7 @@
           .number-form{
             display: block;
             width: 309px;
-            height: 28px;
+            height: 50px;
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
@@ -688,7 +689,6 @@
             width: 341px;
             height: 48px;
             background-color: #ea352d;
-            border-radius: 4px;
             color: white;
             border: solid 1px #ea352d;
             margin-top: 30px;
@@ -699,10 +699,8 @@
   }
 }
 
-.Complete{
-  background-color: #f5f5f5;
+
   .Complete-info{
-    height: 442px;
     padding-top: 30px;
     .Complete-view{
       width:700px;
@@ -725,13 +723,12 @@
         padding-left: 20px;
         p{
           color: #333;
-          font-size: 16px;
         }
       }
       .Complete-btn{
         width: 300px;
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 70px;
         a{
           display: block;
           width: 341px;
@@ -748,7 +745,7 @@
       }
     }
   }
-}
+
 
 .Login-main{
   // width: 731px;
@@ -877,4 +874,11 @@ footer{
     text-align: center;
     margin-top: 5px;
   }
+}
+
+
+.signup-main__has-error-text{
+  color: red;
+  font-weight: bold;
+  font-size: 11px;
 }

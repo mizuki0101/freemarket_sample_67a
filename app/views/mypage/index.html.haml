@@ -1,0 +1,33 @@
+= render partial: 'shared/shared_2/header-top'
+.breadcrumb-bar
+  - breadcrumb :mypage
+  = render "layouts/breadcrumbs"
+.mypageContents
+  = render partial: 'mypage/side-bar'
+  .mypage
+    .myphoto
+      .exhibition
+        =link_to '#' do
+          長浜一矢
+          %p出品数 : 100
+    .news-doing
+      %ul.news-doing-content
+        %li.news-content
+          =link_to '#' do
+            ニュース
+        %li.doing-content
+          =link_to '#' do
+            やることリスト
+      .buyed-contents
+        .product-content
+          %h2購入した商品
+          %ul.buyed
+            %li.trading
+              =link_to '#' do
+                取引中
+            %li.transactions
+              =link_to '#' do
+                過去の取引
+
+
+= render partial: "shared/shared_2/footer-top"

@@ -1,0 +1,200 @@
+
+
+.mypageContents{
+  display: flex;
+  background-color: #f5f5f5;
+  ul{
+    width: 450px;
+    li{
+      border-bottom: solid 2px #f5f5f5;
+      margin-left: 80px;
+      background-color: white;
+      padding: 15px 15px 15px 15px;
+      a{
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+        i{
+          float: right;
+          line-height: 25px;
+          font-size: 20px;
+        }
+      }
+    }
+    li:hover{
+      background-color: lightgray;
+    }
+    .page{
+      background-color: #eee;
+      font-weight: 600;
+      margin-top: 40px;
+      a{
+        color: #333;
+      }
+    }
+    .logout{
+      margin-bottom: 50px;
+    }
+    p{
+      margin-left: 80px;
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  .mypage{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdVM-tmEJNQL1moeI4ZJXPHLiHF2iiiDcQEbi3KbKKmWl7v4om");
+    background-size: cover;
+    width: 700px;
+    height: 300px;
+    margin-left: 150px;
+    margin-top: 40px;
+    .myphoto{
+      background-image: url("https://i.imgur.com/6OwbPKy.png");
+      background-size: cover;
+      width: 130px;
+      height: 130px;
+      border: solid 1px black;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      margin-top: 60px;    
+    }
+    .exhibition{
+      text-align: center;
+      margin-top: 110px;
+      a{
+        display: block;
+        padding-top: 25px;
+        text-decoration: none;
+      }
+      p{
+        margin-top: 7px;
+      }
+    }
+  }
+
+  .news-doing{
+    width: 589px;
+    height: 250px;
+    ul{
+      display: flex;
+      margin: 0 auto;
+      width: 700px;
+      .news-content{
+        width: 350px;
+        height: 74px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 72px;
+        line-height: 45px;
+        background-color: #ccc;
+        font-weight: bold;
+        border-top: 2px solid #ea352d;
+      }
+      .doing-content{
+        width: 350px;
+        height: 74px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 72px;
+        line-height: 45px;
+        background-color: #ccc;
+        font-weight: bold;
+        border-top: 2px solid #ea352d;
+      }
+      h5:hover{
+        color: #ccc;
+      }
+    }
+  }
+
+  .buyitem{
+    border: solid 1px black;
+    width: 700px;
+    height: 400px;
+    margin-top: 500px;
+    margin-right: 350px;
+    margin: 0 auto;
+  }
+}
+
+.buyed-contents{
+  margin-top: 60px;
+  .product-content{
+    width: 700px;
+    height: 400px;
+    background-color: white;
+    h2{
+      font-weight: bold;
+      color: #333;
+      line-height: 72px;
+      padding-left: 10px;
+      font-size: 16px;
+      background-color: #fafafa;
+      height: 72px;
+    }
+    ul{
+      display: flex;
+      margin: 0 auto;
+      width: 700px;
+      .trading{
+        width: 350px;
+        height: 74px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 45px;
+        background-color: #ccc;
+        font-weight: bold;
+        border-bottom: 2px solid #ea352d;
+      }
+      .transactions{        
+        width: 350px;
+        height: 74px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 45px;
+        background-color: #ccc;
+        font-weight: bold;
+        border-bottom: 2px solid #ea352d;
+      }
+    }
+  }
+}
+
+.Mypage-logout{
+  background-color: #f5f5f5;
+  display: flex;
+  .logout-contents{
+    padding-top:100px;
+    .logout-content{
+      width: 700px;
+      height: 179px;
+      background-color: white;
+      margin: 0 auto;
+      margin-left: 150px;
+      line-height: 100px;
+      .logout-form{
+        padding: 64px;
+        width: 572px;
+        height: 50px;
+        background-color: white;
+        margin: 0 auto;
+      }
+      .logout-btn{
+        width: 320px;
+        height: 50px;
+        background-color: red;
+        margin: 0 auto;
+        a{
+          text-align: center;
+          color: white;
+          line-height: 50px;
+          text-decoration: none;
+          display: block;
+        }
+      }
+    }
+  }
+}

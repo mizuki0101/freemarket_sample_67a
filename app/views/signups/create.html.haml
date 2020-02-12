@@ -1,16 +1,12 @@
-  .s-header
-    .l-header
-      %h1
-      .nav-contents
-        .nav-content.red
-          %p情報入力
-          .circle.rot
-        .nav-content
-          %p住所入力
-          .circle
-        .nav-content
-          %p電話番号
-          .circle
-        .nav-content
-          %p入力完了
-          .round
+.wrapper
+  = render partial: "shared/shared_1/header"
+  .Complete-info
+    .Complete-view
+      %h2会員登録完了
+      .Complete-text
+        %pありがとうございます。
+        %p登録が完了しました。
+      .Complete-btn
+        = link_to "/" do
+          フリマを始める
+  = render partial: "shared/shared_1/footer"
