@@ -19,7 +19,7 @@
       %h2会員情報登録
       .register-form
         .l-single-content
-          =form_with model: @user, url: step2_signups_path, method: :post, local: true do |form|
+          =form_with model: @user, url: address_signups_path, method: :post, local: true do |form|
             -# != sprintf(form.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1500, date_separator:'%s'),'年','月')+'日'
             .form-group
               %labelニックネーム
@@ -54,9 +54,6 @@
               = render partial: 'error-messages', locals: { user: @user, column: "password"}
 
               %p※英字と数字の両方を含めて設定してください
-              .checkbox-default
-                %i.far.fa-square
-                パスワードを表示する
             .form-password
               %labelパスワード確認
               - if @user.errors.full_messages_for(:password_confirmation).any?

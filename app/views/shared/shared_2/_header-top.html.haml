@@ -6,8 +6,9 @@
       %a{type: "button", class: "header__box__search__btn", link_to: "#"}
   .header__box2
     .header__box2__tab
-      = render partial: 'category-drop'
-      = render partial: "brand-drop"
+      -# = render partial: 'category-drop'
+      -# = render partial: "brand-drop"
     .header__box2__info
       = link_to "♡ いいね！一覧", class: "header__box2__info__like"
-      = link_to "マイページ", class: "header__box2__info__mypage"
+      = link_to '/mypage',  class: "header__box2__info__mypage" do
+        マイページ
