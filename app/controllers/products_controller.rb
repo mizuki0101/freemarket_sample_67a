@@ -76,7 +76,6 @@ class ProductsController < ApplicationController
   def update
     @category = Category.find_by(name: params[:category_id])
     @product.category_id = @category.id
-    # @product.shipping_charges_id = 1
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -85,8 +84,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :show
   end
 
   private
