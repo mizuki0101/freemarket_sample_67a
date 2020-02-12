@@ -1,0 +1,14 @@
+.breadcrumb-bar {
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 2px inset rgb(168, 168, 168);
+  background: #fff;
+  padding: 16px 200px;
+  box-shadow:  10px 10px 10px rgba(0,0,0,0.4);
+  a {
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+  }
+}
