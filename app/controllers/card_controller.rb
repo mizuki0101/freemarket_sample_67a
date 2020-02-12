@@ -1,7 +1,14 @@
 class CardController < ApplicationController
   require "payjp"
   before_action :get_payjp_info, only: [:new, :pay, :delete, :show]
-  before_action :set_card, only: [:new, :show, :delete]
+  before_action :set_card, only: [:new, :show, :delete, :index]
+
+
+  def index
+    if @card.present?
+      redirect_to card_path(@card)
+    end
+  end
 
   def new
     if @card.present?
@@ -16,7 +23,7 @@ class CardController < ApplicationController
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #なくてもOK
+      ) 
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to card_path(@card)
