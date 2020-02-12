@@ -86,7 +86,7 @@ class SignupsController < ApplicationController
       birth_date: session[:birth_date] 
     )
     unless @user.valid?
-      return render '/signups/telephones'
+      return render '/signups/telephone'
     end
 
     @user.save
@@ -102,8 +102,7 @@ class SignupsController < ApplicationController
       city: session[:city],
       house_number: session[:house_number]
     )
-
-
+    sign_in @user unless user_signed_in?
 
   end
 
