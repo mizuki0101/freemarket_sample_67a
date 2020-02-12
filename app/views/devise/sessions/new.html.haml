@@ -1,0 +1,24 @@
+
+.Login-main
+  .wrapper
+    = render partial: "shared/shared_1/header"
+  .login-panel
+    .login-new
+      %pアカウントをお持ちでない方はこちら
+      = link_to "/signups/new" do
+        新規会員登録
+    .login-api
+      .facebook-btn
+        %i.fab.fa-facebook-square
+        facebookで登録
+      .google-btn
+        %i.fab.fa-google
+        googleで登録
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .login-form-mail
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "log-form", placeholder: "メールアドレス"
+          .log-form-pass
+            = f.password_field :password, autocomplete: "current-password", class: "log-form", placeholder: "パスワード"
+          .log-form-btn
+            = f.submit "ログインする", class: "log-btn"
+  = render partial: "shared/shared_1/footer"

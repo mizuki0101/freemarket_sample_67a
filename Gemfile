@@ -84,3 +84,4 @@ gem "font-awesome-sass"
 gem 'active_hash'
 gem 'ancestry'
 gem 'rails-i18n'
+gem 'gretel'

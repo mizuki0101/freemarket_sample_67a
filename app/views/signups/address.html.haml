@@ -1,0 +1,106 @@
+.wrwpper
+  .prefecture-register
+    .s-header
+      .l-header
+        %h1
+        .nav-contents
+          .nav-content.red
+            %p情報入力
+            .circle.red
+          .nav-content.second
+            %p住所入力
+            .circle.second
+          .nav-content
+            %p電話番号
+            .circle
+          .nav-content
+            %p入力完了
+            .round
+    .prefecture-main
+      .prefecture-content
+        %h2住所登録
+        = form_with model: @address, url: telephone_signups_path, method: :post, local: true do |form|
+          .prefecture-form
+            .form-group-name
+              %labelお名前（全角）
+              %span必須
+              .form-name
+                .name-myouzi
+                - if @address.errors.full_messages_for(:send_family_name).any?
+                  = form.text_field :send_family_name, class: "name-form", placeholder: '例）山田'
+                - else
+                  = form.text_field :send_family_name, class: "name-form", placeholder: '例）山田'
+                .name-second
+                - if @address.errors.full_messages_for(:send_first_name).any?
+                  = form.text_field :send_first_name, class: "name-form", placeholder: '彩'
+                -else
+                  = form.text_field :send_first_name, class: "name-form", placeholder: '彩'
+              = render partial: 'error-address', locals: { address: @address, column: "send_family_name"}
+              = render partial: 'error-address', locals: { address: @address, column: "send_first_name"}
+
+            .form-group-kana
+              %labelお名前カナ
+              %span必須
+              .form-kana
+                .kana-myouzi
+                - if @address.errors.full_messages_for(:send_family_name_kana).any?
+                  = form.text_field :send_family_name_kana, class: "kana-form", placeholder: '例）ヤマダ'
+                - else @address.errors.full_messages_for(:send_family_name_kana).any?
+                  = form.text_field :send_family_name_kana, class: "kana-form", placeholder: '例）ヤマダ'
+                .kana-second
+                - if @address.errors.full_messages_for(:send_first_name_kana)
+                  = form.text_field :send_first_name_kana, class: "kana-form", placeholder: '例）アヤ'
+                - else
+                  = form.text_field :send_first_name_kana, class: "kana-form", placeholder: '例）アヤ'
+              = render partial: 'error-address', locals: { address: @address, column: "send_family_name_kana"}
+              = render partial: 'error-address', locals: { address: @address, column: "send_first_name_kana"}
+
+
+            .form-content-post
+              %label郵便番号
+              %span必須
+              - if @address.errors.full_messages_for(:postnumber).any?
+                = form.text_field :postnumber, class: "post-form", placeholder: "例）111-2222"
+              - else
+                = form.text_field :postnumber, class: "post-form", placeholder: "例）111-2222"
+              = render partial: 'error-address', locals: { address: @address, column: "postnumber"}
+              -# - if @user.errors.messages[:postnumber]
+            .select-prefecture
+              %label都道府県
+              %span必須
+              - if @address.errors.full_messages_for(:prefecture_id).any?
+                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" }, class: "active-hash"
+              - else
+                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" },  class: "active-hash"
+              = render partial: 'error-address', locals: { address: @address, column: "prefecture_id"}
+            .form-content-post
+              %label市町村区
+              %span必須
+              - if @address.errors.full_messages_for(:city).any?
+                = form.text_field :city, class: "post-form", placeholder: "市町村区"
+              - else
+                = form.text_field :city, class: "post-form", placeholder: "市町村区"
+              = render partial: 'error-address', locals: { address: @address, column: "city"}
+
+            .form-content-post
+              %label番地
+              %span必須
+              - if @address.errors.full_messages_for(:house_number).any?
+                = form.text_field :house_number, class: "post-form", placeholder: "番地"
+              - else
+                = form.text_field :house_number, class: "post-form", placeholder: "番地"
+              = render partial: 'error-address', locals: { address: @address, column: "house_number"}
+
+            .form-build
+              %label建物名
+              %span任意
+              = form.text_field :build, class: "build-form", placeholder: "建物名"
+            .form-telephon
+              %label電話番号
+              %span任意
+              = form.text_field :phonenumber, class: "number-form", placeholder: "携帯電話の番号を入力"
+
+            .address-register
+              = form.submit "次へ", class: "register-btn"
+
+    = render partial: "shared/shared_1/footer"
