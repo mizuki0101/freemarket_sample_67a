@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy]
+  before_action :set_categories, only: [:new,:create, :edit, :update]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -8,41 +9,24 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-    #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-    end
-    # binding.pry
 
     def get_category_children
-
-      #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
       @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
     end
 
     def get_category_grandchildren
-      #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
       @category_grandchildren = Category.find("#{params[:child_id]}").children
     end
   end
 
   def create
-    @category = Category.find_by(name: params[:category_id])
     @product = Product.new(product_params)
-    @product.categories_id = @category.id
     @product.saler_id = 1
-    binding.pry
-    begin
-      @product.save!
+    if @product.save
       redirect_to root_path
-    rescue ActiveRecord::RecordInvalid => e
-      puts e
-      puts "保存に失敗しました"
-      redirect_to new_product_path
+    else
+      render :new
     end
-    
   end
 
   def edit
@@ -59,7 +43,6 @@ class ProductsController < ApplicationController
       @category_children << child
     end
     @category_parent_array = [@rootCategory.name]
-    #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       if parent.name === @rootCategory.name
         parent.name = "---"
@@ -67,7 +50,6 @@ class ProductsController < ApplicationController
       @category_parent_array << parent.name
     end
     @category_grandchildren_array = [@product.category.name]
-    #データベースから、親カテゴリーのみ抽出し、配列化
     @childCategory.children.each do |grandchild|
       if grandchild.name === @product.category.name
         grandchild.name = "---"
@@ -111,10 +93,18 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id, :prefecture_id, images_attributes: [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_categories
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+    end
   end
 end

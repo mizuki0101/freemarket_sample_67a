@@ -1,7 +1,11 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
+    return html;
+  }
+  function appendChildOption(category){
+    var html = `<option value="${null}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -9,8 +13,8 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'><div class="select-wrap"><i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                         <div class='listing-select-wrapper__box'>
-                          <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
+                          <select class="listing-select-wrapper__box--select" id="child_category" name="product[categories_id]">
+                            <option value="${null}" data-category="---">---</option>
                             ${insertHTML}
                           <select>
                           </div>
@@ -24,7 +28,7 @@ $(function(){
     grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
                               <div class='listing-select-wrapper__box'><div class="select-wrap">
                                 <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
-                                <select class="listing-select-wrapper__box--select" id="grandchild_category" name="category_id">
+                                <select class="listing-select-wrapper__box--select" id="grandchild_category" name="product[categories_id]">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -52,7 +56,7 @@ $(function(){
         $('#brand_wrapper').remove();
         var insertHTML = '';
         children.forEach(function(child){
-          insertHTML += appendOption(child);
+          insertHTML += appendChildOption(child);
         });
         appendChidrenBox(insertHTML);
       })

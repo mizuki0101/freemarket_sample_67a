@@ -195,6 +195,14 @@ label{
     vertical-align: middle;
   }
 }
+.error {
+  margin-top: 10px;
+  color: red;
+  font-weight: normal;
+}
+.image-error{
+  margin-top: 30px;
+}
 .wrapper{
   height: 100%;
   width: 100%;
@@ -263,12 +271,12 @@ label{
             .js-change{
               line-height: 32px;
               width:50%;
+              border-right:1px solid #ccc;
               cursor:pointer;
             }
             .js-remove{
               line-height: 32px;
               width:50%;
-              border-right:1px solid #ccc;
               cursor:pointer;
             }
             .js-remove:hover{
@@ -281,8 +289,8 @@ label{
             }
           }
         }
-        .previews__box:not(:nth-child(5n+1)){
-          margin-left:8px;
+        .previews__box{
+          margin-right:5px;
         }
         .input-box{
           height:50%;
@@ -298,7 +306,6 @@ label{
             width:100%;
             min-height: 162px;
             text-align: center;
-            // padding:40px;
             position: relative;
             label{
               position: absolute;
@@ -364,8 +371,9 @@ label{
             float: right;
             display: flex;
             text-align: right;
-            div{
+            .yen{
               display: inline;
+              line-height: 48px;
             }
             input[type="tel"]{
               min-height: 48px;
