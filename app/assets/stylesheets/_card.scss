@@ -20,7 +20,7 @@
       font-weight: 600;
     }
     .require {
-      background-color: red;
+      background-color: #0099e8;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
@@ -57,8 +57,9 @@
           cursor: pointer;
           background-color: #fff;
         }
-        .deadline-date {
+        .deadline-date{
           line-height: 48px;
+          background-color: #fff;
         }
       }
     }
@@ -74,8 +75,8 @@
     &__bottom {
       margin-top: 32px;
       &--btn {
-        background: #ea352d;
-        border: 1px solid #ea352d;
+        background: #0099e8;
+        border: 1px solid #0099e8;
         color: #fff;
         width: 100%;
         line-height: 48px;
@@ -101,7 +102,7 @@
         width: 100%;
         line-height: 48px;
         font-size: 14px;
-        background: #ea352d;
+        background:  #0099e8;
         border: 1px solid #ea352d;
         color: #fff;
         font-size: 14px;
@@ -123,9 +124,9 @@
         padding: 4px 6px;
         background: #fff;
         border-radius: 3px;
-        border: 1px solid #ea352d;
+        border: 1px solid #0099e8;
         a {
-          color: #ea352d;
+          color: #0099e8;
           text-decoration: none;
           font-size: 14px;
         }
