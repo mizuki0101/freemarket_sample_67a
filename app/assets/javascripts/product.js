@@ -47,7 +47,6 @@ $(document).on('turbolinks:load', ()=> {
     if(length >= 5 && length <= 10){
       length -= 5;
       $(".input-box").css('width',`calc(100% - 20% * ${length}`);
-      console.log(length);
     }
     
     if($('.previews__box').length == 10){
@@ -62,7 +61,6 @@ $(document).on('turbolinks:load', ()=> {
   });
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().parent().find('img').data('index');
-    console.log($(this).parent().parent().find('img').data('index'));
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
