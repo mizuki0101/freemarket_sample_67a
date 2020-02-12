@@ -60,18 +60,18 @@
               %label郵便番号
               %span必須
               - if @address.errors.full_messages_for(:postnumber).any?
-                = form.text_field :postnumber, class: "post-form", placeholder: "郵便番号"
+                = form.text_field :postnumber, class: "post-form", placeholder: "例）111-2222"
               - else
-                = form.text_field :postnumber, class: "post-form", placeholder: "郵便番号"
+                = form.text_field :postnumber, class: "post-form", placeholder: "例）111-2222"
               = render partial: 'error-address', locals: { address: @address, column: "postnumber"}
               -# - if @user.errors.messages[:postnumber]
             .select-prefecture
               %label都道府県
               %span必須
               - if @address.errors.full_messages_for(:prefecture_id).any?
-                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "active-hash"
+                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" }, class: "active-hash"
               - else
-                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "active-hash"
+                = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" },  class: "active-hash"
               = render partial: 'error-address', locals: { address: @address, column: "prefecture_id"}
             .form-content-post
               %label市町村区

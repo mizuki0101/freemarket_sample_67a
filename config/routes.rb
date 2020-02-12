@@ -26,4 +26,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :mypage, only: [:index] do
+    collection do
+      get 'logout', to: 'mypage#logout'
+    end
+  end
+
 end

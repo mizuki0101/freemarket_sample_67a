@@ -54,9 +54,6 @@
               = render partial: 'error-messages', locals: { user: @user, column: "password"}
 
               %p※英字と数字の両方を含めて設定してください
-              .checkbox-default
-                %i.far.fa-square
-                パスワードを表示する
             .form-password
               %labelパスワード確認
               - if @user.errors.full_messages_for(:password_confirmation).any?

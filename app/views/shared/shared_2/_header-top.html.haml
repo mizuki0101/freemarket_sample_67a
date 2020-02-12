@@ -6,8 +6,8 @@
       %a{type: "button", class: "header__box__search__btn", link_to: "#"}
   .header__box2
     .header__box2__tab
-      = render partial: 'category-drop'
-      = render partial: "brand-drop"
+      -# = render partial: 'category-drop'
+      -# = render partial: "brand-drop"
     .header__box2__info
       - if user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__box2__info__like"

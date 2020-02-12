@@ -1,0 +1,9 @@
+-# = render partial: "shared/shared_1/header" 
+.Mypage-logout
+  = render partial: 'mypage/side-bar'
+  .logout-contents
+    .logout-content
+      .logout-form
+        .logout-btn
+          = link_to destroy_user_session_path, method: :delete do
+            ログアウト
