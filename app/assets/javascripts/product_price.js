@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function() {
   $('#product_price').on('keyup', function() {
     let getPrice = $(this).val();
     let commission = getPrice / 10;
@@ -8,6 +8,5 @@ $(document).on('turbolinks:load', ()=> {
     if($.type(getPrice) != "number"){
       return;
     };
-
   })
 });
