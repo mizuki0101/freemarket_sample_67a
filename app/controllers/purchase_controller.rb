@@ -10,6 +10,8 @@ class PurchaseController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+    @product = Product.find(1)
+    @product_price = (@product.price.to_i).round
   end
 
   def pay
@@ -19,6 +21,8 @@ class PurchaseController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
+  @product_buyer= Product.find(1)
+  @product_buyer.update( buyer_id: current_user.id)
   redirect_to root_path
 
   end
@@ -26,7 +30,7 @@ class PurchaseController < ApplicationController
   private
 
   def set_card
-    @card = Card.find_by(user_id: current_user.id)
+    @card = Card.includes(:user).find_by(user_id: current_user.id)
   end
 
 end

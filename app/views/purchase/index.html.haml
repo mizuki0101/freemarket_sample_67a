@@ -1,4 +1,3 @@
-.wrapper
 = render partial: "shared/shared_1/header"
 .purchase-contents
   .purchase-content
@@ -7,13 +6,14 @@
     .purchase-content__item
       .purchase-content__item__box
         .purchase-content__item__box__img
-          -# = image_tag "credit/mastercard.svg", height: 20, width: 30
+          = image_tag @product.images[0].src.url, size: '80x80'
         .purchase-content__item__box__show
           .purchase-content__item__box__show__name
-            商品名
+            = @product.name
           .purchase-content__item__box__show__label
             .purchase-content__item__box__show__label__price
-              ¥1000
+              = "¥"
+              = @product_price
             .purchase-content__item__box__show__label__tax
               （税込）送料込み
     .purchase-content__info
@@ -22,7 +22,8 @@
           .purchase-content__info__price__name__pay
             支払い金額
           .purchase-content__info__price__name__count
-            ￥1,000
+            = "¥"
+            = @product_price
         .purchase-content__info__price__point
           .purchase-content__info__price__point__icon
           .purchase-content__info__price__point__name
