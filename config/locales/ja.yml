@@ -19,6 +19,7 @@ ja:
       prefecture_id: 都道府県
       city: 市町村
       house_number: 番地
+      phonenumber: 電話番号
   
   date:
     formats:
