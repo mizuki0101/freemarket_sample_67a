@@ -48,8 +48,6 @@ grand_child_category.each do |child_grandchild|
     grandchild_array << [child_grandchild,parent_id_cnt + 13]
   end
 end
-# puts grandchild_array
-# puts grandchild_array.find_all{|item| item[1] === 120 }
 
 parent_category.each do |parent|
   Category.create!(
@@ -70,18 +68,3 @@ grandchild_array.each do |grandchild,num|
     name: grandchild,
   )
 end
-
-id: nil,
- name: "あqwせdrftgyふ",
- size: nil,
- bland: nil,
- price: 500,
- description: "クァw瀬drftgyふじこ。jんhbgvcfdぇswせdrftgyふじこlp",
- status_id: 1,
- delivery_date_id: 3,
- shipping_method_id: nil,
- prefecture_id: 6,
- created_at: nil,
- updated_at: nil,
- categories_id: 178,
- saler_id: 178,

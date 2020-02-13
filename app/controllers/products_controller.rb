@@ -30,11 +30,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @productCategory = @product.category
+    @productCategory = Category.find(@product.categories_id)
     @childCategory = @productCategory.parent
     @rootCategory = @productCategory.root
     @category_children = [@childCategory] 
-
     @rootCategory.children.each do |child|
       if child.name === @childCategory.name
         child.name = "---"
@@ -47,16 +46,15 @@ class ProductsController < ApplicationController
       if parent.name === @rootCategory.name
         parent.name = "---"
       end
-      @category_parent_array << parent.name
+      @category_parent_array << parent
     end
-    @category_grandchildren_array = [@product.category.name]
+    @category_grandchildren_array = [@productCategory]
     @childCategory.children.each do |grandchild|
-      if grandchild.name === @product.category.name
+      if grandchild.name === @productCategory.name
         grandchild.name = "---"
       end
-      @category_grandchildren_array << grandchild.name
+      @category_grandchildren_array << grandchild
     end
-
     def get_category_children
 
       #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
@@ -74,8 +72,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @category = Category.find_by(name: params[:category_id])
-    @product.category_id = @category.id
+    @productCategory = Category.find_by(name:params[:categories_id])
+    @product.categories_id = @productCategory
     if @product.update(product_params)
       redirect_to root_path
     else
