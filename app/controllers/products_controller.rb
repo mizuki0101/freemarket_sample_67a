@@ -1,14 +1,20 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy]
-  before_action :set_categories, only: [:new,:create, :edit, :update]
+  before_action :set_product, only: [:edit, :update, :destroy,:show]
+  before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.includes(:images).order('created_at DESC').limit(5)
   end
+  def show
+    @saler_user = User.find(@product.saler_id)
+    @category = Category.find(@product.categories_id)
+    @shopping = Shippingcharges.find(@product.shopping_charge_id)
+    @delivery_date = Delivarydate.find(@product.delivery_date_id)
+  end  
 
   def new
     @product = Product.new
-    @product.images.new
+    @product.images.new  
 
     def get_category_children
       @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -21,7 +27,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.saler_id = 1
+    @product.saler_id = current_user.id
     if @product.save
       redirect_to root_path
     else
@@ -30,10 +36,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @productCategory = @product.category
+    @productCategory = Category.find(@product.categories_id)
     @childCategory = @productCategory.parent
     @rootCategory = @productCategory.root
     @category_children = [@childCategory] 
+    # binding.pry
 
     @rootCategory.children.each do |child|
       if child.name === @childCategory.name
@@ -49,16 +56,15 @@ class ProductsController < ApplicationController
       end
       @category_parent_array << parent.name
     end
-    @category_grandchildren_array = [@product.category.name]
+    @category_grandchildren_array = [@productCategory.name]
     @childCategory.children.each do |grandchild|
-      if grandchild.name === @product.category.name
+      if grandchild.name === @productCategory.name
         grandchild.name = "---"
       end
       @category_grandchildren_array << grandchild.name
     end
 
     def get_category_children
-
       #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
       @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
     end
@@ -88,6 +94,7 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       render :show
+    end  
   end
 
   private

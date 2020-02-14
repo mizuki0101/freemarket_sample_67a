@@ -54,12 +54,10 @@ body {
       height: 50px;
       width: 150px;
       font-size: 40px;
-      line-height: 40px;
       text-align: center;
-      background-image: image-url("logo/logo.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-
+      a {
+        text-decoration: none;
+      }
     }
     &__search {
       height: 40px;
@@ -395,29 +393,48 @@ body {
     }
     &__picture {
       height: 250px;
-      display: flex;
-      justify-content: space-around;
-      padding: 0 150px;
-      &__image1 {
-        background-image: image-url("icon/a007.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
+      padding: 0 255px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      &__image {  
         width: 150px;
         height: 220px;
-        background-color: white;
+        display: inline-flex;
         &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
+          height: 150px;
+          width: 150px;
+          background-color: white;
+          margin-left: 30px;
+          box-shadow: 2px 2px 10px gray;
+          position: relative;
+
+        }
+        &__form {
+          width: 150px;
+          height: 70px;
+          background-color: white;
+          box-shadow: 2px 2px 10px gray;
+          &__name {
             font-size: 20px;
-            white-space: pre;
+            height: 35px;
           }
-          &__like {
-            padding-top: 50px;
+          &__box {
+            height: 35px;
+            
+            background-color: white;
+            &__price {
+              font-size: 20px;
+              float: left;
+            }
+            &__like {
+              font-size: 20px;
+              float: right;
+            }
           }
-        }       
+
+        }  
       }
       &__image2 {
         background-image: image-url("icon/a004.png");
@@ -638,5 +655,27 @@ body {
     color: white;
     height: 15px;
     text-align: center;
+  }
+}
+
+.products-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 50px solid #ea352d ;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #ea352d ;
+  z-index:100;
+  position: relative;
+  top:-320px;
+  position: absolute;
+  top: 0px;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    margin:-20px 0px 0px -40px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
   }
 }

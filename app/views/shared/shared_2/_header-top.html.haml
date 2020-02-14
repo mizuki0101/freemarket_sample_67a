@@ -1,16 +1,17 @@
 .header
   .header__box
     .header__box__title
+    = link_to image_tag("logo/logo.png", width: "150px", height: "40px"), root_path
     .header__box__search
       %input{ class: 'header__box__search__form', placeholder: 'キーワードから探す' }
       %a{type: "button", class: "header__box__search__btn", link_to: "#"}
   .header__box2
     .header__box2__tab
       = render partial: 'products/category-drop'
-      = render partial: 'products/brand-drop'
+      = render partial: "products/brand-drop"
     .header__box2__info
       - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__box2__info__like"
+        = link_to "いいね!一覧", class: "header__box2__info__like"
         = link_to "マイページ", mypage_index_path, class: "header__box2__info__mypage"
       - else
         = link_to "ログイン", new_user_session_path, class: "header__box2__info__like"

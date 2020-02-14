@@ -1,94 +1,88 @@
 .products-detail
   = render partial: "shared/shared_2/header-top"
   
-  .content-detail
-    .content-detail__form
-      .content-detail__form__title
-        ジャケット
-      .content-detail__form__box
-        .content-detail__form__box__image
-          .slick  
-            .slick-img
-              = image_tag "icon/a001.png", alt: ''
-              = image_tag "icon/a004.png", alt: ''
-              = image_tag "icon/a007.png", alt: ''
-              = image_tag "icon/a001.png", alt: ''
-              = image_tag "icon/a004.png", alt: ''
-              = image_tag "icon/a001.png", alt: ''
-              = image_tag "icon/a004.png", alt: ''
-              = image_tag "icon/a007.png", alt: ''
-              = image_tag "icon/a001.png", alt: ''
-              = image_tag "icon/a004.png", alt: ''
-            .slick-thumbnail
-              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a007.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a007.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a001.png", class: "slick-thumbnail_item", alt: ''
-              = image_tag "icon/a004.png", class: "slick-thumbnail_item", alt: ''
-        .content-detail__form__box__detail
-          .content-detail__form__box__detail__seller
-            出品者
-          .content-detail__form__box__detail__seller__form
-            takahashi
-          .content-detail__form__box__detail__category
-            カテゴリー
-          .content-detail__form__box__detail__category__form
-            メンズ
-            アウター
-            ジャケット
-          .content-detail__form__box__detail__brand
-            ブランド
-          .content-detail__form__box__detail__brand__form
-            アンダーアーマー
-          .content-detail__form__box__detail__size
-            商品のサイズ
-          .content-detail__form__box__detail__size__form
-            L
-          .content-detail__form__box__detail__status
-            商品の状態
-          .content-detail__form__box__detail__status__form
-            やや傷や汚れあり
-          .content-detail__form__box__detail__delivery-price
-            配送料の負担
-          .content-detail__form__box__detail__delivery-price__form
-            送料込み(出品者負担)
-          .content-detail__form__box__detail__delivery-method
-            配送の方法
-          .content-detail__form__box__detail__delivery-method__form
-            らくらくメルカリ便
-          .content-detail__form__box__detail__delivery-origin
-            配送元の地域
-          .content-detail__form__box__detail__delivery-origin__form
-            愛知県
-          .content-detail__form__box__detail__delivery-date
-            発送日の目安
-          .content-detail__form__box__detail__delivery-date__form
-            1~2日で発送
-      .content-detail__form__price
-        .content-detail__form__price__bold
-          ￥5000
-        .content-detail__form__price__item
-          .content-detail__form__price__item__tax
-            (税込)
-          .content-detail__form__price__item__delivery-price
-            送料込み
-      .content-detail__form__bay-btn
-        購入画面にすすむ
-      .content-detail__form__icon
-        .content-detail__form__icon__like
-          ♡ いいね! 0
-        .content-detail__form__icon__report
-          不適切な商品の報告
-    .content-detail__comment
-      .content-detail__comment__danger
-        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      .content-detail__comment__form
-      .content-detail__comment__btn
-        コメントする   
+.content-detail
+  .content-detail__form
+    .content-detail__form__title
+      = @product.name
+    .content-detail__form__box
+      .content-detail__form__box__image
+        .slick  
+          - @product.images.each do |product_image|
+            = image_tag product_image.src.url, class: "slick-img", height: "300px", width: "300px"
+        .slick-thumbnail
+          - @product.images.each do |product_image|
+            = image_tag product_image.src.url, class: "slick-thumbnail_item", height: "60px", width: "60px"
+        -if @product.buyer_id.present? 
+          .products-box_show_photo__sold
+            .products-box_show_photo__sold__inner
+              SOLD
+      .content-detail__form__box__detail
+        .content-detail__form__box__detail__seller
+          出品者
+        .content-detail__form__box__detail__seller__form
+          = @saler_user.nickname
+        .content-detail__form__box__detail__category
+          カテゴリー
+        .content-detail__form__box__detail__category__form
+          = @category.root.name
+          = @category.parent.name
+          = @category.name
+        .content-detail__form__box__detail__brand
+          ブランド
+        .content-detail__form__box__detail__brand__form
+          -# = @product.brand
+        .content-detail__form__box__detail__size
+          商品のサイズ
+        .content-detail__form__box__detail__size__form
+          = @product.size
+        .content-detail__form__box__detail__status
+          商品の状態
+        .content-detail__form__box__detail__status__form
+          = @product.status.name
+        .content-detail__form__box__detail__delivery-price
+          配送料の負担
+        .content-detail__form__box__detail__delivery-price__form
+          = @shopping.name
+        .content-detail__form__box__detail__delivery-method
+          配送の方法
+        .content-detail__form__box__detail__delivery-method__form
+          
+        .content-detail__form__box__detail__delivery-origin
+          配送元の地域
+        .content-detail__form__box__detail__delivery-origin__form
+          = @product.prefecture.name
+        .content-detail__form__box__detail__delivery-date
+          発送日の目安
+        .content-detail__form__box__detail__delivery-date__form
+          = @delivery_date.name
+    .content-detail__form__price
+      .content-detail__form__price__bold
+        = "¥ #{@product.price}"
+      .content-detail__form__price__item
+        .content-detail__form__price__item__tax
+          (税込)
+        .content-detail__form__price__item__delivery-price
+          送料込み
+    - if user_signed_in? && current_user.id == @product.saler_id
+      = link_to "編集画面にすすむ", edit_product_path, class: "content-detail__form__edit-btn"
+      = link_to "商品を削除する", @product, method: :delete, class: "content-detail__form__destroy"
+    - else
+      = link_to "購入画面にすすむ",purchase_index_path, class: 'content-detail__form__bay-btn'
+    .content-detail__form__comment
+      = @product.description
+    .content-detail__form__icon
+      .content-detail__form__icon__like
+        ♡ いいね! 0
+      .content-detail__form__icon__report
+        不適切な商品の報告
+  .content-detail__comment
+    .content-detail__comment__danger
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    -# = form_for [@product, @comment] do |f|  
+    -# .content-detail__comment__form  
+    -#   = f.text_area :body, class: "content-detail__comment__form", rows: "5"
+    -# .content-detail__comment__btn  
+    -#   = f.submit "コメントする", class:"content-detail__comment__btn"
   
-  = render partial: "shared/shared_2/footer-top"
+= render partial: "shared/shared_2/footer-top"
