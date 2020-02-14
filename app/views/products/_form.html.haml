@@ -12,33 +12,31 @@
       .image-input__box#image-box
         #previews
           %ul.prev
-          - if @product.persisted?
-            - @product.images.each_with_index do |image, i|
-              %li.previews__box
-                = image_tag image.src.url, data: { index: i }, width: "100", height: '120'
-                .btn-box
-                  .js-remove 削除
-                  .js-change 編集
+            - if @product.persisted?
+              - @product.images.each_with_index do |image, i|
+                %li.previews__box
+                  = image_tag image.src.url, data: { index: i }, width: "100", height: '120'
+                  .btn-box
+                    .js-change 編集
+                    .js-remove 削除
           .drop-zone.input-box
             .js-file_group{"data-index" => "#{@product.images.count}"}
-              %label{:for => "src"}
+              %label{:for => "product_images_attributes_#{@product.images.count}_src"}
                 %p
                   ドラッグアンドドロップ
                   %br/
                   またはクリックしてファイルをアップロード
-              = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
-        
-          - if @product.persisted?
-            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy',style: "display:none;"
+              = file_field_tag "product_images_attributes_#{@product.images.count}_src", name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
         = f.fields_for :images do |image|
-          .drop-zone{:style => "display:none;"}
+          .drop-zone.input-box{:style => "display:none;"}
             .js-file_group{"data-index" => "#{image.index}"}
-              %label{:for => "product_images_attributes_0_src"}
+              %label{:for => "product_images_attributes_#{image.index}_src"}
                 %p
                   ドラッグアンドドロップ
                   %br/
                   またはクリックしてファイルをアップロード
-                = image.file_field :src, class: 'js-file'
+              = image.file_field :src, class: 'js-file'
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             %br/
       .field_with_errors.image-error
         - if @product.errors.any?
@@ -79,27 +77,28 @@
             カテゴリー
             %span.listing-default--require
               必須
-              - if @product.persisted?
-                .listing-select-wrapper
-                  .listing-select-wrapper__box.select-wrap
-                    = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                    .listing-select-wrapper__added#children_wrapper
-                      .listing-select-wrapper__box.select-wrap
-                        = f.select :categories_id, options_for_select(@category_children.map{|c|[c[:name], data: {category: c[:id]}]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                    .listing-select-wrapper__added#grandchildren_wrapper
-                      .listing-select-wrapper__box.select-wrap
-                        = f.select :categories_id, @category_grandchildren_array, {}, {class: 'listing-select-wrapper__box--select', id: 'id="grandchild_category"'}
+            - if @product.persisted?
               .listing-select-wrapper
                 .listing-select-wrapper__box.select-wrap
-                  %i.fa.fa-chevron-down
                   = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-            .field_with_errors
-              - if @product.errors.any?
-                %ul
-                  - @product.errors.full_messages_for(:categories_id).each do |message|
-                    %li.error 
-                      カテゴリーを選択してください
-            
+                  .listing-select-wrapper__added#children_wrapper
+                    .listing-select-wrapper__box.select-wrap
+                      = f.select :categories_id, options_for_select(@category_children.map{|c|[c[:name], data: {category: c[:id]}]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                  .listing-select-wrapper__added#grandchildren_wrapper
+                    .listing-select-wrapper__box.select-wrap
+                      = f.select :categories_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id]]}), {}, {class: 'listing-select-wrapper__box--select', id: 'id="grandchild_category"'}
+          -if @product.new_record?
+            .listing-select-wrapper
+              .listing-select-wrapper__box.select-wrap
+                %i.fa.fa-chevron-down
+                = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          .field_with_errors
+            - if @product.errors.any?
+              %ul
+                - @product.errors.full_messages_for(:categories_id).each do |message|
+                  %li.error 
+                    カテゴリーを選択してください
+          
         .select__box
           %label 
             商品の状態
@@ -114,6 +113,13 @@
                   - @product.errors.full_messages_for(:status_id).each do |message|
                     %li.error 
                       = message
+          .select__box
+            %label 
+              ブランド
+              %span
+                任意
+            .select-wrap
+              = f.text_field :bland,{:type => "text",:placeholder => "例)　タニタ"}
     .section
       .select.clearfix
         %h3 配送について
@@ -206,8 +212,9 @@
 
         = f.submit '出品する', class: "btn-default btn-blue"
         %a.btn-default.btn-gray 戻る
+-# ↓本番環境でcategory.jsがうまく機能せず解決策を探した結果hamlファイルに直書きで解消できるとのことだったので直書き
 :javascript
-  $(function(){
+    $(function(){
     // カテゴリーセレクトボックスのオプションを作成
     function appendOption(category){
       var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
@@ -250,7 +257,6 @@
     // 親カテゴリー選択後のイベント
     $('#parent_category').on('change', function(){
       var parentCategory = $('#parent_category').val(); //選択された親カテゴリーの名前を取得
-      console.log(parentCategory);
       if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
         $.ajax({
           url: 'get_category_children',

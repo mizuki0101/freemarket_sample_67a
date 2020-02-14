@@ -48,8 +48,6 @@ grand_child_category.each do |child_grandchild|
     grandchild_array << [child_grandchild,parent_id_cnt + 13]
   end
 end
-# puts grandchild_array
-# puts grandchild_array.find_all{|item| item[1] === 120 }
 
 parent_category.each do |parent|
   Category.create!(
@@ -70,3 +68,4 @@ grandchild_array.each do |grandchild,num|
     name: grandchild,
   )
 end
+

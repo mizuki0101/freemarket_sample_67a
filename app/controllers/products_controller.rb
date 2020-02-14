@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.saler_id = 1
+    @product.saler_id = current_user.id
     if @product.save
       redirect_to root_path
     else
@@ -30,11 +30,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @productCategory = @product.category
+    @productCategory = Category.find(@product.categories_id)
     @childCategory = @productCategory.parent
     @rootCategory = @productCategory.root
     @category_children = [@childCategory] 
-
     @rootCategory.children.each do |child|
       if child.name === @childCategory.name
         child.name = "---"
@@ -49,14 +48,13 @@ class ProductsController < ApplicationController
       end
       @category_parent_array << parent.name
     end
-    @category_grandchildren_array = [@product.category.name]
+    @category_grandchildren_array = [@productCategory]
     @childCategory.children.each do |grandchild|
-      if grandchild.name === @product.category.name
+      if grandchild.name === @productCategory.name
         grandchild.name = "---"
       end
-      @category_grandchildren_array << grandchild.name
+      @category_grandchildren_array << grandchild
     end
-
     def get_category_children
 
       #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
@@ -74,8 +72,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @category = Category.find_by(name: params[:category_id])
-    @product.category_id = @category.id
+    @productCategory = Category.find_by(name:params[:categories_id])
+    @product.categories_id = @productCategory
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -95,7 +93,7 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id, images_attributes: [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id,:bland, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_product

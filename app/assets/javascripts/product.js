@@ -1,14 +1,14 @@
-$(document).on('turbolinks:load', ()=> {
+$(function() {
 
 
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <label for="product_images_attributes_${num}_src"><p>ドラッグアンドドロップ
                     <br>
-                    またはクリックしてファイルをアップロード</p></label>
+                    またはクリックしてファイルをアップロード</p>
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][src]"
-                    id="product_images_attributes_${num}_src">
+                    id="product_images_attributes_${num}_src"></label>
                 </div>
                 `;
     return html;
@@ -29,14 +29,13 @@ $(document).on('turbolinks:load', ()=> {
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
       $('ul.prev').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('.input-box').append(buildFileField(fileIndex[0]));
+      $('.input-box').append(buildFileField(fileIndex[1]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -56,7 +55,7 @@ $(document).on('turbolinks:load', ()=> {
     
   });
   $('#image-box').on('click', '.js-change', function() {
-    const targetIndex = $(this).parent().prev().data('index');
+    const targetIndex = $(this).parent().parent().find('img').data('index');
     $(`input[name="product[images_attributes][${targetIndex}][src]"]`).trigger('click');
   });
   $('#image-box').on('click', '.js-remove', function() {
@@ -64,7 +63,9 @@ $(document).on('turbolinks:load', ()=> {
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    if (hiddenCheck){
+      hiddenCheck.prop('checked', true);
+    } 
     $(this).parent().parent().remove();
     $(`div[data-index="${targetIndex}"]`).remove();
     $(`.js-file_group[data-index="${targetIndex}"]`).parent().remove();
@@ -81,7 +82,9 @@ $(document).on('turbolinks:load', ()=> {
       $(".input-box:last-child").css('display',``);
     }
   });
+
   let length = $('.previews__box').length
+  $(".input-box").css('width',`calc(100% - 20% * ${length})`);
   if(length >= 5 && length <= 10){
     length -= 5;
     $(".input-box").css('width',`calc(100% - 20% * ${length})`);
