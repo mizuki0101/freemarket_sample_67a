@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   resources :mypage, only: [:index] do
     collection do
       get 'logout', to: 'mypage#logout'
+      get 'ausstellen', to: 'mypage#ausstellen'
+      get 'deal', to: 'mypage#deal'
+      get 'verkauf', to: 'mypage#verkauf'
     end
   end
 
