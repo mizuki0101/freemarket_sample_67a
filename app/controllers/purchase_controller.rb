@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
   require "payjp"
   before_action :set_card, only: [:index, :pay]
+  before_action :set_product, only: [:index, :pay]
 
   def index
     if @card.blank?
@@ -15,7 +16,7 @@ class PurchaseController < ApplicationController
   def pay
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
     Payjp::Charge.create(
-    :amount => 13500, #itemテーブルの金額を入れる
+    :amount => @product.price, #itemテーブルの金額を入れる
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
@@ -28,5 +29,10 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.find_by(user_id: current_user.id)
   end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
 
 end
