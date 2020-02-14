@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     member do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'paycheck'
+      post'pay'
     end
   end
   resources :signups, only: [:new, :create] do
@@ -25,13 +27,6 @@ Rails.application.routes.draw do
     collection do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
-    end
-  end
-
-  resources :purchase, only: [:index] do
-    collection do
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
     end
   end
 

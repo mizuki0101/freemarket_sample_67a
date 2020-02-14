@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy,:show]
+  before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
+  before_action :set_card, only: [:paycheck, :pay]
+
+  require "payjp"
 
   def index
     @products = Product.includes(:images).order('created_at DESC').limit(5)
@@ -94,6 +97,31 @@ class ProductsController < ApplicationController
     end
   end
 
+
+
+  def paycheck
+    @product = Product.find(params[:id])
+    if @card.blank?
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+
+  def pay
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+    Payjp::Charge.create(
+    amount:  @product.price,
+    customer:  @card.customer_id,
+    currency: 'jpy'
+  )
+  @product_buyer= Product.find(params[:id])
+  @product_buyer.update( buyer_id: current_user.id)
+  redirect_to root_path
+  end
+
   private
 
   
@@ -112,4 +140,9 @@ class ProductsController < ApplicationController
         @category_parent_array << parent.name
     end
   end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
 end
