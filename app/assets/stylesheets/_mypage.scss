@@ -21,8 +21,15 @@
         }
       }
     }
+    // .uuu{
+    //   background-color: #ccc;
+    // }
     li:hover{
       background-color: lightgray;
+      // margin-left: -5px;
+      i:hover{
+        margin-right: -5px;
+      }
     }
     .page{
       background-color: #eee;
@@ -44,7 +51,8 @@
     }
   }
   .mypage{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdVM-tmEJNQL1moeI4ZJXPHLiHF2iiiDcQEbi3KbKKmWl7v4om");
+    background-image: url("https://wallpaper.sc/desktop/wp-content/uploads/2018/08/desktop-pc-1920x1080-thumbnail_00265-768x432.jpg");
+    image-rendering: auto;
     background-size: cover;
     width: 700px;
     height: 300px;
@@ -55,7 +63,7 @@
       background-size: cover;
       width: 130px;
       height: 130px;
-      border: solid 1px black;
+      border: solid 1px gray;
       border-radius: 50%;
       display: block;
       margin: 0 auto;
@@ -64,26 +72,32 @@
     .exhibition{
       text-align: center;
       margin-top: 110px;
+      .user-nickname{
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+      }
       a{
         display: block;
         padding-top: 25px;
         text-decoration: none;
       }
+      q{
+        margin-top: 5px;
+
+      }
       p{
-        margin-top: 7px;
+        margin-top: 12px;
       }
     }
   }
 
   .news-doing{
-    width: 589px;
+    // width: 589px;
     height: 250px;
-    ul{
-      display: flex;
-      margin: 0 auto;
-      width: 700px;
-      .news-content{
-        width: 350px;
+    display: flex;
+      .news-contents{
+        width: 1000px;
         height: 74px;
         text-align: center;
         margin: 0 auto;
@@ -91,23 +105,21 @@
         line-height: 45px;
         background-color: #ccc;
         font-weight: bold;
-        border-top: 2px solid #ea352d;
+        text-decoration: none;
+        display: block;
+        margin: 0 auto;
+        line-height: 74px;
+        margin-top: 110px;
+        color: #333;
+        // border-top: 2px solid #ea352d;
       }
-      .doing-content{
-        width: 350px;
-        height: 74px;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 72px;
-        line-height: 45px;
-        background-color: #ccc;
-        font-weight: bold;
-        border-top: 2px solid #ea352d;
+      .white{
+        border-top: 3px solid #ea352d;
+        background-color: white;
       }
       h5:hover{
         color: #ccc;
       }
-    }
   }
 
   .buyitem{
@@ -121,11 +133,12 @@
 }
 
 .buyed-contents{
-  margin-top: 60px;
+  // margin-top: 10px;
   .product-content{
     width: 700px;
     height: 400px;
     background-color: white;
+    // background-image: image-url("logo/logo.png")
     h2{
       font-weight: bold;
       color: #333;
@@ -135,11 +148,9 @@
       background-color: #fafafa;
       height: 72px;
     }
-    ul{
+    .item-doing{
       display: flex;
-      margin: 0 auto;
-      width: 700px;
-      .trading{
+      .kaufen-contents{
         width: 350px;
         height: 74px;
         text-align: center;
@@ -147,17 +158,13 @@
         line-height: 45px;
         background-color: #ccc;
         font-weight: bold;
-        border-bottom: 2px solid #ea352d;
+        text-decoration: none;
+        line-height: 74px;
+        color: #333;
       }
-      .transactions{        
-        width: 350px;
-        height: 74px;
-        text-align: center;
-        margin: 0 auto;
-        line-height: 45px;
-        background-color: #ccc;
-        font-weight: bold;
-        border-bottom: 2px solid #ea352d;
+      .active{
+        border-bottom: 3px solid #ea352d;
+        background-color: white;
       }
     }
   }
@@ -198,3 +205,58 @@
     }
   }
 }
+
+.ausstallencontents{
+  width: 700px;
+  height: 145px;
+  background-color: white;
+  margin-left: 145px;
+  margin-top: 100px;
+  h2{
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    padding: 0 16px;
+    height: 72px;
+    line-height: 72px;
+    background-color: #fafafa;
+  }
+  .aaa{
+    display: flex;
+    .waren{
+      width: 700px;
+      height: 74px;
+      text-decoration: none;
+      color: #333;
+      display: block;
+      text-align: center;
+      line-height: 74px;
+      font-weight: bold;
+      border-bottom: 3px solid #ea352d;
+      background-color: white;
+      p{
+        line-height: 74px;
+        font-size: 20px;
+      }
+    }
+    .rrr{
+      border-bottom: 3px solid #ea352d;
+      background-color: white;
+    }
+  }
+}
+.sss{
+  width: 700px;
+  height: 400px;
+  background-color: white;
+  // background-image: image-url('logo/logo.png');
+  // background-repeat: no-repeat;
+  // background-size: inherit;
+}
+// .active{
+//   background-color: red;
+// }
+
+// .red{
+//   background-color: red;
+// }
