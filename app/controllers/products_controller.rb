@@ -1,14 +1,20 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy]
-  before_action :set_categories, only: [:new,:create, :edit, :update]
+  before_action :set_product, only: [:edit, :update, :destroy,:show]
+  before_action :set_categories, only: [:new, :create, :edit, :update]
 
   def index
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.includes(:images).order('created_at DESC').limit(5)
   end
+  def show
+    @saler_user = User.find(@product.saler_id)
+    @category = Category.find(@product.categories_id)
+    @shopping = Shippingcharges.find(@product.shopping_charge_id)
+    @delivery_date = Delivarydate.find(@product.delivery_date_id)
+  end  
 
   def new
     @product = Product.new
-    @product.images.new
+    @product.images.new  
 
     def get_category_children
       @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -56,7 +62,6 @@ class ProductsController < ApplicationController
       @category_grandchildren_array << grandchild
     end
     def get_category_children
-
       #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
       @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
     end
@@ -108,4 +113,3 @@ class ProductsController < ApplicationController
     end
   end
 end
-

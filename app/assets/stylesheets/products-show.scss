@@ -22,10 +22,12 @@ body {
     }
     &__box {
       height: 420px;
+      position: relative;
       &__image {
         height: 420px;
         width: 300px;
         float: left;
+        
       }  
       &__detail {
         height: 414px;
@@ -67,6 +69,7 @@ body {
           border-bottom: solid 1px #f5f5f5;
           padding-left: 10px;
           white-space: pre;
+          padding-top: 5px;
         }
         &__brand {
           float: left;
@@ -204,19 +207,18 @@ body {
         font-weight: bold;
         font-size: 40px;
         height:50px;
-        width: 160px;
+        width: 150px;
       }
       &__item {
-        padding-top: 30px;
+        padding-top: 15px;
         height: 40px;
         display: flex;
         justify-content: center;
-        width: 150px;
+        width: 100px;
         &__tax {
           font-size: 10px;
           height: 20px;
-          padding-top: 5px;
-          
+          padding-top: 5px; 
         }
         &__delivery-price {
           font-size: 15px;
@@ -225,7 +227,21 @@ body {
         }
       }
     }
+    &__edit-btn {
+      width: 680px;
+      background-color: lightgray;
+      color: white;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display:inline-block;
+    }
     &__bay-btn {
+      width: 680px;
       background-color: red;
       color: white;
       height: 50px;
@@ -234,10 +250,24 @@ body {
       font-size: 20px;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 30px;
+      text-decoration: none;
+      display:inline-block;
+    }
+    &__destroy {
+      width: 680px;
+      background-color: red;
+      color: white;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display:inline-block;
+      margin-top: 20px;
     }
     &__icon {
-      margin-top: 50px;
       height: 50px;
       display: flex;
       justify-content: start;
@@ -271,6 +301,7 @@ body {
     height: 300px;
     background-color: white;
     padding: 20px;
+    font-size: 15px;
     &__danger {
       height: 50px;
       padding: 5px;
@@ -296,13 +327,14 @@ body {
 }
 
 .slick {
-  height: 420px;
+  height: 300px;
   width: 300px;
 }
 .slick-img {
   height: 300px;
   width: 300px;
   background-size: 300px 300px;
+  
 }
 .slick-thumbnail {
   height: 120px;
@@ -321,4 +353,27 @@ body {
 .img.slick-slide {
   height: 300px;
   width: 60px;
+}
+
+.products-box_show_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 60px solid #ea352d ;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #ea352d ;
+  z-index:1;
+  position: relative;
+  top:-320px;
+  position: absolute;
+  top: 0px;
+  
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    margin:-25px 0px 0px -45px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
 }
