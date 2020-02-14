@@ -291,17 +291,21 @@ label{
         }
         .previews__box{
           margin-right:5px;
+          list-style: none;
+          img{
+            padding-left: 5px;
+          }
         }
         .input-box{
           height:50%;
           width:100%;
           margin-right:5px;
           float:right;
+          background-color: #f5f5f5;
+          border: 1px dashed #ccc;
+          min-height: 162px;
+          width: 100%;
           .js-file_group{
-            min-height: 162px;
-            width: 100%;
-            background-color: #f5f5f5;
-            border: 1px dashed #ccc;
             margin-top: 16px;
             width:100%;
             min-height: 162px;
@@ -320,9 +324,7 @@ label{
               }
             }
           }
-          .js-file_group:not(:last-child){
-            display:none;
-          }
+          
           input[type="file"]{
             display:none;
           }
@@ -492,4 +494,8 @@ label{
       margin-top: 5px;
     }
   }
+}
+
+.js-file_group:not(:last-child){
+  display:none;
 }
