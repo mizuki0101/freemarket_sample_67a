@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :status
   belongs_to_active_hash :shippingcharges, optional: true
   belongs_to :category, optional: true
+  belongs_to :user
   validates :images,:name,:price,:description,:status_id,:delivery_date_id,:prefecture_id,:shopping_charge_id,:categories_id,:saler_id,presence: true
   validates :categories_id, numericality: { only_integer: true}
 end

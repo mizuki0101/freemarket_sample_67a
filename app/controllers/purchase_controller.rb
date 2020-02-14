@@ -33,4 +33,5 @@ class PurchaseController < ApplicationController
     @card = Card.includes(:user).find_by(user_id: current_user.id)
   end
 
+
 end

@@ -34,13 +34,13 @@
           .content-detail__form__box__detail__seller
             出品者
           .content-detail__form__box__detail__seller__form
-            takahashi
+            = @saler_user.nickname
           .content-detail__form__box__detail__category
             カテゴリー
           .content-detail__form__box__detail__category__form
-            メンズ
-            アウター
-            ジャケット
+            = @category.root.name
+            = @category.parent.name
+            = @category.name
           .content-detail__form__box__detail__brand
             ブランド
           .content-detail__form__box__detail__brand__form
@@ -56,11 +56,11 @@
           .content-detail__form__box__detail__delivery-price
             配送料の負担
           .content-detail__form__box__detail__delivery-price__form
-            送料込み(出品者負担)
+            = @shoppingcharge.name
           .content-detail__form__box__detail__delivery-method
             配送の方法
           .content-detail__form__box__detail__delivery-method__form
-            らくらくメルカリ便
+            
           .content-detail__form__box__detail__delivery-origin
             配送元の地域
           .content-detail__form__box__detail__delivery-origin__form

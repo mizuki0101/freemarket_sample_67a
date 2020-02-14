@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy,:show]
   before_action :set_categories, only: [:new,:create, :edit, :update]
 
   def index
@@ -21,13 +21,20 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.saler_id = 1
+    @product.saler_id = current_user.id
     if @product.save
       redirect_to root_path
     else
       render :new
     end
   end
+
+  def show
+    @saler_user = User.find(@product.saler_id)
+    @category = Category.find(@product.categories_id)
+    @shoppingcharge = Shippingcharges.find(@product.shopping_charge_id)
+  end
+
 
   def edit
     @productCategory = @product.category

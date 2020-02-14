@@ -11,7 +11,7 @@
       .credit-content__create__info
         %h3 クレジットカード一覧
         .credit-content__create__info__add
-          = link_to "クレジットカード追加する", new_card_path, class: 'credit-content__create__info__add--btn' 
+          = link_to "クレジットカード追加する", new_card_path, class: 'credit-content__create__info__add--btn',data: {"turbolinks"=>false} 
       = link_to "支払い方法について ＞", "#", class: 'credit-content__create__payhow' 
 
 = render partial: "shared/shared_2/footer-top"
