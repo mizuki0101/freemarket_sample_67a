@@ -25,7 +25,7 @@ $(document).on('turbolinks:load',function() {
   fileIndex.splice(0, lastIndex);
 
   $('#image-box').on('change', '.js-file', function(e) {
-    const targetIndex = $(this).parent().data('index');
+    const targetIndex = $(this).parent().parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -79,7 +79,7 @@ $(document).on('turbolinks:load',function() {
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
     if(length < 10){
-      $(".input-box:last-child").css('display',``);
+      $(".js-file_group:last-child").css('display',``);
     }
   });
 
