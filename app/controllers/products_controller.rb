@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.saler_id = 1
+    @product.saler_id = current_user.id
     if @product.save
       redirect_to root_path
     else
@@ -93,7 +93,7 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id, images_attributes: [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id,:bland, images_attributes: [:src, :_destroy, :id])
   end
 
   def set_product
