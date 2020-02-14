@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
       if parent.name === @rootCategory.name
         parent.name = "---"
       end
-      @category_parent_array << parent
+      @category_parent_array << parent.name
     end
     @category_grandchildren_array = [@productCategory]
     @childCategory.children.each do |grandchild|
