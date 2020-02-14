@@ -77,42 +77,42 @@
             カテゴリー
             %span.listing-default--require
               必須
-              - if @product.persisted?
-                .listing-select-wrapper
-                  .listing-select-wrapper__box.select-wrap
-                    = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                    .listing-select-wrapper__added#children_wrapper
-                      .listing-select-wrapper__box.select-wrap
-                        = f.select :categories_id, options_for_select(@category_children.map{|c|[c[:name], data: {category: c[:id]}]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                    .listing-select-wrapper__added#grandchildren_wrapper
-                      .listing-select-wrapper__box.select-wrap
-                        = f.select :categories_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id]]}), {}, {class: 'listing-select-wrapper__box--select', id: 'id="grandchild_category"'}
-            -if @product.new_record?
+            - if @product.persisted?
               .listing-select-wrapper
                 .listing-select-wrapper__box.select-wrap
-                  %i.fa.fa-chevron-down
                   = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-            .field_with_errors
-              - if @product.errors.any?
-                %ul
-                  - @product.errors.full_messages_for(:categories_id).each do |message|
-                    %li.error 
-                      カテゴリーを選択してください
-            
-        .select__box
-          %label 
-            商品の状態
-            %span
-              必須
-          .select-wrap
-            %i.fa.fa-chevron-down
-            = f.collection_select :status_id, Status.all, :id, :name, prompt: "--", class: 'input'
-            .field_with_errors
-              - if @product.errors.any?
-                %ul
-                  - @product.errors.full_messages_for(:status_id).each do |message|
-                    %li.error 
-                      = message
+                  .listing-select-wrapper__added#children_wrapper
+                    .listing-select-wrapper__box.select-wrap
+                      = f.select :categories_id, options_for_select(@category_children.map{|c|[c[:name], data: {category: c[:id]}]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                  .listing-select-wrapper__added#grandchildren_wrapper
+                    .listing-select-wrapper__box.select-wrap
+                      = f.select :categories_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id]]}), {}, {class: 'listing-select-wrapper__box--select', id: 'id="grandchild_category"'}
+          -if @product.new_record?
+            .listing-select-wrapper
+              .listing-select-wrapper__box.select-wrap
+                %i.fa.fa-chevron-down
+                = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          .field_with_errors
+            - if @product.errors.any?
+              %ul
+                - @product.errors.full_messages_for(:categories_id).each do |message|
+                  %li.error 
+                    カテゴリーを選択してください
+          
+      .select__box
+        %label 
+          商品の状態
+          %span
+            必須
+        .select-wrap
+          %i.fa.fa-chevron-down
+          = f.collection_select :status_id, Status.all, :id, :name, prompt: "--", class: 'input'
+          .field_with_errors
+            - if @product.errors.any?
+              %ul
+                - @product.errors.full_messages_for(:status_id).each do |message|
+                  %li.error 
+                    = message
     .section
       .select.clearfix
         %h3 配送について
