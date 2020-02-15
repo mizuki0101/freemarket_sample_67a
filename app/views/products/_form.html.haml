@@ -26,7 +26,7 @@
                   ドラッグアンドドロップ
                   %br/
                   またはクリックしてファイルをアップロード
-              = file_field_tag "product_images_attributes_#{@product.images.count}_src", name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+                = file_field_tag "product_images_attributes_#{@product.images.count}_src", name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
         = f.fields_for :images do |image|
           .drop-zone.input-box{:style => "display:none;"}
             .js-file_group{"data-index" => "#{image.index}"}
@@ -35,7 +35,7 @@
                   ドラッグアンドドロップ
                   %br/
                   またはクリックしてファイルをアップロード
-              = image.file_field :src, class: 'js-file'
+                = image.file_field :src, class: 'js-file'
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             %br/
       .field_with_errors.image-error
@@ -87,11 +87,11 @@
                   .listing-select-wrapper__added#grandchildren_wrapper
                     .listing-select-wrapper__box.select-wrap
                       = f.select :categories_id, options_for_select(@category_grandchildren_array.map{|c|[c[:name], c[:id]]}), {}, {class: 'listing-select-wrapper__box--select', id: 'id="grandchild_category"'}
-          -if @product.new_record?
-            .listing-select-wrapper
-              .listing-select-wrapper__box.select-wrap
-                %i.fa.fa-chevron-down
-                = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            -if @product.new_record?
+              .listing-select-wrapper
+                .listing-select-wrapper__box.select-wrap
+                  %i.fa.fa-chevron-down
+                  = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
           .field_with_errors
             - if @product.errors.any?
               %ul

@@ -10,5 +10,6 @@ FactoryBot.define do
     delivery_date_id   {1}
     status_id          {1}
     shopping_charge_id {1}
+    
   end
 end
