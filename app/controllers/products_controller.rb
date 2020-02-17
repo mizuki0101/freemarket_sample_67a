@@ -100,7 +100,6 @@ class ProductsController < ApplicationController
 
 
   def paycheck
-    @product = Product.find(params[:id])
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else
