@@ -26,8 +26,8 @@
           カテゴリー
         .content-detail__form__box__detail__category__form
           = @category.root.name
-          = @category.parent.name
-          = @category.name
+          = "> #{@category.parent.name}"
+          = "> #{@category.name}"
         .content-detail__form__box__detail__brand
           ブランド
         .content-detail__form__box__detail__brand__form
@@ -68,7 +68,11 @@
       = link_to "編集画面にすすむ", edit_product_path, class: "content-detail__form__edit-btn"
       = link_to "商品を削除する", @product, method: :delete, class: "content-detail__form__destroy"
     - else
-      = link_to "購入画面にすすむ",purchase_index_path, class: 'content-detail__form__bay-btn'
+      -if @product.buyer_id.present?
+        .content-detail__form__sold-btn
+          売り切れました
+      -else
+        = link_to "購入画面にすすむ",purchase_index_path, class: 'content-detail__form__bay-btn'
     .content-detail__form__comment
       = @product.description
     .content-detail__form__icon

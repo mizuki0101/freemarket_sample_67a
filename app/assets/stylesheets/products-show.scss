@@ -267,6 +267,18 @@ body {
       display:inline-block;
       margin-top: 20px;
     }
+    &__sold-btn {
+      width: 680px;
+      background-color: lightgray;
+      color: white;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display:inline-block;
+    }
     &__icon {
       height: 50px;
       display: flex;
@@ -377,3 +389,4 @@ body {
     font-weight: 600;
   }
 }
+
