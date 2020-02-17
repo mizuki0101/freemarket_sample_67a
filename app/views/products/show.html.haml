@@ -1,6 +1,8 @@
 .products-detail
   = render partial: "shared/shared_2/header-top"
-  
+  .breadcrumb-bar
+    - breadcrumb :show, @product
+    = render "layouts/breadcrumbs"
 .content-detail
   .content-detail__form
     .content-detail__form__title

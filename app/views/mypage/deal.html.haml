@@ -1,0 +1,14 @@
+= render partial: 'shared/shared_2/header-top'
+.mypageContents
+  = render partial: 'mypage/side-bar'
+  .ausstallencontents
+    .aaa
+      -# = link_to ausstellen_mypage_index_path, class: "waren" do
+      -#   出品中
+      = link_to deal_mypage_index_path, class: "waren" do
+        %p取引中
+      -# = link_to '#', class: "waren" do
+      -#   売約済み
+    .sss
+
+= render partial: "shared/shared_2/footer-top"

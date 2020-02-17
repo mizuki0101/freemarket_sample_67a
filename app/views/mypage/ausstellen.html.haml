@@ -1,0 +1,10 @@
+= render partial: 'shared/shared_2/header-top'
+.mypageContents
+  = render partial: 'mypage/side-bar'
+  .ausstallencontents
+    .aaa
+      = link_to ausstellen_mypage_index_path, class: "waren" do
+        %p出品中
+    .sss
+
+= render partial: "shared/shared_2/footer-top"

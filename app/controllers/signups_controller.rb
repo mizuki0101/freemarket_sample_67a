@@ -7,6 +7,7 @@ class SignupsController < ApplicationController
   end
 
   def address
+    # binding.pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -18,7 +19,7 @@ class SignupsController < ApplicationController
     session[:birth_year] = params[:birthday]["birthday(1i)"]
     session[:birth_month] = params[:birthday]["birthday(2i)"]
     session[:birth_date] = params[:birthday]["birthday(3i)"]
-
+    # binding.pry
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -64,6 +65,7 @@ class SignupsController < ApplicationController
       building: "苺ビル",
       phonenumber: "08026259178"
     )
+    # binding.pry
     unless @address.valid?
       render '/signups/address'
     end
