@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  before_action :set_card, only: [:paycheck, :pay]
+  before_action :set_card, only: [:paycheck, :pay, :show]
 
   require "payjp"
 
@@ -100,7 +100,6 @@ class ProductsController < ApplicationController
 
 
   def paycheck
-    @product = Product.find(params[:id])
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else

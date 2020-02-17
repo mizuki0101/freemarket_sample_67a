@@ -78,8 +78,11 @@
         .content-detail__form__sold-btn
           売り切れました
       -else
-        = link_to "購入画面にすすむ",paycheck_product_path, class: 'content-detail__form__bay-btn'
-    .content-detail__form__description
+        - if @card.present?
+          = link_to "購入画面にすすむ",paycheck_product_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
+        - else
+          = link_to "支払い情報を登録をしてください",new_card_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
+    .content-detail__form__comment
       = @product.description
     .content-detail__form__icon
       .content-detail__form__icon__like
