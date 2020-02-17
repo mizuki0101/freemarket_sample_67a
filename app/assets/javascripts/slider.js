@@ -1,5 +1,5 @@
 $(function(){
-  $('.slick-img').slick({
+  $('.slick').slick({
       autoplay: false,
       autoplaySpeed: 3000,
       slidesToShow: 1,
@@ -11,14 +11,13 @@ $(function(){
   $('.slick-thumbnail').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
-    asNavFor: '.slick-img',
+    asNavFor: '.slick',
     pauseOnFocus: false,
     pauseOnHover: false,
     focusOnSelect: true,
     centerMode: false,
     centerPadding: 0,
-    fade: false,
-    
+    fade: false,   
     
   }); 
   $('.slick-thumbnail').on('turbolinks:load',function(){

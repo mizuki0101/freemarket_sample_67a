@@ -12,7 +12,7 @@ body {
   padding: 30px 350px;
   &__form {
     background-color: white;
-    height: 800px;
+    height: auto;
     padding: 30px;
     &__title {
       text-align: center;
@@ -27,7 +27,6 @@ body {
         height: 420px;
         width: 300px;
         float: left;
-        
       }  
       &__detail {
         height: 414px;
@@ -279,8 +278,13 @@ body {
       text-decoration: none;
       display:inline-block;
     }
+    &__description {
+      height: auto;
+      padding: 20px 0;
+      font-size: 20px;
+    }
     &__icon {
-      height: 50px;
+      height: 30px;
       display: flex;
       justify-content: start;
       &__like {
