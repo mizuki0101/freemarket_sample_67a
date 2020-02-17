@@ -27,7 +27,10 @@ crumb :logout do
   parent :mypage
 end
 
-
+crumb :show do |product|
+  link product.name,  product_path
+  parent :root
+end
 
 
 # crumb :payshow do
