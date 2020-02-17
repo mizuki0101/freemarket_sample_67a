@@ -1,4 +1,5 @@
-.sell_box
-  出品する
-  %a{type: "button", class: "sell_box__btn", href: new_product_path}
+- if user_signed_in?
+  .sell_box
+    出品する
+    %a{type: "button", class: "sell_box__btn", href: new_product_path}
 
