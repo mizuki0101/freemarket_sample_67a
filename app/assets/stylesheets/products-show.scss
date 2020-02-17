@@ -8,7 +8,7 @@ body {
 .content-detail {
   box-sizing: border-box;
   background-color: #f0f0f0;
-  height: 1200px;
+  height: auto;
   padding: 30px 350px;
   &__form {
     background-color: white;
@@ -320,9 +320,10 @@ body {
     font-size: 15px;
     &__danger {
       height: 50px;
-      padding: 5px;
+      padding: 10px;
       background-color: #ffffcc;
-      font-size: 14px;
+      font-size: 15px;
+      
     }
     &__form {
       width: 700px;
@@ -335,7 +336,7 @@ body {
       height: 50px;
       color: white;
       text-align: center;
-      line-height: 40px;
+      line-height: 50px;
       margin-top: 5px;
       cursor: pointer;
     }

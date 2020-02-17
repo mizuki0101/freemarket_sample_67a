@@ -33,7 +33,7 @@
         .content-detail__form__box__detail__brand
           ブランド
         .content-detail__form__box__detail__brand__form
-          -# = @bland.name
+          = @product.bland
         .content-detail__form__box__detail__size
           商品のサイズ
         .content-detail__form__box__detail__size__form
@@ -91,11 +91,9 @@
         不適切な商品の報告
   .content-detail__comment
     .content-detail__comment__danger
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    -# = form_for [@product, @comment] do |f|  
-    -# .content-detail__comment__form  
-    -#   = f.text_area :body, class: "content-detail__comment__form", rows: "5"
-    -# .content-detail__comment__btn  
-    -#   = f.submit "コメントする", class:"content-detail__comment__btn"
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+    .content-detail__comment__form  
+    .content-detail__comment__btn  
+      コメントする
   
 = render partial: "shared/shared_2/footer-top"
