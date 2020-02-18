@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       get 'paycheck'
       post'pay'
     end
+    resources :likes, only: [:create, :destroy]
   end
+  
   resources :signups, only: [:new, :create] do
     collection do
       get 'member'

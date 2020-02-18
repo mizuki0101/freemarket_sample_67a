@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  before_action :set_card, only: [:paycheck, :pay, :show]
+  before_action :set_card, only: [:paycheck, :pay]
 
   require "payjp"
 

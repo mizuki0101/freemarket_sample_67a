@@ -10,4 +10,10 @@ class Product < ApplicationRecord
   belongs_to :category, optional: true
   validates :images,:name,:price,:description,:status_id,:delivery_date_id,:prefecture_id,:shopping_charge_id,:categories_id,:saler_id,presence: true
   validates :categories_id, numericality: { only_integer: true}
+  has_many :likes, dependent: :destroy
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
+  
 end
