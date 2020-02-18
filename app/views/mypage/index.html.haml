@@ -7,7 +7,7 @@
   .mypage
     .myphoto
       .exhibition
-        =link_to '#', class: "user-nickname" do
+        =link_to profile_mypage_index_path, class: "user-nickname" do
           = current_user.nickname
         出品数 :
         %q.length-conunt= current_user.products.length

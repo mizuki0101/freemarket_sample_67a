@@ -4,10 +4,10 @@
   display: flex;
   background-color: #f5f5f5;
   ul{
-    width: 450px;
+    width: 350px;
     li{
       border-bottom: solid 2px #f5f5f5;
-      margin-left: 80px;
+      margin-left: 100px;
       background-color: white;
       padding: 15px 15px 15px 15px;
       a{
@@ -16,7 +16,7 @@
         font-size: 13px;
         i{
           float: right;
-          line-height: 25px;
+          line-height: 14px;
           font-size: 20px;
         }
       }
@@ -43,15 +43,17 @@
       margin-bottom: 50px;
     }
     p{
-      margin-left: 80px;
+      margin-left: 100px;
       margin-top: 40px;
       font-weight: bold;
       font-size: 14px;
       color: #333;
+      margin-bottom: 5px;
     }
   }
   .mypage{
-    background-image: url("https://wallpaper.sc/desktop/wp-content/uploads/2018/08/desktop-pc-1920x1080-thumbnail_00265-768x432.jpg");
+    background-color: #00e0d5;
+    background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
     image-rendering: auto;
     background-size: cover;
     width: 700px;
@@ -252,6 +254,280 @@
   // background-image: image-url('logo/logo.png');
   // background-repeat: no-repeat;
   // background-size: inherit;
+}
+
+.profileContents{
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  margin: 0 auto;
+  // margin-left: 145px;
+  margin-top: 40px;
+  h2{
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 32px 16px;
+  }
+  .personcontent{
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 50px;
+    .document{
+      margin-top: 20px;
+    }
+    a{
+      text-decoration: none;
+      float: right;
+      display: block;
+      color: #0099e8;
+      margin-top: 30px;
+    }
+  }
+  .profileContent{
+    width: 500px;
+    // height: 818px;
+    background-color: white;
+    margin: 0 auto;
+    // margin-top: 16px;
+    // margin-bottom: 16px;
+    padding: 50px;
+    .name_contents{
+      margin-top: 30px;
+      .name_content{
+        display: flex;
+        margin-top: 10px;
+        .first{
+          margin-left: 8px;
+        }
+      }
+    }
+    .name_kana_contents{
+      margin-top: 30px;
+      .name_kana_content{
+        display: flex;
+        margin-top: 10px;
+        .first_kana{
+          margin-left: 8px;
+        }
+      }
+    }
+    .birthday_contents{
+      margin-top: 30px;
+      .birthday_content{
+        display: flex;
+        margin-top: 10px;
+        .birthmonth{
+          margin-left: 8px;
+        }
+        .birthdate{
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.confirmationContents{
+  width: 700px;
+  height: 848px;
+  background-color: white;
+  margin: 0 auto;
+  // margin-left: 145px;
+  margin-top: 40px;
+  h2{
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 32px 16px;
+  }
+  .confirmationContent{
+    margin: 0 auto;
+    width: 343px;
+    margin-top: 50px;
+    // padding: 50px;
+    .send_name_contents{
+      .name_form{
+        display: flex;
+        .send_family_name_content{
+          margin-top: 20px;
+          display: flex;
+          .send_family_form{
+            width: 171px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: solid 1px #ccc;
+          }
+          .send_first_form{
+            width: 171px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: solid 1px #ccc;
+            margin-left: 1px;
+          }
+        }
+      }
+    }
+    .send_name_contents_kana{
+      margin-top: 20px;
+      .send_family_name_content_kana{
+        margin-top: 20px;
+        display: flex;
+        .send_family_form_kana{
+          width: 171px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+        .send_first_form_kana{
+          width: 171px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+          margin-left: 1px;
+        }
+      }
+    }
+    .postnumber_contents{
+      margin: 0 auto;
+      margin-top: 20px;
+      .postnumber_content{
+        margin-top: 10px;
+        .postnumber_form{
+          width: 343px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+      }
+    }
+    .prefecture_contents{
+      margin-top: 30px;
+      .prefecture_content{
+        margin-top: 10px;
+        .active-hash{
+          width: 343px;
+          height: 45px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+      }
+    }
+    .city_contents{
+      margin-top: 30px;
+      .city_content{
+        margin-top: 10px;
+        .city_form{
+          width: 343px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+      }
+    }
+    .housenumber_contents{
+      margin-top: 30px;
+      .housenumber_content{
+        margin-top: 10px;
+        .housenumber_form{
+          width: 343px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: solid 1px #ccc;
+        }
+      }
+    }
+    .change_btn{
+      margin-top: 68px;
+      .change-btn{
+        width: 343px;
+        height: 40px;
+        background-color: #3CCACE;
+        padding: 10px 16px 8px;
+        border: solid 1px #3CCACE;
+        color: white;
+        border-radius: 2px;
+
+      }
+    }
+  }
+}
+
+.profilecontents{
+  width: 700px;
+  height: 800px;
+  background-color: white;
+  margin: 0 auto;
+  // margin-left: 145px;
+  margin-top: 40px;
+  h2{
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    padding: 32px 16px;
+  }
+  .profile-back{
+    // background-image: url('https://wallpaper.sc/desktop/wp-content/uploads/2018/08/desktop-pc-1920x1080-thumbnail_00265-768x432.jpg');
+    width: 700px;
+    height: 300px;
+    position: relative;
+    background-color: #00e0d5;
+    background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-size: cover;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    // margin-top: 20px;
+    .profile-picture{
+      position: absolute;
+      background-image: url('https://i.imgur.com/6OwbPKy.png');
+      background-size: cover;
+      width: 110px;
+      height: 110px;
+      border: solid 1px gray;
+      border-radius: 50%;
+      display: block;
+      margin-top: 90px;
+      margin-left: 150px;
+      .nickname_form{
+        width: 186px;
+        height: 28px;
+        margin-left: 150px;
+        margin-top: 30px;
+        .nickname-form{
+          padding: 15px 18px 15px;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+        }
+      }
+      .profile-text{
+        margin-top: 100px;
+        .nickname-text{
+          width: 650px;
+          height: 200px;
+          margin-top: 80px;
+          margin-left: -125px;
+          padding: 60px 16px;
+          line-height: 25px;
+        }
+      }
+      .profile_btn{
+        margin-top: 70px;
+        .profile-btn{
+          width: 650px;
+          height: 50px;
+          background-color: #00e0d5;
+          border: solid 1px #00e0d5;
+          color: white;
+          margin-left: -125px;
+        }
+      }
+    }
+  }
 }
 // .active{
 //   background-color: red;

@@ -38,6 +38,8 @@
       p{
         margin-right: 32px;
         margin-left: -37px;
+        margin-top: -5px;
+        margin-bottom: 5px;
       }
       .circle{
         width: 10px;
@@ -55,7 +57,7 @@
       }
       .circle::after{
         position: absolute;
-        bottom: 3px;
+        bottom: 4px;
         z-index: -1;
         display: block;
         content: '';
@@ -66,25 +68,25 @@
       }
       .red::after{
         position: absolute;
-        bottom: 5px;
+        bottom: 4px;
         z-index: -1;
         display: block;
         content: '';
         width: 100%;
         height: 2px;
         background: red;
-        margin-bottom: 11px;
+        margin-bottom: 18px;
       }
       .phone::after{
         position: absolute;
-        bottom: 5px;
+        bottom: 4px;
         z-index: -1;
         display: block;
         content: '';
         width: 100%;
         height: 2px;
         background: red;
-        margin-bottom: 11px;
+        margin-bottom: 18px;
       }
       .red{
         background-color: red;
@@ -223,7 +225,7 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
+            background-color: #3CCACE;
             margin: 0 0 0 8px;
             border-radius: 2px;
             color: white;
@@ -236,7 +238,7 @@
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
-            margin: 0;
+            margin-top: 5px;
           }
           h3{
             margin-top: 80px;
@@ -271,7 +273,7 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
+            background-color: #3CCACE;
             margin: 0 0 0 8px;
             border-radius: 2px;
             color: white;
@@ -284,6 +286,7 @@
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
+            margin-top: 5px;
           }
           p{
             color: #ccc;
@@ -307,7 +310,7 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
+            background-color: #3CCACE;
             margin: 0 0 0 8px;
             border-radius: 2px;
             color: white;
@@ -316,8 +319,9 @@
           }
           .form-name{
             display: flex;
+            margin-top: 5px;
             .name-form{
-              width: 151px;
+              width: 161px;
               height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
@@ -336,8 +340,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -345,11 +349,12 @@
           }
           .form-kana{
             display: flex;
+            margin-top:5px;
             .kana-second{
               margin-left:12px;
             }
             .kana-form{
-              width: 151px;
+              width: 161px;
               height: 50px;
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
@@ -365,8 +370,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -379,7 +384,7 @@
             }
             select{
               height: 46px;
-              width: 70px;
+              width: 93px;
               padding: 0 10px;
             }
           }
@@ -390,11 +395,12 @@
           margin-top: 45px;
           .register-btn{
             width: 341px;
-            background-color: #ea352d;
+            background-color: #3CCACE;
             color: white;
-            border: solid 1px #ea352d;
+            border: solid 1px #3CCACE;
             border-radius: 2px;
             padding: 10px 16px 8px 16px;
+            height: 45px;
           }
         }
       }
@@ -439,8 +445,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -459,6 +465,7 @@
               border-radius: 4px;
               border: solid 1px #ccc;
               margin-right: 10px;
+              margin-top: 5px;
             }
           }
           .form-group-kana{
@@ -468,9 +475,6 @@
           }
           .form-kana{
             display: flex;
-            .kana-myouzi{
-              // margin-right: 10px;
-            }
             .kana-form{
               margin-right: 10px;
               width: 150px;
@@ -478,6 +482,7 @@
               padding: 10px 16px 8px 16px;
               border-radius: 4px;
               border: solid 1px #ccc;
+              margin-top: 5px;
             }
             .kana-name{
               margin-left: 5px;
@@ -495,8 +500,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -522,8 +527,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -533,6 +538,7 @@
             display: block;
             width: 338px;
             height: 50px;
+            margin-top: 5px;
           }
           .form-city{
             width: 314px;
@@ -544,7 +550,7 @@
               font-size: 14px;
             }
             span{
-              background-color: #ea352d;
+              background-color: #3CCACE;
               margin: 0 0 0 8px;
               border-radius: 2px;
               color: white;
@@ -565,7 +571,7 @@
           }
           span{
             background-color: #ccc;
-            margin: 0 0 0 8px;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -593,7 +599,7 @@
           }
           span{
             background-color: #ccc;
-            margin: 0 0 0 8px;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -614,9 +620,9 @@
           margin-top: 50px;
           margin: 0 auto;
           .register-btn{
-            background-color: #ea352d;
+            background-color: #3CCACE;
             color: white;
-            border: 1px solid #ea352d;
+            border: 1px solid #3CCACE;
             width: 341px;
             height: 48px;
             line-height: 48px;
@@ -629,18 +635,19 @@
 }
 
 
+
 .telephone-single-container{
   background-color: #f5f5f5;
-  .header{
-    height: 128px;
-    background-color: red;
-  }
+  height: 100vh;
   .Telephone-information{
     padding-top: 30px;
+    // width: 100vw;
+    // height: 100vh;
     .telephone-l-single{
       width:700px;
       margin: 0 auto;
       background-color: white;
+      // height: 600px;
       h2{
         text-align: center;
         padding: 32px;
@@ -665,8 +672,8 @@
             font-size: 14px;
           }
           span{
-            background-color: #ea352d;
-            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            margin-bottom: 5px;
             border-radius: 2px;
             color: white;
             font-size: 12px;
@@ -679,6 +686,7 @@
             border: solid 1px #ccc;
             border-radius: 4px;
             padding: 10px 16px 8px 16px;
+            margin-top: 5px;
           }
           p{
             margin-top: 8px;
@@ -688,9 +696,9 @@
           .telephone-btn{
             width: 341px;
             height: 48px;
-            background-color: #ea352d;
+            background-color: #3CCACE;
             color: white;
-            border: solid 1px #ea352d;
+            border: solid 1px #3CCACE;
             margin-top: 30px;
           }
         }
@@ -698,6 +706,7 @@
     }
   }
 }
+
 
 
   .Complete-info{
@@ -733,10 +742,10 @@
           display: block;
           width: 341px;
           height: 48px;
-          background-color: #ea352d;
+          background-color: #3CCACE;
           border-radius: 4px;
           color: white;
-          border: solid 1px #ea352d;
+          border: solid 1px #3CCACE;
           margin-top: 30px;
           text-decoration: none;
           text-align: center;
@@ -745,6 +754,7 @@
       }
     }
   }
+
 
 
 .Login-main{
