@@ -30,12 +30,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :mypage, only: [:index] do
+  resources :mypage, only: [:index, :edit, :update] do
     collection do
       get 'logout', to: 'mypage#logout'
       get 'ausstellen', to: 'mypage#ausstellen'
       get 'deal', to: 'mypage#deal'
       get 'verkauf', to: 'mypage#verkauf'
+      get 'profile', to: 'mypage#profile'
+      get 'person', to: 'mypage#person'
+      get 'addressconfirmation', to: 'mypage#addressconfirmation'
     end
   end
 

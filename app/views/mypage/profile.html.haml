@@ -1,0 +1,17 @@
+= render partial: 'shared/shared_2/header-top'
+.mypageContents
+  = render partial: 'mypage/side-bar'
+  .profilecontents
+    %h2プロフィール
+    .profile-back
+      = form_with do |form|
+        .profile-picture
+          .nickname_form
+            =form.text_field :nickname, class: "nickname-form", placeholder: "ニックネーム", value: current_user.nickname
+          .profile-text
+            =form.text_area :text, class: "nickname-text", placeholder: "例）こんにちは⭐︎ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に９号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ"
+          .profile_btn
+            =form.submit "変更する", class: "profile-btn"
+
+
+= render partial: "shared/shared_2/footer-top"
