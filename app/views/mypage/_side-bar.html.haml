@@ -47,7 +47,7 @@
         プロフィール
         = icon('fas', 'angle-right')
     %li 
-      =link_to addressconfirmation_mypage_index_path do
+      =link_to edit_mypage_path(current_user.address.id) do
         発送元・住所の変更
         = icon('fas', 'angle-right')
     %li 

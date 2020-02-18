@@ -3,7 +3,7 @@
   = render partial: 'mypage/side-bar'
   .confirmationContents
     %h2発送元・住所の変更
-    = form_with  do |form|
+    = form_with model: @address, local: true do |form|
       .confirmationContent
         .send_name_contents
           %label送付者名前
