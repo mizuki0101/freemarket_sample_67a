@@ -42,7 +42,7 @@ body {
   background-color: white;
   height: 100px;
   width: 100%;
-  padding: 10px 250px;
+  padding: 10px 350px;
   &__box {
     height: 50px;
     width: 100%;
@@ -61,12 +61,12 @@ body {
     }
     &__search {
       height: 40px;
-      width: 800px;
+      width: 600px;
       display: flex;
       justify-content: center;
       &__form {
         height: 30px;
-        width: 730px;
+        width: 530px;
         margin-left: 30px;
         font-size: 15px;
       }
