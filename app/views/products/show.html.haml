@@ -70,18 +70,21 @@
         -else
           .content-detail__form__price__item__delivery-price
             着払い    
-    - if user_signed_in? && current_user.id == @product.saler_id
-      = link_to "編集画面にすすむ", edit_product_path, class: "content-detail__form__edit-btn"
-      = link_to "商品を削除する", @product, method: :delete, class: "content-detail__form__destroy"
+    - if user_signed_in?
+      - if current_user.id == @product.saler_id
+        = link_to "編集画面にすすむ", edit_product_path, class: "content-detail__form__edit-btn"
+        = link_to "商品を削除する", @product, method: :delete, class: "content-detail__form__destroy"
+      - else
+        -if @product.buyer_id.present?
+          .content-detail__form__sold-btn
+            売り切れました
+        -else
+          - if @card.present?
+            = link_to "購入画面にすすむ",paycheck_product_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
+          - else
+            = link_to "支払い情報を登録をしてください",new_card_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
     - else
-      -if @product.buyer_id.present?
-        .content-detail__form__sold-btn
-          売り切れました
-      -else
-        - if @card.present?
-          = link_to "購入画面にすすむ",paycheck_product_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
-        - else
-          = link_to "支払い情報を登録をしてください",new_card_path, class: 'content-detail__form__bay-btn',data: {"turbolinks"=>false}
+      = link_to "ログインしてください", login_signups_path, class: "content-detail__form__destroy"
     .content-detail__form__description
       = @product.description
     .content-detail__form__icon
