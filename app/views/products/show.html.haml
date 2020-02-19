@@ -85,8 +85,15 @@
     .content-detail__form__description
       = @product.description
     .content-detail__form__icon
-      .content-detail__form__icon__like
-        ♡ いいね! 0
+      .content-detail__form__icon__like.like
+        %a いいね！
+        - if @product.like?(current_user)
+          %i.fa.fa-heart.heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+        - else
+          %i.fa.fa-heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+        %a#likes-count
+          = @product.likes.length
+
       .content-detail__form__icon__report
         不適切な商品の報告
   .content-detail__comment
@@ -97,3 +104,47 @@
       コメントする
   
 = render partial: "shared/shared_2/footer-top"
+
+:javascript
+    $(function() {
+      $(document).on("click","i",function() {
+        var product = $(this).data("ids-product");
+        var user = $(this).data("ids-user");
+        let count = $('#likes-count').text().trim();
+        console.log(+count + 1);
+        if($(this).hasClass('heart')){
+          $.ajax({
+          type: 'DELETE',
+          url: `/likes/${product}`,
+          data: {product_id: product, user_id: user},
+          dataType: 'json'
+        })
+        .done(function(){
+          console.log('成功');
+          $('.fa-heart').removeClass('heart');
+          $('#likes-count').empty();
+          $('#likes-count').append(+count - 1);
+        })
+        .fail(function(){
+          console.log('失敗');
+        });
+        }else{
+          $.ajax({
+          type: 'POST',
+          url: "/likes",
+          data: {product_id: product},
+          dataType: 'json'
+          })
+        .done(function(){
+          console.log('成功');
+          $('.fa-heart').addClass('heart');
+          $('#likes-count').empty();
+          $('#likes-count').append(+count + 1);
+        })
+        .fail(function(){
+          console.log('失敗');
+        });
+        }
+      });
+    });
+

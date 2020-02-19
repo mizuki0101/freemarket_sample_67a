@@ -22,14 +22,14 @@ Rails.application.routes.draw do
       get 'login'
     end
   end
-
+  
   resources :card, only: [:new, :show, :index] do
     collection do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
   end
-
+  
   resources :mypage, only: [:index, :edit, :update] do
     collection do
       get 'logout', to: 'mypage#logout'
@@ -41,5 +41,6 @@ Rails.application.routes.draw do
       get 'addressconfirmation', to: 'mypage#addressconfirmation'
     end
   end
-
+  resources :likes, only: [:create, :destroy, :index], defaults: { format: 'json'}
+  
 end
