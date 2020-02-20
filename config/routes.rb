@@ -21,7 +21,6 @@ Rails.application.routes.draw do
       get 'member'
       post 'address'
       post 'telephone'
-      get 'login'
     end
   end
   
