@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
     @category = Category.find(@product.categories_id)
     @shopping = Shippingcharges.find(@product.shopping_charge_id)
     @delivery_date = Delivarydate.find(@product.delivery_date_id)
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
+    # @product = Product.find(params[:id])
   end  
 
   def new

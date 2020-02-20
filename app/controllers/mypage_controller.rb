@@ -4,6 +4,7 @@ class MypageController < ApplicationController
   end
 
   def ausstellen
+    @products = Product.where(saler_id: current_user.id)
   end
 
   def deal

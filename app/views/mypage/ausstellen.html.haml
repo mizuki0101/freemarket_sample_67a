@@ -1,10 +1,16 @@
 = render partial: 'shared/shared_2/header-top'
 .mypageContents
-  = render partial: 'mypage/side-bar'
-  .ausstallencontents
-    .aaa
-      = link_to ausstellen_mypage_index_path, class: "waren" do
-        %p出品中
-    .sss
+  .mypageContent
+    = render partial: 'mypage/side-bar'
+    .ausstallencontents
+      .aaa
+        = link_to ausstellen_mypage_index_path, class: "waren" do
+          %p出品中
+      .sss
+        .item
+          - if @products.exists?
+            - @products.each do |product|
+              %p= product.name
+              %p= image_tag product.images[0].src.url, class: 'status-mini-image', size: '100x100'
 
 = render partial: "shared/shared_2/footer-top"

@@ -3,27 +3,28 @@
   - breadcrumb :mypage
   = render "layouts/breadcrumbs"
 .mypageContents
-  = render partial: 'mypage/side-bar'
-  .mypage
-    .myphoto
-      .exhibition
-        =link_to profile_mypage_index_path, class: "user-nickname" do
-          = current_user.nickname
-        出品数 :
-        -# %q.length-conunt= current_user.products.length
-    .news-doing
-      =link_to '#', class: "news-contents" do
-        ニュース
-      =link_to '#', class: "news-contents" do
-        やることリスト
-    .buyed-contents
-      .product-content
-        %h2購入した商品
-        .item-doing
-          =link_to '#', class: "kaufen-contents" do
-            取引中
-          =link_to '#', class: "kaufen-contents" do
-            過去の取引
+  .mypageContent
+    = render partial: 'mypage/side-bar'
+    .mypage
+      .myphoto
+        .exhibition
+          =link_to profile_mypage_index_path, class: "user-nickname" do
+            = current_user.nickname
+          出品数 :
+          -# %q.length-conunt= current_user.products.length
+      .news-doing
+        =link_to '#', class: "news-contents" do
+          ニュース
+        =link_to '#', class: "news-contents" do
+          やることリスト
+      .buyed-contents
+        .product-content
+          %h2購入した商品
+          .item-doing
+            =link_to '#', class: "kaufen-contents" do
+              取引中
+            =link_to '#', class: "kaufen-contents" do
+              過去の取引
 
 
 = render partial: "shared/shared_2/footer-top"
