@@ -35,7 +35,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.saler_id = current_user.id
-    binding.pry
     begin 
       @product.save!
       redirect_to root_path
@@ -44,16 +43,9 @@ class ProductsController < ApplicationController
       session[:error] = @product.errors.full_messages
       redirect_to new_product_path
     end
-    # if @product.save
-    #   redirect_to root_path
-    # else
-    #   session[:error] = @product.errors.full_messages
-    #   redirect_to new_product_path
-    # end
   end
 
   def edit
-    # binding.pry
     @productCategory = Category.find(@product.categories_id)
     @childCategory = @productCategory.parent
     @rootCategory = @productCategory.root
