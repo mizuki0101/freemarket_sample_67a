@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 2020_02_18_122355) do
-=======
-ActiveRecord::Schema.define(version: 2020_02_19_014303) do
->>>>>>> Stashed changes
+ActiveRecord::Schema.define(version: 2020_02_20_042212) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postnumber", null: false
@@ -62,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_014303) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "product_id"
+    t.text "croped_image", limit: 4294967295
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 

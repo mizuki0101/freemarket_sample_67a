@@ -33,15 +33,25 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.saler_id = current_user.id
-    if @product.save
+    binding.pry
+    begin 
+      @product.save!
       redirect_to root_path
-    else
+    rescue => e
+      p e
       session[:error] = @product.errors.full_messages
       redirect_to new_product_path
     end
+    # if @product.save
+    #   redirect_to root_path
+    # else
+    #   session[:error] = @product.errors.full_messages
+    #   redirect_to new_product_path
+    # end
   end
 
   def edit
+    # binding.pry
     @productCategory = Category.find(@product.categories_id)
     @childCategory = @productCategory.parent
     @rootCategory = @productCategory.root
@@ -132,7 +142,7 @@ class ProductsController < ApplicationController
 
   
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id,:bland, images_attributes: [:src, :_destroy, :id])
+    params.require(:product).permit(:name, :price, :description, :status_id, :delivery_date_id, :shopping_charge_id,:categories_id, :prefecture_id,:bland, images_attributes: [:src, :_destroy, :id,:croped_image])
   end
 
   def set_product

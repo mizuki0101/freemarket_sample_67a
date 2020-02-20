@@ -499,7 +499,32 @@ label{
 .js-file_group:not(:last-child){
   display:none;
 }
+.modal{
+  position: fixed;
+  left:30%;
+  z-index: 2;
+  background-color: #f1f1f1;
+  border: 3px solid gray;
+  border-radius: 4px;
+  padding:20px;
+  height: 400px;
+  img#imageModal{
+    height: 350px;
+  }
+}
 
+
+.modalbg{
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 3;
+  top:0;
+  left:0;
+}
 .redheart {
   color: red;
 }

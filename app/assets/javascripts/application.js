@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require rails-ujs
+//= require cropper.min.js
+//= require jquery-cropper.min.js
 //= require activestorage
 //= require turbolinks
 //= require_tree .

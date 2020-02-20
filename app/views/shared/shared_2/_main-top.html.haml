@@ -84,7 +84,10 @@
         - @products.each do |product|
           = link_to product_path(product), data: {"turbolinks" => false} do
             .content5__main1__picture__image__content
-              = image_tag product.images[0].src.url, height: "150px", width: "150px"
+              -if product.images[0].croped_image.blank?
+                = image_tag product.images[0].src.url, height: "150px", width: "150px"
+              -else 
+                = image_tag product.images[0].croped_image, height: "150px", width: "150px"
               .content5__main1__picture__image__form  
                 .content5__main1__picture__image__form__name
                   = product.name
