@@ -13,6 +13,12 @@ class Product < ApplicationRecord
   validates :images,:name,:price,:description,:status_id,:delivery_date_id,:prefecture_id,:shopping_charge_id,:categories_id,:saler_id,presence: true
   validates :categories_id, numericality: { only_integer: true}
 
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
+  
   def like?(user)
     like_users.include?(user)
   end

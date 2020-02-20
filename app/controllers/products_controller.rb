@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :set_card, only: [:paycheck, :pay, :show]
-
   require "payjp"
 
   def index
@@ -119,6 +118,10 @@ class ProductsController < ApplicationController
   @product_buyer= Product.find(params[:id])
   @product_buyer.update( buyer_id: current_user.id)
   redirect_to root_path
+  end
+
+  def search
+    @products = Product.search(params[:keyword]).order('created_at DESC').limit(5)
   end
 
   private
