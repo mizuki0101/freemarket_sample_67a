@@ -17,8 +17,7 @@ $(function(){
     focusOnSelect: true,
     centerMode: false,
     centerPadding: 0,
-    fade: false,   
-    
+    fade: false,
   }); 
   $('.slick-thumbnail').on('turbolinks:load',function(){
     var index = $(this).attr("data-index");

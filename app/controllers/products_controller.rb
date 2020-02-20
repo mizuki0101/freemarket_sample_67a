@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   require "payjp"
 
   def index
-    @products = Product.includes(:images).order('created_at DESC').limit(5)
+    @products = Product.includes(:images).order('created_at DESC').limit(10)
   end
   def show
     @saler_user = User.find(@product.saler_id)
