@@ -65,7 +65,10 @@
           = @current_user.family_name
           = @current_user.first_name
       .purchase-content__info__purchase-btn
-      = form_tag(action: :pay, method: :post) do
-        %button.purchase-content__info__purchase-btn__box 購入する
+      = form_with method: :post, url:pay_product_path, local: true do |f|
+        = f.submit '購入する', class: "purchase-content__info__purchase-btn__box"
+      -# = form_tag(action: :pay, method: :post) do
+      -#   %button.purchase-content__info__purchase-btn__box 購入する
 
   = render partial: "shared/shared_1/footer"
+
