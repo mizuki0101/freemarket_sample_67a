@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  before_action :set_card, only: [:paycheck, :pay, :show]
+  before_action :set_card, only: [:paycheck, :pay]
   require "payjp"
 
   def index
@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
     @delivery_date = Delivarydate.find(@product.delivery_date_id)
     @comment = Comment.new
     @comments = @product.comments.includes(:user)
-    # @product = Product.find(params[:id])
+    if user_signed_in?
+      set_card
+    end
   end  
 
   def new
