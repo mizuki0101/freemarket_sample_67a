@@ -9,7 +9,6 @@ $(document).on('turbolinks:load', ()=> {
   $(function(){
     let btn = $('.news-contents');
     btn.click(function(e) {
-      console.log('aaa');
       e.preventDefault();
       btn.removeClass('white');
       $(this).addClass('white');
@@ -29,12 +28,5 @@ $(document).on('turbolinks:load', ()=> {
       btn2.removeClass('rrr');
       $(this).addClass('rrr');
     });
-
-    // let btn3 = $('li');
-    // btn3.click(function(e) {
-    //   e.preventDefault();
-    //   btn3.removeClass('uuu')
-    //   $(this).addClass('uuu')
-    // })
   });
 });

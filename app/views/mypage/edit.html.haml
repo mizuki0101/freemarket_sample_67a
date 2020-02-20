@@ -1,40 +1,41 @@
 = render partial: 'shared/shared_2/header-top'
 .mypageContents
-  = render partial: 'mypage/side-bar'
-  .confirmationContents
-    %h2発送元・住所の変更
-    = form_with model: @address, url: mypage_path, method: :patch, local: true do |form|
-      .confirmationContent
-        .send_name_contents
-          %label送付者名前
-          .name_form
-            .send_family_name_content
-              =form.text_field :send_family_name, class: "send_family_form", placeholder: "例）長浜", value: current_user.address.send_family_name
-              =form.text_field :send_first_name, class: "send_first_form", placeholder: "例）一矢", value: current_user.address.send_first_name
-        .send_name_contents_kana
-          %label送付者名前カナ
-          .name_form
-            .send_family_name_content_kana
-              =form.text_field :send_family_name_kana, class: "send_family_form_kana", placeholder: "例）ナガハマ", value: current_user.address.send_family_name_kana
-              =form.text_field :send_first_name_kana, class: "send_first_form_kana", placeholder: "例）カズヤ", value: current_user.address.send_first_name_kana
-        .postnumber_contents
-          %label郵便番号
-          .postnumber_content
-            =form.text_field :postnumber, class: "postnumber_form", placeholder: "例）111-2222", value: current_user.address.postnumber
-        .prefecture_contents
-          %label都道府県
-          .prefecture_content
-            = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" }, class: "active-hash", value: current_user.address.prefecture.name
-        .city_contents
-          %label市町村
-          .city_content
-            =form.text_field :city, class: "city_form", placeholder: "名古屋市", value: current_user.address.city
-        .housenumber_contents
-          %label番地
-          .housenumber_content
-            =form.text_field :house_number, class: "housenumber_form", placeholder: "番地", value: current_user.address.house_number
-        .change_btn
-          = form.submit "変更する", class: "change-btn"
+  .mypageContent
+    = render partial: 'mypage/side-bar'
+    .confirmationContents
+      %h2発送元・住所の変更
+      = form_with model: @address, url: mypage_path, method: :patch, local: true do |form|
+        .confirmationContent
+          .send_name_contents
+            %label送付者名前
+            .name_form
+              .send_family_name_content
+                =form.text_field :send_family_name, class: "send_family_form", placeholder: "例）長浜", value: current_user.address.send_family_name
+                =form.text_field :send_first_name, class: "send_first_form", placeholder: "例）一矢", value: current_user.address.send_first_name
+          .send_name_contents_kana
+            %label送付者名前カナ
+            .name_form
+              .send_family_name_content_kana
+                =form.text_field :send_family_name_kana, class: "send_family_form_kana", placeholder: "例）ナガハマ", value: current_user.address.send_family_name_kana
+                =form.text_field :send_first_name_kana, class: "send_first_form_kana", placeholder: "例）カズヤ", value: current_user.address.send_first_name_kana
+          .postnumber_contents
+            %label郵便番号
+            .postnumber_content
+              =form.text_field :postnumber, class: "postnumber_form", placeholder: "例）111-2222", value: current_user.address.postnumber
+          .prefecture_contents
+            %label都道府県
+            .prefecture_content
+              = form.collection_select :prefecture_id, Prefecture.all, :id, :name, { :prompt => "選択してください" }, class: "active-hash", value: current_user.address.prefecture.name
+          .city_contents
+            %label市町村
+            .city_content
+              =form.text_field :city, class: "city_form", placeholder: "名古屋市", value: current_user.address.city
+          .housenumber_contents
+            %label番地
+            .housenumber_content
+              =form.text_field :house_number, class: "housenumber_form", placeholder: "番地", value: current_user.address.house_number
+          .change_btn
+            = form.submit "変更する", class: "change-btn"
 
 
 

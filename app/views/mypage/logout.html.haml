@@ -3,11 +3,12 @@
   - breadcrumb :logout
   = render "layouts/breadcrumbs"
 .Mypage-logout
-  = render partial: 'mypage/side-bar'
-  .logout-contents
-    .logout-content
-      .logout-form
-        .logout-btn
-          = link_to destroy_user_session_path, method: :delete do
-            ログアウト
+  .mypage-logout
+    = render partial: 'mypage/side-bar'
+    .logout-contents
+      .logout-content
+        .logout-form
+          .logout-btn
+            = link_to destroy_user_session_path, method: :delete do
+              ログアウト
 = render partial: "shared/shared_2/footer-top"

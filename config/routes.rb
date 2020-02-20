@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'paycheck'
       post'pay'
     end
+    resources :comments, only: :create
   end
   resources :signups, only: [:new, :create] do
     collection do

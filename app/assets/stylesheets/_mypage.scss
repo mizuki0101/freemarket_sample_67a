@@ -3,6 +3,13 @@
 .mypageContents{
   display: flex;
   background-color: #f5f5f5;
+  // width: 700px;
+  // margin: 0 auto;
+  .mypageContent{
+    display: flex;
+    width: 1300px;
+    margin: 0 auto;
+  }
   ul{
     width: 350px;
     li{
@@ -18,6 +25,7 @@
           float: right;
           line-height: 14px;
           font-size: 20px;
+          color: #ccc;
         }
       }
     }
@@ -26,11 +34,11 @@
     // }
     li:hover{
       background-color: lightgray;
-      // margin-left: -5px;
-      i:hover{
-        margin-right: -5px;
-      }
+      .fa-angle-right{
+        color: #000000;
+        margin-right: -9px;
     }
+  }
     .page{
       background-color: #eee;
       font-weight: 600;
@@ -175,6 +183,11 @@
 .Mypage-logout{
   background-color: #f5f5f5;
   display: flex;
+  .mypage-logout{
+    display: flex;
+    width: 1300px;
+    margin: 0 auto;
+  }
   .logout-contents{
     padding-top:100px;
     .logout-content{
@@ -194,7 +207,7 @@
       .logout-btn{
         width: 320px;
         height: 50px;
-        background-color: red;
+        background-color: #00e0d5;
         margin: 0 auto;
         a{
           text-align: center;
@@ -254,6 +267,14 @@
   // background-image: image-url('logo/logo.png');
   // background-repeat: no-repeat;
   // background-size: inherit;
+  .item{
+    width: 350px;
+    margin: 0 auto;
+    p{
+      text-align: center;
+    }
+
+  }
 }
 
 .profileContents{
