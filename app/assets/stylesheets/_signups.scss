@@ -41,6 +41,9 @@
         margin-top: -5px;
         margin-bottom: 5px;
       }
+      .comp{
+        color: red;
+      }
       .circle{
         width: 10px;
         height: 10px;
@@ -88,6 +91,42 @@
         background: red;
         margin-bottom: 18px;
       }
+      .last::after{
+        position: absolute;
+        bottom: 4px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: red;
+        margin-bottom: 18px;
+      }
+      .tele::after{
+        position: absolute;
+        bottom: 4px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: red;
+        margin-bottom: 18px;
+      }
+      .com::after{
+        position: absolute;
+        bottom: 4px;
+        z-index: -1;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: red;
+        margin-bottom: 18px;
+      }
+      .com{
+        background-color: red;
+      }
       .red{
         background-color: red;
       }
@@ -101,6 +140,12 @@
         background-color: red;
       }
       .last{
+        background-color: red;
+      }
+      .fff{
+        background-color: red;
+      }
+      .orange{
         background-color: red;
       }
     }

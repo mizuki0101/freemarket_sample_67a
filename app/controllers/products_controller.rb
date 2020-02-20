@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy,:show, :paycheck, :pay]
   before_action :set_categories, only: [:new, :create, :edit, :update]
-  before_action :set_card, only: [:paycheck, :pay, :show]
+  before_action :set_card, only: [:paycheck, :pay]
   require "payjp"
 
   def index
@@ -12,6 +12,11 @@ class ProductsController < ApplicationController
     @category = Category.find(@product.categories_id)
     @shopping = Shippingcharges.find(@product.shopping_charge_id)
     @delivery_date = Delivarydate.find(@product.delivery_date_id)
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
+    if user_signed_in?
+      set_card
+    end
   end  
 
   def new
@@ -33,7 +38,8 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      session[:error] = @product.errors.full_messages
+      redirect_to new_product_path
     end
   end
 

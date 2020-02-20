@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
+  has_many :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :delivarydate

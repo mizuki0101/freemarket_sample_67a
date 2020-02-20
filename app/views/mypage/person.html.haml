@@ -1,33 +1,34 @@
 = render partial: 'shared/shared_2/header-top'
 .mypageContents
-  = render partial: 'mypage/side-bar'
-  .profileContents
-    %h2本人情報
-    .personcontent
-      %pお客様の本人情報をご確認ください。
-      %p.document登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-      = link_to '#' do
-        本人確認書類のアップロードについて
-        = icon('fas', 'angle-right')
-    .profileContent
-      .name_contents
-        %labelお名前
-        .name_content
-          %p.family= current_user.family_name
-          %p.first=current_user.first_name
-      .name_kana_contents
-        %labelお名前カナ
-        .name_kana_content
-          %p= current_user.family_name_kana
-          %p.first_kana= current_user.first_name_kana
-      .birthday_contents
-        %label生年月日
-        .birthday_content
-          %p= current_user.birth_year
-          %p年
-          %p.birthmonth= current_user.birth_month
-          %p月
-          %p.birthdate= current_user.birth_date
-          %p日
+  .mypageContent
+    = render partial: 'mypage/side-bar'
+    .profileContents
+      %h2本人情報
+      .personcontent
+        %pお客様の本人情報をご確認ください。
+        %p.document登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        = link_to '#' do
+          本人確認書類のアップロードについて
+          = icon('fas', 'angle-right')
+      .profileContent
+        .name_contents
+          %labelお名前
+          .name_content
+            %p.family= current_user.family_name
+            %p.first=current_user.first_name
+        .name_kana_contents
+          %labelお名前カナ
+          .name_kana_content
+            %p= current_user.family_name_kana
+            %p.first_kana= current_user.first_name_kana
+        .birthday_contents
+          %label生年月日
+          .birthday_content
+            %p= current_user.birth_year
+            %p年
+            %p.birthmonth= current_user.birth_month
+            %p月
+            %p.birthdate= current_user.birth_date
+            %p日
 
 = render partial: "shared/shared_2/footer-top"

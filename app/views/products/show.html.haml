@@ -90,21 +90,44 @@
     .content-detail__form__icon
       .content-detail__form__icon__like.like
         %a いいね！
-        - if @product.like?(current_user)
-          %i.fa.fa-heart.heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+        - if user_signed_in?
+          - if @product.like?(current_user)
+            %i.fa.fa-heart.heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+          - else
+            %i.fa.fa-heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+          %a#likes-count
+            = @product.likes.length
         - else
-          %i.fa.fa-heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
-        %a#likes-count
-          = @product.likes.length
+          - if @product.likes.length > 0
+            %i.fa.fa-heart.heart
+            = @product.likes.length
+          - else
+            %i.fa.fa-heart
+            = @product.likes.length
 
       .content-detail__form__icon__report
         不適切な商品の報告
+    .comments
+      %h4 < コメント一覧 >
+      .comment
+        -if @comments
+          -@comments.reverse.each do |comment|
+            .comment-name
+              =link_to comment.user.nickname 
+              %p :
+              %p.product-comment=comment.text
   .content-detail__comment
-    .content-detail__comment__danger
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
-    .content-detail__comment__form  
-    .content-detail__comment__btn  
-      コメントする
+    -if current_user
+      = form_with model: @comment, id: "new-form", url: product_comments_path(@product), method: :post, local: true do |form|
+        .content-detail__comment__danger
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+        .content-detail__comment__form
+          =form.text_area :text, placeholder: "例）こんばんは！  こちらの商品は大変素晴らしいと思ったのですが、、、価格と釣り合っていないように思われます！！  もしかしたら他の方が不快感を覚えるかもしれないので（僕は思わないですけど、、）、取り下げられた方が良いのではないかと愚考します。", class: "comment-area", id: "area"  
+        .content-detail__comment__btn  
+          =form.submit "コメントする", class: "comment-btn", id: "btn"
+        -# -binding.pry
+    -else
+      %p※※ コメントの投稿には新規登録/ログインが必要です ※※
   
 = render partial: "shared/shared_2/footer-top"
 
