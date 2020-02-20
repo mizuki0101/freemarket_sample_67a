@@ -96,12 +96,20 @@
     .content-detail__form__icon
       .content-detail__form__icon__like.like
         %a いいね！
-        - if @product.like?(current_user)
-          %i.fa.fa-heart.heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+        - if user_signed_in?
+          - if @product.like?(current_user)
+            %i.fa.fa-heart.heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+          - else
+            %i.fa.fa-heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
+          %a#likes-count
+            = @product.likes.length
         - else
-          %i.fa.fa-heart{data:{ids:{"product": @product.id,"user": current_user.id}}}
-        %a#likes-count
-          = @product.likes.length
+          - if @product.likes.length > 0
+            %i.fa.fa-heart.heart
+            = @product.likes.length
+          - else
+            %i.fa.fa-heart
+            = @product.likes.length
 
       .content-detail__form__icon__report
         不適切な商品の報告
@@ -112,8 +120,9 @@
           -@comments.reverse.each do |comment|
             .comment-name
               =link_to comment.user.nickname 
-              %p :
-              %p.product-comment=comment.text
+              -# %p :
+              .baloon-left
+                %p.product-comment=comment.text
   .content-detail__comment
     -if current_user
       = form_with model: @comment, id: "new-form", url: product_comments_path(@product), method: :post, local: true do |form|
