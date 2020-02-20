@@ -7,6 +7,7 @@ class User < ApplicationRecord
          has_one :address, dependent: :destroy
          has_one :user
          has_many :products
+         has_many :likes, dependent: :destroy
 
          VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
          PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
