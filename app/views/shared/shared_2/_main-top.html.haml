@@ -93,7 +93,7 @@
                     ¥
                     = product.price
                   .content5__main1__picture__image__form__box__like
-                    ☆1
+                    = product.likes.length
               -if product.buyer_id.present? 
                 .products-box_photo__sold
                   .products-box_photo__sold__inner
