@@ -13,7 +13,7 @@
         .credit-content__create__info__show
           .credit-content__create__info__show__label
             .credit-content__create__info__show__label__left
-              = image_tag "credit/mastercard.svg", height: 20, width: 30
+              = image_tag "credit/#{@default_card_information.brand.downcase}.svg", height: 20, width: 30
             .credit-content__create__info__show__label__right
               -# = link_to "削除する", delete_card_index_path, class: 'credit-content__create__info__show__label__right-ーbtn' 
               = form_with method: :post, url:delete_card_index_path, name: "charge-form", id: 'charge-form', local: true do |f|
