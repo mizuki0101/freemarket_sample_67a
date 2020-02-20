@@ -28,7 +28,7 @@
                   またはクリックしてファイルをアップロード
                 = file_field_tag "product_images_attributes_#{@product.images.count}_src", name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
         = f.fields_for :images do |image|
-          .drop-zone.input-box{:style => "display:none;"}
+          .drop-zone{:style => "display:none;"}
             .js-file_group{"data-index" => "#{image.index}"}
               %label{:for => "product_images_attributes_#{image.index}_src"}
                 %p
