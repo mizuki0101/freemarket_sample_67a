@@ -378,11 +378,12 @@ body {
 }
 
 .content5 {
+  box-sizing: border-box;
   background-color: #f0f0f0;
-  height: 800px;
+  height: 700px;
   width: 100%;
-  &__main1 {
-    height: 400px;
+  &__main {
+    height: 700px;
     &__title {
       height: 100px;
       white-space: pre;
@@ -392,16 +393,18 @@ body {
       font-weight: bold;
     }
     &__picture {
-      height: 250px;
+      height: 570px;
       padding: 0 255px;
+      width: 100%;
       a {
         text-decoration: none;
-        color: black;
+        margin-bottom: 50px;
       }
       &__image {
-        width: 150px;
         height: 220px;
-        display: inline-flex;
+        display: flex;
+        flex-wrap: wrap;
+        
         &__content {
           height: 150px;
           width: 150px;
@@ -411,13 +414,16 @@ body {
           position: relative;
         }
         &__form {
+          color: #666666;
+          padding: 0 10px;
           width: 150px;
-          height: 70px;
+          height: 60px;
           background-color: white;
           box-shadow: 2px 2px 10px gray;
+          
           &__name {
             font-size: 20px;
-            height: 45px;
+            height: 35px;
             overflow: hidden;
             p {
               display: -webkit-box;
@@ -428,6 +434,7 @@ body {
           &__box {
             height: 25px;   
             background-color: white;
+            padding-bottom: 5px;
             &__price {
               font-size: 20px;
               float: left;
@@ -439,132 +446,9 @@ body {
           }
         }  
       }
-      &__image2 {
-        background-image: image-url("icon/a004.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image3 {
-        background-image: image-url("icon/a001.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
     }
   }
-  &__main2 {
-    height: 400px;
-    &__title {
-      height: 100px;
-      white-space: pre;
-      text-align: center;
-      font-size: 25px;
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
-    &__picture {
-      height: 250px;
-      display: flex;
-      justify-content: space-around;
-      padding: 0 150px;
-      &__image1 {
-        background-image: image-url("icon/a007.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image2 {
-        background-image: image-url("icon/a004.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-      &__image3 {
-        background-image: image-url("icon/a001.png");
-        background-size: 150px 150px;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 220px;
-        background-color: white;
-        &__content {
-          height: 80px;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 140px;
-          &__form {
-            font-size: 20px;
-            white-space: pre;
-          }
-          &__like {
-            padding-top: 50px;
-          }
-        }       
-      }
-    }
-  }    
 }
-
 .banner {
   box-sizing: border-box;
   height: 360px;
