@@ -131,7 +131,7 @@ class ProductsController < ApplicationController
     customer:  @card.customer_id,
     currency: 'jpy'
   )
-  @product_buyer= Product.find(params[:id])
+  @product_buyer = Product.find(params[:id])
   @product_buyer.update( buyer_id: current_user.id)
   redirect_to root_path
   end
