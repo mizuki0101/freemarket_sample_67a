@@ -2,9 +2,9 @@
   .header__box
     .header__box__title
     = link_to image_tag("logo/logo.png", width: "150px", height: "40px"), root_path
-    .header__box__search
-      %input{ class: 'header__box__search__form', placeholder: 'キーワードから探す' }
-      %a{type: "button", class: "header__box__search__btn", link_to: "#"}
+    = form_with(url: search_products_path, local: true, method: :get, class: "header__box__search") do |form|
+      = form.text_field :keyword, class: 'header__box__search__form', placeholder: 'キーワードから探す'
+      = form.submit "", class: "header__box__search__btn"
   .header__box2
     .header__box2__tab
       = render partial: 'products/category-drop'
