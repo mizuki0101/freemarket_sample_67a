@@ -38,12 +38,14 @@
                 = image.file_field :src, class: 'js-file'
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             %br/
-      .field_with_errors.image-error
-        - if @product.errors.any?
-          %ul
-            - @product.errors.full_messages_for(:images).each do |message|
-              %li.error 
-                = message
+      .field_with_errors
+        - if session[:error].present?
+          %ul.errors
+            - session[:error].each do |e|
+              - if e.include?("src")
+                %li.error 
+                  画像がありません
+          
     .section
       .form
         %label 
@@ -52,11 +54,12 @@
             必須
         = f.text_field :name,{:type => "text",:placeholder => "商品名（必須 40文字まで)"}
         .field_with_errors
-          - if @product.errors.any?
-            %ul
-              - @product.errors.full_messages_for(:name).each do |message|
-                %li.error 
-                  = message
+          - if session[:error].present?
+            %ul.errors
+              - session[:error].each do |e|
+                - if e.include?("名前")
+                  %li.error 
+                    商品名がありません
         .form__group
           %label 
             商品の説明
@@ -64,11 +67,12 @@
               必須
           = f.text_area :description,{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
           .field_with_errors
-            - if @product.errors.any?
-              %ul
-                - @product.errors.full_messages_for(:description).each do |message|
-                  %li.error 
-                    = message
+            - if session[:error].present?
+              %ul.errors
+                - session[:error].each do |e|
+                  - if e.include?("説明")
+                    %li.error 
+                      説明がありません
     .section
       .select.clearfix
         %h3 商品の詳細
@@ -94,11 +98,12 @@
                   %i.fa.fa-chevron-down
                   = f.select :categories_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
           .field_with_errors
-            - if @product.errors.any?
-              %ul
-                - @product.errors.full_messages_for(:categories_id).each do |message|
-                  %li.error 
-                    カテゴリーを選択してください
+            - if session[:error].present?
+              %ul.errors
+                - session[:error].each do |e|
+                  - if e.include?("カテゴリー")
+                    .error 
+                      カテゴリーを選択してください
           
         .select__box
           %label 
@@ -109,11 +114,12 @@
             %i.fa.fa-chevron-down
             = f.collection_select :status_id, Status.all, :id, :name, prompt: "--", class: 'input'
             .field_with_errors
-              - if @product.errors.any?
-                %ul
-                  - @product.errors.full_messages_for(:status_id).each do |message|
-                    %li.error 
-                      = message
+              - if session[:error].present?
+                %ul.errors
+                  - session[:error].each do |e|
+                    - if e.include?("状態")
+                      %li.error 
+                        商品の状態が選択されていません
           .select__box
             %label 
               ブランド
@@ -134,11 +140,12 @@
             %i.fa.fa-chevron-down
             = f.collection_select :shopping_charge_id, Shippingcharges.all, :id, :name, prompt: "--", class: 'input'
           .field_with_errors
-          - if @product.errors.any?
-            %ul
-              - @product.errors.full_messages_for(:shopping_charge_id).each do |message|
-                %li.error 
-                  = message
+            - if session[:error].present?
+              %ul.errors
+                - session[:error].each do |e|
+                  - if e.include?("配送料")
+                    %li.error 
+                      配送料の負担を選んでください
         .select__box
           %label 
             発送元の地域
@@ -148,11 +155,12 @@
             %i.fa.fa-chevron-down
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'input'
           .field_with_errors
-            - if @product.errors.any?
-              %ul
-                - @product.errors.full_messages_for(:prefecture_id).each do |message|
-                  %li.error 
-                    = message
+            - if session[:error].present?
+              %ul.errors
+                - session[:error].each do |e|
+                  - if e.include?("地域")
+                    %li.error 
+                      発送元の地域を選んでください
         .select__box
           %label 
             発送までの日数
@@ -162,11 +170,12 @@
             %i.fa.fa-chevron-down
             = f.collection_select :delivery_date_id, Delivarydate.all, :id, :name, prompt: "--", class: 'input'
           .field_with_errors
-            - if @product.errors.any?
-              %ul
-                - @product.errors.full_messages_for(:delivery_date_id).each do |message|
-                  %li.error 
-                    = message
+            - if session[:error].present?
+              %ul.errors
+                - session[:error].each do |e|
+                  - if e.include?("配送日")
+                    %li.error 
+                      配送日を選択してください
 
     .section
       .clearfix
@@ -185,10 +194,13 @@
                   .yen ¥
                   = f.telephone_field :price, {:placeholder => "例）300"}
               .field_with_errors
-                - if @product.errors.any?
-                  - @product.errors.full_messages_for(:price).each do |message|
-                    %p.error
-                      = message
+                - if session[:error].present?
+                  %ul.errors
+                    - session[:error].each do |e|
+                      - if e.include?("価格")
+                        .error 
+                          価格がありません
+                          - session[:error] = nil
             %li.clearfix.list
               %p.l-left  販売手数料 (10%)
               %p.l-right#commision  -

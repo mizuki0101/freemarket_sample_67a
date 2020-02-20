@@ -34,7 +34,8 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      session[:error] = @product.errors.full_messages
+      redirect_to new_product_path
     end
   end
 
