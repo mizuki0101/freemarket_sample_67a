@@ -11,10 +11,16 @@
       .content-detail__form__box__image
         .slick  
           - @product.images.each do |product_image|
-            = image_tag product_image.src.url, class: "slick-img", height: "300px", width: "300px"
+            - if product_image.croped_image.blank?
+              = image_tag product_image.src.url, class: "slick-img", height: "300px", width: "300px"
+            - else
+              = image_tag product_image.croped_image, class: "slick-img", height: "300px", width: "300px"
         .slick-thumbnail
           - @product.images.each do |product_image|
-            = image_tag product_image.src.url, class: "slick-thumbnail_item", height: "60px", width: "60px"
+            - if product_image.croped_image.blank?
+              = image_tag product_image.src.url, class: "slick-thumbnail_item", height: "60px", width: "60px"
+            - else
+              = image_tag product_image.croped_image, class: "slick-img", height: "300px", width: "300px"
         -if @product.buyer_id.present? 
           .products-box_show_photo__sold
             .products-box_show_photo__sold__inner

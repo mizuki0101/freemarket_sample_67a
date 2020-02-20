@@ -1,3 +1,12 @@
+#cropModal.modal.fade{:role => "dialog",:style => "display:none;"}
+  .modal-dialog
+    .modal-content
+      .modal-body
+        .img-container
+          %img#imageModal{:src => ""}/
+      .modal-footer
+        %button.btn-return{"data-dismiss" => "modal", :type => "button"}戻る
+        %button.btn-save.btn.btn-primary{"data-dismiss" => "modal", :type => "button"} 保存
 .container
   = form_for @product do |f|
     .head
@@ -29,13 +38,17 @@
                 = file_field_tag "product_images_attributes_#{@product.images.count}_src", name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
         = f.fields_for :images do |image|
           .drop-zone{:style => "display:none;"}
-            .js-file_group{"data-index" => "#{image.index}"}
+            .js-file_group
               %label{:for => "product_images_attributes_#{image.index}_src"}
                 %p
                   ドラッグアンドドロップ
                   %br/
                   またはクリックしてファイルをアップロード
                 = image.file_field :src, class: 'js-file'
+                = image.hidden_field :x, class:"dataX"
+                = image.hidden_field :y, class:"dataY"
+                = image.hidden_field :width, class:"dataWidth"
+                = image.hidden_field :height, class:"dataHeight"
             = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             %br/
       .field_with_errors
