@@ -398,7 +398,7 @@ body {
       width: 100%;
       a {
         text-decoration: none;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
       }
       &__image {
         height: 220px;
@@ -433,14 +433,9 @@ body {
             height: 25px;   
             background-color: white;
             padding-bottom: 5px;
-            &__price {
-              font-size: 20px;
-              float: left;
-            }
-            &__like {
-              font-size: 20px;
-              float: right;
-            }
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
           }
         }  
       }
