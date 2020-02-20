@@ -23,8 +23,11 @@ $(document).on('turbolinks:load',function() {
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
+  $('#previews').on('change',function() {
+  })
 
   $('#image-box').on('change', '.js-file', function(e) {
+   
     const targetIndex = $(this).parent().parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
@@ -50,7 +53,6 @@ $(document).on('turbolinks:load',function() {
     
     if($('.previews__box').length == 10){
       $(".input-box").css('display','none');
-      
     }
     
   });
@@ -80,6 +82,9 @@ $(document).on('turbolinks:load',function() {
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
     if(length < 10){
       $(".js-file_group:last-child").css('display',``);
+    }
+    if($('.previews__box').length < 10){
+      $(".input-box:last-child").css('display',``);
     }
   });
 
