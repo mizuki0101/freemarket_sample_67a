@@ -106,8 +106,9 @@
           -@comments.reverse.each do |comment|
             .comment-name
               =link_to comment.user.nickname 
-              %p :
-              %p.product-comment=comment.text
+              -# %p :
+              .baloon-left
+                %p.product-comment=comment.text
   .content-detail__comment
     -if current_user
       = form_with model: @comment, id: "new-form", url: product_comments_path(@product), method: :post, local: true do |form|
